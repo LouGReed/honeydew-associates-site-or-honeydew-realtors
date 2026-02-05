@@ -1,4 +1,5 @@
 import { siteConfig } from '@/config/site';
+import BrandLogo from './BrandLogo';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -7,11 +8,7 @@ export default function Footer() {
       <div className={`container ${styles.container}`}>
         <div className={styles.top}>
           <a href="/" className={styles.logo} aria-label="Honeydew Home">
-            <img
-              src={siteConfig.logo}
-              alt={siteConfig.businessName}
-              style={{ height: 28, width: 'auto', objectFit: 'contain' }}
-            />
+            <BrandLogo />
           </a>
 
           <nav className={styles.nav} aria-label="Footer navigation">

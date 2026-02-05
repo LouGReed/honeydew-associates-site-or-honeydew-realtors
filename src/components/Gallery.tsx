@@ -1,15 +1,18 @@
-import { gallerySep1, gallerySep2 } from '@/config/pexels';
+import { twoFectaLeft, twoFectaRight } from '@/config/pexels';
+import type { PexelImage } from '@/config/pexels';
 import styles from './Gallery.module.css';
 
 /**
  * Mammoth-style contained image sequence.
- * Work images primary, with 2 Pexels separators interleaved
- * (after work-02 and work-04) for editorial breathing room.
+ * Work images primary, with Pexels separators interleaved
+ * for editorial breathing room. After work-04, a "two-fecta"
+ * pair of vertical Pexels images sits side by side.
  */
 
 const GALLERY_DIR = '/assets/imagery/galleryofhomeimprovement';
 
-type GalleryItem = {
+type SingleItem = {
+  type: 'single';
   src: string;
   alt: string;
   width: number;
@@ -18,41 +21,75 @@ type GalleryItem = {
   orientation: 'horizontal' | 'vertical';
 };
 
+type TwoFectaItem = {
+  type: 'twoFecta';
+  left: PexelImage;
+  right: PexelImage;
+};
+
+type GalleryItem = SingleItem | TwoFectaItem;
+
 const sequence: GalleryItem[] = [
-  { src: `${GALLERY_DIR}/01.png`, alt: 'Home improvement — living area',     width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
-  { src: `${GALLERY_DIR}/02.png`, alt: 'Home improvement — kitchen detail',  width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
-  { src: gallerySep1.src,         alt: gallerySep1.alt,                      width: gallerySep1.width, height: gallerySep1.height, kind: 'pexels', orientation: 'horizontal' },
-  { src: `${GALLERY_DIR}/03.png`, alt: 'Home improvement — bathroom finish', width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
-  { src: `${GALLERY_DIR}/04.png`, alt: 'Home improvement — bedroom staging', width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
-  { src: gallerySep2.src,         alt: gallerySep2.alt,                      width: gallerySep2.width, height: gallerySep2.height, kind: 'pexels', orientation: 'vertical' },
-  { src: `${GALLERY_DIR}/05.png`, alt: 'Home improvement — exterior view',   width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
-  { src: `${GALLERY_DIR}/06.png`, alt: 'Home improvement — final walkthrough', width: 1920, height: 1280, kind: 'work', orientation: 'horizontal' },
+  { type: 'single', src: `${GALLERY_DIR}/01.png`, alt: 'Home improvement — living area',     width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
+  { type: 'single', src: `${GALLERY_DIR}/02.png`, alt: 'Home improvement — kitchen detail',  width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
+  { type: 'single', src: `${GALLERY_DIR}/03.png`, alt: 'Home improvement — bathroom finish', width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
+  { type: 'single', src: `${GALLERY_DIR}/04.png`, alt: 'Home improvement — bedroom staging', width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
+  { type: 'twoFecta', left: twoFectaLeft, right: twoFectaRight },
+  { type: 'single', src: `${GALLERY_DIR}/05.png`, alt: 'Home improvement — exterior view',   width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
+  { type: 'single', src: `${GALLERY_DIR}/06.png`, alt: 'Home improvement — final walkthrough', width: 1920, height: 1280, kind: 'work', orientation: 'horizontal' },
 ];
 
 export default function Gallery() {
   return (
     <section id="work" className={styles.gallery}>
       <div className={styles.inner}>
-        {sequence.map((item, index) => (
-          <div
-            key={item.src}
-            className={`${styles.panel} ${
-              item.kind === 'pexels' ? styles.separator : ''
-            } ${
-              item.orientation === 'vertical' ? styles.vertical : ''
-            }`}
-          >
-            <img
-              src={encodeURI(item.src)}
-              alt={item.alt}
-              width={item.width}
-              height={item.height}
-              loading={index < 2 ? 'eager' : 'lazy'}
-              draggable={false}
-              className={styles.image}
-            />
-          </div>
-        ))}
+        {sequence.map((item, index) => {
+          if (item.type === 'twoFecta') {
+            return (
+              <div key="twoFecta" className={`${styles.panel} ${styles.separator} ${styles.twoFecta}`}>
+                <img
+                  src={encodeURI(item.left.src)}
+                  alt={item.left.alt}
+                  width={item.left.width}
+                  height={item.left.height}
+                  loading="lazy"
+                  draggable={false}
+                  className={styles.twoFectaImage}
+                />
+                <img
+                  src={encodeURI(item.right.src)}
+                  alt={item.right.alt}
+                  width={item.right.width}
+                  height={item.right.height}
+                  loading="lazy"
+                  draggable={false}
+                  className={styles.twoFectaImage}
+                />
+              </div>
+            );
+          }
+
+          return (
+            <div
+              key={item.src}
+              className={`${styles.panel} ${
+                item.kind === 'pexels' ? styles.separator : ''
+              } ${
+                item.orientation === 'vertical' ? styles.vertical : ''
+              }`}
+            >
+              <img
+                src={encodeURI(item.src)}
+                alt={item.alt}
+                width={item.width}
+                height={item.height}
+                loading={index < 2 ? 'eager' : 'lazy'}
+                draggable={false}
+                className={styles.image}
+              />
+            </div>
+          );
+        })}
       </div>
     </section>
   );

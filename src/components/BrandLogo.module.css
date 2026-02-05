@@ -1,0 +1,11 @@
+/* ============================================
+   BrandLogo — Reusable brand mark
+   Size controlled by parent context via max-height
+   ============================================ */
+
+.logo {
+  display: block;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}

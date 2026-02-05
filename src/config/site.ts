@@ -4,7 +4,7 @@ export const siteConfig = {
   phone: '(512) 555-0134',
   email: 'hello@honeydew.co',
   housecallProUrl: 'https://housecallpro.com/book/honeydew-homes',
-  logo: '/img/brand/logo.png',
+  logo: '/img/brand/honeydewlogo.png',
 
   services: [
     {

@@ -36,14 +36,20 @@
   padding: var(--space-sm) 0;
 }
 
-/* ── Vertical: centered, taller presence ───── */
-.vertical {
+/* ── Two-fecta: side-by-side vertical pair ─── */
+.twoFecta {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-sm);
 }
 
-.vertical .image {
-  max-width: 100%;
+.twoFectaImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 4 / 5;
 }
 
 /* ===== Tablet (768px+) ===================== */
@@ -60,8 +66,14 @@
     padding: var(--space-md) 0;
   }
 
-  .vertical .image {
-    max-width: 55%;
+  .twoFecta {
+    flex-direction: row;
+    gap: var(--space-md);
+  }
+
+  .twoFectaImage {
+    flex: 1;
+    min-width: 0;
   }
 }
 
@@ -79,8 +91,8 @@
     padding: var(--space-md) 0;
   }
 
-  .vertical .image {
-    max-width: 45%;
+  .twoFecta {
+    gap: var(--space-lg);
   }
 }
 

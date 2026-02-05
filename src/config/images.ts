@@ -55,14 +55,13 @@ export const galleryImages: ImageEntry[] = [
 // ─── Standout Full-Bleed Images (for feature breaks) ───────────────
 export const standoutImages: ImageEntry[] = [
   { src: '/img/standout/standout-01.jpg', alt: 'Austin neighborhood', position: 'center' },
-  { src: '/img/standout/standout-02.jpg', alt: 'Home exterior at golden hour', position: 'center' },
 ];
 
 // ─── Validation Logos ───────────────────────────────────────────────
 export const validationLogos = [
-  { src: '/img/validation/compass.png', alt: 'Compass' },
-  { src: '/img/validation/sicara.png', alt: 'Sicara Design' },
-  { src: '/img/validation/texas-realtors.png', alt: 'Texas Realtors' },
+  { src: '/img/validation/compass.png', alt: 'Compass', width: 1080, height: 1080, href: 'https://www.compass.com/' },
+  { src: '/img/validation/sicara.png', alt: 'Sicara Design', width: 1600, height: 1600, href: 'https://www.sicaradesign.com/' },
+  { src: '/img/validation/texas-realtors.png', alt: 'Texas Realtors', width: 4096, height: 4096, href: 'https://www.texasrealestate.com/' },
 ];
 
 // ─── Sequencing Utilities ──────────────────────────────────────────

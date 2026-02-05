@@ -11,14 +11,16 @@
   right: 0;
   z-index: 1000;
   height: var(--nav-height);
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
 }
 
-/* Scrolled: frosted glass */
+/* Scrolled past hero: warm off-white with subtle border */
 .scrolled {
-  background-color: rgba(253, 251, 247, 0.95);
+  background-color: #F6F3EE;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* Container — flex on mobile, grid on desktop */
@@ -46,12 +48,15 @@
 .logo img {
   filter: brightness(0) invert(1);
   transition: filter 0.3s ease;
-  max-height: 32px;
-  width: auto;
+  /* Logo PNG has large transparent padding — crop it via cover */
+  width: 180px;
+  height: 38px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .scrolled .logo img {
-  filter: none;
+  filter: brightness(0);
 }
 
 /* ===== Desktop Nav ===== */
@@ -73,7 +78,11 @@
 }
 
 .scrolled .navLink {
-  color: var(--color-text);
+  color: #1A1816;
+}
+
+.scrolled .navLink:hover {
+  color: #000;
 }
 
 /* Underline animation */
@@ -102,7 +111,7 @@
 }
 
 .scrolled .navLinkActive {
-  color: var(--color-text);
+  color: #111;
 }
 
 /* ===== Desktop Actions ===== */
@@ -116,14 +125,7 @@
   padding: 12px 20px;
 }
 
-.scrolled .ctaBtn {
-  background-color: var(--color-text);
-  color: var(--color-bg);
-}
-
-.scrolled .ctaBtn:hover {
-  background-color: var(--color-text-secondary);
-}
+/* CTA stays gold accent in both states */
 
 /* ===== Mobile Toggle ===== */
 .mobileToggle {
@@ -147,7 +149,7 @@
 }
 
 .scrolled .hamburger {
-  background-color: var(--color-text);
+  background-color: #1A1816;
 }
 
 .hamburger::before,
@@ -241,7 +243,8 @@
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
   .logo img {
-    max-height: 36px;
+    width: 220px;
+    height: 44px;
   }
 
   .mobileNav {
@@ -267,7 +270,8 @@
   }
 
   .logo img {
-    max-height: 40px;
+    width: 260px;
+    height: 48px;
   }
 
   .nav {
@@ -291,6 +295,11 @@
 
 /* ===== Large Desktop (1440px+) ===== */
 @media (min-width: 1440px) {
+  .logo img {
+    width: 280px;
+    height: 52px;
+  }
+
   .nav {
     gap: 52px;
   }

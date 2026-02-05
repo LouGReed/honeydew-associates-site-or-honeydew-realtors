@@ -2,22 +2,33 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { siteConfig } from '@/config/site';
+import BrandLogo from './BrandLogo';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolledPastHero, setScrolledPastHero] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
-  // Handle scroll state
+  // Detect when the hero's bottom edge crosses above the header
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const hero = document.getElementById('hero');
+    if (!hero) return;
 
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // When hero is NOT intersecting the top of the viewport → scrolled past
+        setScrolledPastHero(!entry.isIntersecting);
+      },
+      {
+        // Trigger when the hero bottom passes below the nav height
+        rootMargin: '-96px 0px 0px 0px',
+        threshold: 0,
+      }
+    );
+
+    observer.observe(hero);
+    return () => observer.disconnect();
   }, []);
 
   // IntersectionObserver for active section tracking
@@ -78,15 +89,12 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}
+        className={`${styles.navbar} ${scrolledPastHero ? styles.scrolled : ''}`}
       >
         <div className={styles.container}>
           {/* Logo */}
           <a href="/" className={styles.logo} aria-label="Honeydew Home">
-            <img
-              src={siteConfig.logo}
-              alt={siteConfig.businessName}
-            />
+            <BrandLogo />
           </a>
 
           {/* Desktop Nav */}

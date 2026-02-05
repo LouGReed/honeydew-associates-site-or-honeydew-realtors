@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/honeydew-associates-site-or-honeydew-realtors',
   images: {
-    // Use unoptimized for local development to avoid issues
     unoptimized: true,
   },
 }

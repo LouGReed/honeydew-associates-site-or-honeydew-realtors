@@ -1,3 +1,4 @@
+export { default as BrandLogo } from './BrandLogo';
 export { default as Navbar } from './Navbar';
 export { default as HeroSlideshow } from './HeroSlideshow';
 export { default as Intro } from './Intro';

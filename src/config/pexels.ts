@@ -32,31 +32,22 @@ export const introPortrait: PexelImage = {
   orientation: 'vertical',
 };
 
-/** Gallery separator after work image 2 */
-export const gallerySep1: PexelImage = {
-  src: `${BASE}/pexels-falling4utah-1080721.jpg`,
-  alt: 'Sunlit home interior',
-  width: 6000,
-  height: 4000,
-  orientation: 'horizontal',
-};
-
-/** Gallery separator after work image 4 */
-export const gallerySep2: PexelImage = {
-  src: `${BASE}/pexels-ron-lach-10398346.jpg`,
-  alt: 'Quiet moment at home',
-  width: 3928,
-  height: 5892,
+/** Gallery two-fecta — left (vertical) */
+export const twoFectaLeft: PexelImage = {
+  src: `${FAV}/fatherandkidsplaying.jpg`,
+  alt: 'Father and kids playing at home',
+  width: 2274,
+  height: 3411,
   orientation: 'vertical',
 };
 
-/** Editorial band between Gallery and Services */
-export const postGalleryBand: PexelImage = {
-  src: `${FAV}/windowlightshadowcinematic.jpg`,
-  alt: 'Window light in a quiet interior',
-  width: 4926,
-  height: 3284,
-  orientation: 'horizontal',
+/** Gallery two-fecta — right (vertical) */
+export const twoFectaRight: PexelImage = {
+  src: `${FAV}/grillingfood.jpg`,
+  alt: 'Grilling food outdoors',
+  width: 5461,
+  height: 8192,
+  orientation: 'vertical',
 };
 
 /** Services section — side figure */
@@ -68,11 +59,3 @@ export const servicesFigure: PexelImage = {
   orientation: 'vertical',
 };
 
-/** Calm break before Contact section */
-export const preContactBand: PexelImage = {
-  src: `${FAV}/backyardwillowtree.jpg`,
-  alt: 'Serene backyard scene',
-  width: 5712,
-  height: 4284,
-  orientation: 'horizontal',
-};

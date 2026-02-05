@@ -10,7 +10,7 @@ export default function Services() {
           <header className={styles.header}>
             <span className="eyebrow">What We Do</span>
             <h2 className={styles.title}>
-              Make-ready work that respects your timeline—and your client's home.
+              Make-ready work that respects your timeline and your client's home.
             </h2>
           </header>
 

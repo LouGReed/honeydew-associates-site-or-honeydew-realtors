@@ -13,13 +13,24 @@ export default function Validation() {
         </div>
         <div className={styles.logos}>
           {validationLogos.map((logo, index) => (
-            <div key={index} className={styles.logoWrapper}>
+            <a
+              key={index}
+              href={logo.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${logo.alt} website`}
+              className={styles.logoLink}
+            >
               <img
                 src={logo.src}
                 alt={logo.alt}
-                style={{ width: 100, height: 40, objectFit: 'contain' }}
+                width={logo.width}
+                height={logo.height}
+                loading="lazy"
+                draggable={false}
+                className={styles.logo}
               />
-            </div>
+            </a>
           ))}
         </div>
       </div>

@@ -94,6 +94,7 @@ export default function HeroSlideshow() {
 
   return (
     <section
+      id="hero"
       className={`snap-section ${styles.hero}`}
       aria-label="Hero slideshow"
       onTouchStart={onTouchStart}
