@@ -1,128 +1,119 @@
 export interface HeroSlide {
   src: string;
+  alt: string;
   fit: "cover" | "contain";
   position: string;
-  overlayStrength: number;
 }
 
 export const siteConfig = {
-  businessName: "Honeydew Homes",
+  businessName: "Honeydew",
+  tagline: "Austin Make-Ready Partner",
   phone: "(512) 555-0134",
-  email: "hello@honeydew-homes.com",
+  email: "hello@honeydew.co",
   housecallProUrl: "https://housecallpro.com/book/honeydew-homes",
 
-  // Logo paths
+  // Logo
   logo: "/assets/brand/Honey Dew Logos/honeydewfinal.png",
-  logoAlt: "/assets/brand/Honey Dew Logos/Untitled design (19).png",
 
-  // Hero slideshow images
+  // Hero slideshow - prioritize real work images
   heroSlides: [
     {
-      src: "/assets/slideshow/slide-work-1.png",
+      src: "/assets/imagery/hero/_make_this_16-9_533g18zg4lvr221xgqdk_1.png",
+      alt: "Modern Austin home interior",
       fit: "cover",
       position: "center",
-      overlayStrength: 0.25,
     },
     {
-      src: "/assets/slideshow/slide-family-1.jpg",
+      src: "/assets/imagery/hero/_0mxza8kb24wnu3anuz90_0.png",
+      alt: "Freshly finished living space",
       fit: "cover",
       position: "center",
-      overlayStrength: 0.3,
     },
     {
-      src: "/assets/slideshow/slide-work-2.png",
+      src: "/assets/imagery/hero/_93h9sbu59vqc0wc7j51y_0.png",
+      alt: "Kitchen ready for photos",
       fit: "cover",
       position: "center",
-      overlayStrength: 0.2,
     },
     {
-      src: "/assets/slideshow/slide-family-2.jpg",
+      src: "/assets/imagery/hero/_2jpynof175jqd0qqtvlf_1.png",
+      alt: "Bright clean interior",
       fit: "cover",
       position: "center",
-      overlayStrength: 0.3,
     },
     {
-      src: "/assets/slideshow/slide-outdoor-2.jpg",
+      src: "/assets/imagery/hero/_a0v9yx6l4u99c1hz1h5u_0.png",
+      alt: "Detail work complete",
       fit: "cover",
       position: "center",
-      overlayStrength: 0.25,
-    },
-    {
-      src: "/assets/slideshow/slide-family-3.jpg",
-      fit: "cover",
-      position: "center",
-      overlayStrength: 0.3,
     },
   ] as HeroSlide[],
 
-  // Lifestyle break image
-  lifestyleBreakImage: "/assets/lifestyle-break.jpg",
-
-  // Values section background image
-  valuesImage: "/assets/imagery/hero/_2jpynof175jqd0qqtvlf_1.png",
-
-  // Validation/trust logos
-  validationLogos: [
-    {
-      src: "/assets/validation/compass.PNG",
-      alt: "Compass Real Estate",
-    },
-    {
-      src: "/assets/validation/take_the_provided_texas_realtors_logo_and_remove_the_background_completely_preserve_the_exact_logo__1yb80vnp4ir24l9ohgfz_3.png",
-      alt: "Texas Realtors",
-    },
-    {
-      src: "/assets/validation/Sicara-Design-logo_400x400.png",
-      alt: "Sicara Design",
-    },
-  ],
-
-  // Services list
+  // Services - studio naming
   services: [
     {
-      title: "Make-Ready Services",
-      description: "Pre-listing work to help homes show clean, complete, and cared for.",
+      title: "Make-Ready + Turnovers",
+      description: "Complete pre-listing preparation so your home photographs beautifully and sells faster.",
     },
     {
-      title: "Repairs & Punch Lists",
-      description: "Efficient fixes with attention to detail and respect for the property.",
+      title: "Punch Lists + Repairs",
+      description: "Efficient execution of inspection items and buyer requests with clear communication.",
     },
     {
-      title: "Paint & Finish Work",
-      description: "Clean lines and finishes that photograph well.",
+      title: "Paint + Finish Work",
+      description: "Clean lines and neutral tones that let the home speak for itself.",
     },
     {
       title: "Light Remodels",
-      description: "Targeted updates that improve function and first impressions.",
-    },
-    {
-      title: "Pre-Sale Touch-Ups",
-      description: "Final details that make a home feel finished.",
+      description: "Targeted updates that move the needle without the timeline of a full renovation.",
     },
   ],
 
-  // Footer navigation
-  footerNav: {
-    about: [
-      { label: "Our Story", href: "/#about" },
-      { label: "Values", href: "/#values" },
+  // Process steps
+  process: [
+    {
+      number: "01",
+      title: "Walkthrough + Scope",
+      description: "We meet at the property, understand your timeline, and build a clear scope together.",
+    },
+    {
+      number: "02",
+      title: "Schedule + Execute",
+      description: "Our team handles the work while you focus on your clients. Daily updates, no surprises.",
+    },
+    {
+      number: "03",
+      title: "Final Sweep + Photos",
+      description: "A clean handoff: every detail checked, every surface ready for the photographer.",
+    },
+  ],
+
+  // Validation logos
+  validationLogos: [
+    { src: "/assets/validation/compass.PNG", alt: "Compass" },
+    { src: "/assets/validation/Sicara-Design-logo_400x400.png", alt: "Sicara Design" },
+    {
+      src: "/assets/validation/take_the_provided_texas_realtors_logo_and_remove_the_background_completely_preserve_the_exact_logo__1yb80vnp4ir24l9ohgfz_3.png",
+      alt: "Texas Realtors"
+    },
+  ],
+
+  // Lifestyle images for warm proof section
+  lifestyleImages: [
+    { src: "/assets/slideshow/slide-family-1.jpg", caption: "Family-ready finishes" },
+    { src: "/assets/slideshow/slide-outdoor-2.jpg", caption: "Photo-day polish" },
+    { src: "/assets/slideshow/slide-family-2.jpg", caption: "Austin light, inside and out" },
+  ],
+
+  // Footer
+  footerLinks: {
+    navigation: [
+      { label: "About", href: "#about" },
+      { label: "Services", href: "#services" },
+      { label: "Process", href: "#process" },
+      { label: "Contact", href: "#contact" },
     ],
-    services: [
-      { label: "Make-Ready", href: "/#services" },
-      { label: "Repairs", href: "/#services" },
-      { label: "Paint & Finish", href: "/#services" },
-    ],
-    contact: [
-      { label: "Get in Touch", href: "/contact" },
-      { label: "Book Online", href: "https://housecallpro.com/book/honeydew-homes" },
-    ],
-    serviceAreas: [
-      "Austin",
-      "Round Rock",
-      "Cedar Park",
-      "Georgetown",
-      "Pflugerville",
-    ],
+    serviceAreas: ["Austin", "Round Rock", "Cedar Park", "Georgetown", "Pflugerville"],
   },
 };
 

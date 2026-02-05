@@ -1,3 +1,8 @@
+/* ============================================
+   HONEYDEW DESIGN SYSTEM
+   Editorial / Premium Interior Studio Feel
+   ============================================ */
+
 /* Telegraf Font Faces */
 @font-face {
   font-family: 'Telegraf';
@@ -23,37 +28,50 @@
   font-display: swap;
 }
 
-/* CSS Variables - Mobile First */
+/* Design Tokens - Mobile First */
 :root {
-  /* Colors */
-  --color-bg: #FAF8F5;
-  --color-bg-warm: #F5F1EB;
-  --color-text: #2C2825;
-  --color-text-muted: #5C5652;
-  --color-accent: #D4A054;
-  --color-accent-hover: #C08F45;
-  --color-accent-dark: #8B6B3D;
-  --color-footer-bg: #2C2825;
-  --color-footer-text: #E8E4DF;
-  --color-border: rgba(44, 40, 37, 0.1);
+  /* Colors - Warm, sophisticated palette */
+  --color-bg: #FDFBF7;
+  --color-bg-warm: #F7F4EE;
+  --color-bg-cream: #F2EDE4;
+  --color-text: #1A1816;
+  --color-text-secondary: #4A4642;
+  --color-text-muted: #7A756E;
+  --color-accent: #C9A052;
+  --color-accent-hover: #B8913F;
+  --color-border: rgba(26, 24, 22, 0.08);
+  --color-border-strong: rgba(26, 24, 22, 0.15);
+
+  /* Footer */
+  --color-footer-bg: #1A1816;
+  --color-footer-text: #F2EDE4;
 
   /* Typography */
-  --font-primary: 'Telegraf', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-primary: 'Telegraf', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 
-  /* Spacing - Mobile defaults */
-  --nav-height: 64px;
-  --section-padding: 64px;
-  --container-max: 1200px;
+  /* Spacing Scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 128px;
+
+  /* Layout */
+  --nav-height: 60px;
+  --container-max: 1280px;
+  --container-narrow: 960px;
   --container-padding: 20px;
 
   /* Accessibility */
   --min-tap-target: 44px;
+  --focus-ring: 0 0 0 2px var(--color-accent);
 }
 
-/* Reset & Base */
-*,
-*::before,
-*::after {
+/* Reset */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -62,6 +80,17 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
@@ -76,17 +105,64 @@ body {
   overflow-x: hidden;
 }
 
+/* Typography Scale - Mobile First */
+.eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+h1, .h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+h2, .h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+h3, .h3 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+p, .body {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+.body-sm {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Links */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* Images */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
+/* Buttons */
 button {
   font-family: inherit;
   cursor: pointer;
@@ -94,52 +170,20 @@ button {
   background: none;
 }
 
-/* Typography - Mobile First */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-
-h1 {
-  font-size: 2.25rem;
-}
-
-h2 {
-  font-size: 1.75rem;
-}
-
-h3 {
-  font-size: 1.25rem;
-}
-
-p {
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-/* Container */
-.container {
-  width: 100%;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
-}
-
-/* Buttons - Mobile First with minimum tap target */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: var(--space-sm);
   min-height: var(--min-tap-target);
-  padding: 14px 24px;
+  padding: 14px 28px;
   font-family: var(--font-primary);
   font-weight: 800;
-  font-size: 0.8125rem;
-  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  border-radius: 4px;
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 2px;
+  transition: all 0.2s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -152,67 +196,57 @@ p {
   background-color: var(--color-accent-hover);
 }
 
-.btn-primary:active {
-  transform: scale(0.98);
-}
-
 .btn-primary:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: white;
-  border: 2px solid white;
+  color: var(--color-text);
+  border: 1px solid var(--color-border-strong);
 }
 
 .btn-secondary:hover {
-  background-color: white;
-  color: var(--color-text);
-}
-
-.btn-secondary:focus-visible {
-  outline: 2px solid white;
-  outline-offset: 2px;
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: var(--color-text);
-  border: 2px solid var(--color-text);
-}
-
-.btn-outline:hover {
   background-color: var(--color-text);
   color: var(--color-bg);
+  border-color: var(--color-text);
 }
 
-/* Section spacing */
-.section {
-  padding: var(--section-padding) 0;
-}
-
-.section-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 40px;
-}
-
-.section-header h2 {
-  margin-bottom: 16px;
+.btn-ghost {
+  background: transparent;
   color: var(--color-text);
+  padding: 8px 0;
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
 }
 
-.section-header p {
-  color: var(--color-text-muted);
+.btn-ghost:hover {
+  color: var(--color-accent);
 }
 
-/* Focus states for accessibility */
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+/* Section Spacing */
+.section {
+  padding: var(--space-3xl) 0;
+}
+
+/* Focus States */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 /* Selection */
@@ -221,90 +255,70 @@ button:focus-visible {
   color: white;
 }
 
-/* ===== RESPONSIVE BREAKPOINTS ===== */
-
-/* Small tablets and large phones (768px+) */
+/* ===== TABLET (768px+) ===== */
 @media (min-width: 768px) {
   :root {
     --nav-height: 72px;
-    --section-padding: 80px;
-    --container-padding: 24px;
+    --container-padding: 32px;
   }
 
-  h1 {
-    font-size: 3rem;
+  .eyebrow {
+    font-size: 0.75rem;
   }
 
-  h2 {
-    font-size: 2.25rem;
+  h1, .h1 {
+    font-size: 2.75rem;
   }
 
-  p {
+  h2, .h2 {
+    font-size: 2rem;
+  }
+
+  h3, .h3 {
+    font-size: 1.25rem;
+  }
+
+  p, .body {
     font-size: 1.0625rem;
   }
 
-  .section-header {
-    margin-bottom: 56px;
+  .section {
+    padding: var(--space-4xl) 0;
   }
 }
 
-/* Tablets and small desktops (1024px+) */
+/* ===== DESKTOP (1024px+) ===== */
 @media (min-width: 1024px) {
   :root {
     --nav-height: 80px;
-    --section-padding: 100px;
+    --container-padding: 48px;
   }
 
-  h1 {
-    font-size: 3.5rem;
+  h1, .h1 {
+    font-size: 3.25rem;
   }
 
-  h2 {
-    font-size: 2.5rem;
+  h2, .h2 {
+    font-size: 2.25rem;
   }
 
-  h3 {
+  h3, .h3 {
     font-size: 1.375rem;
-  }
-
-  p {
-    font-size: 1.125rem;
   }
 
   .btn {
     padding: 16px 32px;
-    font-size: 0.875rem;
-  }
-
-  .btn-primary:hover {
-    box-shadow: 0 4px 16px rgba(212, 160, 84, 0.3);
-    transform: translateY(-1px);
-  }
-
-  .section-header {
-    margin-bottom: 64px;
-  }
-
-  .section-header h2 {
-    margin-bottom: 20px;
+    font-size: 0.8125rem;
   }
 }
 
-/* Large desktops (1440px+) */
+/* ===== LARGE DESKTOP (1440px+) ===== */
 @media (min-width: 1440px) {
-  :root {
-    --section-padding: 120px;
+  h1, .h1 {
+    font-size: 3.75rem;
   }
 
-  h1 {
-    font-size: 4rem;
-  }
-
-  h2 {
-    font-size: 2.75rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
+  h2, .h2 {
+    font-size: 2.5rem;
   }
 }
