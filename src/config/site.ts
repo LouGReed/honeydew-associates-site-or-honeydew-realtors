@@ -15,48 +15,48 @@ export const siteConfig = {
   logo: "/assets/brand/Honey Dew Logos/honeydewfinal.png",
   logoAlt: "/assets/brand/Honey Dew Logos/Untitled design (19).png",
 
-  // Hero slideshow images - from slideshow folder
+  // Hero slideshow images
   heroSlides: [
     {
-      src: "/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/slideshow/_2jpynof175jqd0qqtvlf_1.png",
+      src: "/assets/slideshow/slide-work-1.png",
       fit: "cover",
       position: "center",
       overlayStrength: 0.25,
     },
     {
-      src: "/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/slideshow/_a0v9yx6l4u99c1hz1h5u_0.png",
+      src: "/assets/slideshow/slide-family-1.jpg",
+      fit: "cover",
+      position: "center",
+      overlayStrength: 0.3,
+    },
+    {
+      src: "/assets/slideshow/slide-work-2.png",
       fit: "cover",
       position: "center",
       overlayStrength: 0.2,
     },
     {
-      src: "/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/slideshow/Copy of pexels-anastasia-shuraeva-4122912.jpg",
+      src: "/assets/slideshow/slide-family-2.jpg",
+      fit: "cover",
+      position: "center",
+      overlayStrength: 0.3,
+    },
+    {
+      src: "/assets/slideshow/slide-outdoor-2.jpg",
       fit: "cover",
       position: "center",
       overlayStrength: 0.25,
     },
     {
-      src: "/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/slideshow/Copy of pexels-askar-abayev-5637755 copy.jpg",
+      src: "/assets/slideshow/slide-family-3.jpg",
       fit: "cover",
       position: "center",
-      overlayStrength: 0.2,
-    },
-    {
-      src: "/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/slideshow/Copy of pexels-askar-abayev-5638605 copy.jpg",
-      fit: "cover",
-      position: "center",
-      overlayStrength: 0.25,
-    },
-    {
-      src: "/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/slideshow/Copy of pexels-ron-lach-10397939 copy.jpg",
-      fit: "cover",
-      position: "center",
-      overlayStrength: 0.2,
+      overlayStrength: 0.3,
     },
   ] as HeroSlide[],
 
-  // Lifestyle break image (from Pexels favorites)
-  lifestyleBreakImage: "/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/Copy of pexels-anastasia-shuraeva-4122912.jpg",
+  // Lifestyle break image
+  lifestyleBreakImage: "/assets/lifestyle-break.jpg",
 
   // Values section background image
   valuesImage: "/assets/imagery/hero/_2jpynof175jqd0qqtvlf_1.png",
