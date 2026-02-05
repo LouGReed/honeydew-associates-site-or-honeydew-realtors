@@ -39,7 +39,7 @@ export default function HeroSlideshow() {
       return;
     }
 
-    intervalRef.current = setInterval(nextSlide, 6000);
+    intervalRef.current = setInterval(nextSlide, 5000);
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
@@ -48,15 +48,14 @@ export default function HeroSlideshow() {
   }, [nextSlide, isPaused, prefersReducedMotion]);
 
   return (
-    <div className={styles.wrapper}>
-      <section
-        className={styles.hero}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        aria-label="Hero slideshow"
-      >
-        {/* Slides */}
-        <div className={styles.slidesContainer}>
+    <section
+      className={`snap-section ${styles.hero}`}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      aria-label="Hero slideshow"
+    >
+      {/* Slides */}
+      <div className={styles.slidesContainer}>
         {slides.map((slide, index) => (
           <div
             key={slide.src}
@@ -88,40 +87,39 @@ export default function HeroSlideshow() {
             {siteConfig.tagline}
           </span>
           <h1 className={styles.headline}>
-            Homes Ready.<br className={styles.lineBreak} /> Listings Strong.
+            Homes Ready.<span className={styles.lineBreak}> </span>Listings Strong.
           </h1>
           <p className={styles.subhead}>
             Pre-listing preparation and make-ready services for Austin real estate professionals.
           </p>
-          <div className={styles.ctas}>
-            <a
-              href={siteConfig.housecallProUrl}
-              className="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book a Walkthrough
-            </a>
-            <a href="#services" className={`btn-ghost ${styles.secondaryCta}`}>
-              See services
-            </a>
-          </div>
+          <a
+            href={siteConfig.housecallProUrl}
+            className="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book a Walkthrough
+          </a>
         </div>
       </div>
 
-        {/* Slide indicators - subtle */}
-        <div className={styles.indicators} aria-label="Slide navigation">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              className={`${styles.indicator} ${index === currentSlide ? styles.indicatorActive : ''}`}
-              onClick={() => setCurrentSlide(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              aria-current={index === currentSlide ? 'true' : 'false'}
-            />
-          ))}
-        </div>
-      </section>
-    </div>
+      {/* Slide indicators */}
+      <div className={styles.indicators} aria-label="Slide navigation">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            className={`${styles.indicator} ${index === currentSlide ? styles.indicatorActive : ''}`}
+            onClick={() => setCurrentSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
+            aria-current={index === currentSlide ? 'true' : 'false'}
+          />
+        ))}
+      </div>
+
+      {/* Scroll indicator */}
+      <div className={styles.scrollIndicator} aria-hidden="true">
+        <div className={styles.scrollLine} />
+      </div>
+    </section>
   );
 }

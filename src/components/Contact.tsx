@@ -30,11 +30,11 @@ export default function Contact() {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <section id="contact" className={styles.contact}>
-        <div className={`container ${styles.container}`}>
-          <div className={styles.content}>
+    <section id="contact" className={`snap-section ${styles.contact}`}>
+      <div className={`container ${styles.container}`}>
+        <div className={styles.content}>
           <header className={styles.header}>
+            <span className="eyebrow">Get Started</span>
             <h2 className={styles.title}>Book a walkthrough.</h2>
             <p className={styles.subtitle}>
               Tell us about the property—we'll handle the rest.
@@ -147,8 +147,7 @@ export default function Contact() {
             </form>
           )}
         </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

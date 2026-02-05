@@ -6,5 +6,3 @@ export { default as Validation } from './Validation';
 export { default as ImageBand } from './ImageBand';
 export { default as Contact } from './Contact';
 export { default as Footer } from './Footer';
-export { default as StickySection } from './StickySection';
-export { default as StickyImagePanel } from './StickyImagePanel';

@@ -1,8 +1,8 @@
 import {
   HeroSlideshow,
-  Validation,
   Services,
   Process,
+  Validation,
   ImageBand,
   Contact,
 } from '@/components';
@@ -10,22 +10,22 @@ import {
 export default function HomePage() {
   return (
     <>
-      {/* Hero - Sticky z-index 10 */}
+      {/* Hero - Full viewport slideshow */}
       <HeroSlideshow />
 
-      {/* Validation - Sticky z-index 9 */}
-      <Validation />
-
-      {/* Services - Sticky z-index 8 */}
+      {/* Services - What we do */}
       <Services />
 
-      {/* Process - Sticky z-index 7 */}
+      {/* Process - How it works */}
       <Process />
 
-      {/* ImageBand - 3 Sticky panels z-index 6, 5, 4 */}
+      {/* Validation - Trust signals */}
+      <Validation />
+
+      {/* Featured Image - Full bleed */}
       <ImageBand />
 
-      {/* Contact - Sticky z-index 3 */}
+      {/* Contact - CTA + Form */}
       <Contact />
     </>
   );

@@ -26,8 +26,10 @@ export default function RootLayout({
       </head>
       <body>
         <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <main className="snap-container">
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   );

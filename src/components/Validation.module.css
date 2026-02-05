@@ -1,32 +1,27 @@
-/* Validation Strip - Monochrome Black Logos with Sticky Scroll */
-
-/* Outer wrapper - shorter sticky duration */
-.wrapper {
-  position: relative;
-  height: 100vh;
-  z-index: 9;
-}
-
-/* Sticky panel */
+/* Validation Section - Monochrome Black Logos */
 .validation {
-  position: sticky;
-  top: 0;
-  min-height: 100vh;
-  min-height: 100svh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: var(--space-2xl) 0;
+  padding: var(--space-3xl) 0;
   background-color: var(--color-bg);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-lg);
+  text-align: center;
+  gap: var(--space-2xl);
+}
+
+.content {
+  max-width: 560px;
+}
+
+.title {
+  margin-top: var(--space-md);
+  font-size: 1.5rem;
+  line-height: 1.3;
 }
 
 .logos {
@@ -51,26 +46,18 @@
   opacity: 1;
 }
 
-.tagline {
-  font-size: 0.8125rem;
-  color: var(--color-text-muted);
-  text-align: center;
-}
-
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
-  .wrapper {
-    height: 110vh;
-  }
-
   .validation {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-4xl) 0;
   }
 
   .container {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: var(--space-xl);
+    gap: var(--space-3xl);
+  }
+
+  .title {
+    font-size: 2rem;
   }
 
   .logos {
@@ -81,17 +68,16 @@
   .logoWrapper {
     max-width: 100px;
   }
-
-  .tagline {
-    text-align: right;
-    max-width: 280px;
-  }
 }
 
 /* ===== Desktop (1024px+) ===== */
 @media (min-width: 1024px) {
-  .wrapper {
-    height: 120vh;
+  .content {
+    max-width: 640px;
+  }
+
+  .title {
+    font-size: 2.25rem;
   }
 
   .logos {
@@ -100,10 +86,5 @@
 
   .logoWrapper {
     max-width: 120px;
-  }
-
-  .tagline {
-    font-size: 0.875rem;
-    max-width: 320px;
   }
 }

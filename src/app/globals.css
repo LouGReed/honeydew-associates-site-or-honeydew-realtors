@@ -68,10 +68,40 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Scroll Snap Container - Applied to main content */
+.snap-container {
+  height: 100vh;
+  height: 100svh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 0;
+}
+
+/* Scroll Snap Section - Each panel */
+.snap-section {
+  min-height: 100vh;
+  min-height: 100svh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Lighter snap on mobile for better usability */
+@media (max-width: 767px) {
+  .snap-container {
+    scroll-snap-type: y proximity;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+
+  /* Disable snap for reduced motion */
+  .snap-container {
+    scroll-snap-type: none;
+  }
+
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

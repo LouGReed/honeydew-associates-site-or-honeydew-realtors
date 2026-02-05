@@ -1,17 +1,8 @@
-/* Hero Slideshow - Editorial Bottom-Left Style with Sticky Scroll */
-
-/* Outer wrapper - controls how long hero stays pinned */
-.wrapper {
-  position: relative;
-  height: 150vh;
-  z-index: 10;
-}
-
-/* Sticky panel */
+/* Hero Slideshow - Editorial Bottom-Left Style */
 .hero {
-  position: sticky;
-  top: 0;
+  position: relative;
   width: 100%;
+  height: 100vh;
   height: 100svh;
   min-height: 600px;
   overflow: hidden;
@@ -78,7 +69,7 @@
 }
 
 .lineBreak {
-  display: inline;
+  display: block;
 }
 
 /* Subhead */
@@ -88,22 +79,6 @@
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: var(--space-lg);
   max-width: 420px;
-}
-
-/* CTAs */
-.ctas {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-md);
-}
-
-.secondaryCta {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.secondaryCta:hover {
-  color: white;
 }
 
 /* Slide indicators */
@@ -136,12 +111,38 @@
   transform: scale(1.2);
 }
 
+/* Scroll indicator - subtle line */
+.scrollIndicator {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.1);
+  }
+}
+
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
-  .wrapper {
-    height: 180vh;
-  }
-
   .content {
     padding-bottom: var(--space-3xl);
   }
@@ -151,17 +152,11 @@
   }
 
   .lineBreak {
-    display: none;
+    display: inline;
   }
 
   .subhead {
     font-size: 1rem;
-  }
-
-  .ctas {
-    flex-direction: row;
-    align-items: center;
-    gap: var(--space-lg);
   }
 
   .indicators {
@@ -172,14 +167,14 @@
     width: 8px;
     height: 8px;
   }
+
+  .scrollLine {
+    height: 48px;
+  }
 }
 
 /* ===== Desktop (1024px+) ===== */
 @media (min-width: 1024px) {
-  .wrapper {
-    height: 220vh;
-  }
-
   .hero {
     min-height: 700px;
   }
@@ -202,6 +197,10 @@
     right: var(--container-padding);
     gap: 10px;
   }
+
+  .scrollLine {
+    height: 56px;
+  }
 }
 
 /* ===== Large Desktop (1440px+) ===== */
@@ -220,5 +219,10 @@
 @media (prefers-reduced-motion: reduce) {
   .slide {
     transition: none;
+  }
+
+  .scrollLine {
+    animation: none;
+    opacity: 0.6;
   }
 }
