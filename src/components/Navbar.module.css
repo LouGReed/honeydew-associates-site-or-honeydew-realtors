@@ -1,3 +1,4 @@
+/* Navbar - Mobile First */
 .navbar {
   position: fixed;
   top: 0;
@@ -23,33 +24,37 @@
   justify-content: space-between;
 }
 
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  min-height: var(--min-tap-target);
 }
 
 .logo img {
   filter: brightness(0) invert(1);
   transition: filter 0.3s ease;
+  max-height: 36px;
+  width: auto;
 }
 
 .scrolled .logo img {
   filter: none;
 }
 
+/* Desktop nav - hidden on mobile */
 .nav {
-  display: flex;
-  align-items: center;
-  gap: 40px;
+  display: none;
 }
 
 .navLink {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: white;
+  padding: 8px 0;
   transition: opacity 0.2s ease;
 }
 
@@ -61,23 +66,26 @@
   opacity: 0.7;
 }
 
+/* Desktop actions - hidden on mobile */
 .actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  display: none;
 }
 
 .getInTouch {
-  padding: 12px 20px;
+  padding: 10px 16px;
   font-size: 0.75rem;
 }
 
+/* Mobile hamburger toggle */
 .mobileToggle {
-  display: none;
-  width: 32px;
-  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--min-tap-target);
+  height: var(--min-tap-target);
   position: relative;
   z-index: 1001;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hamburger {
@@ -126,75 +134,133 @@
   background-color: var(--color-text);
 }
 
+/* Mobile menu overlay */
 .mobileMenu {
-  display: none;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-bg);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+.mobileMenuOpen {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 24px;
+  padding: 20px;
+}
+
+.mobileNavLink {
+  font-size: 1.375rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  padding: 12px 24px;
+  min-height: var(--min-tap-target);
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobileNavLink:hover,
+.mobileNavLink:active {
+  opacity: 0.7;
+}
+
+/* Mobile sticky CTA bar */
 .mobileStickyCta {
-  display: none;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  padding: 12px var(--container-padding);
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  background-color: var(--color-bg);
+  box-shadow: 0 -1px 0 var(--color-border);
 }
 
-@media (max-width: 968px) {
-  .nav,
-  .actions {
-    display: none;
-  }
-
-  .mobileToggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .mobileMenu {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--color-bg);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
-
-  .mobileMenuOpen {
-    opacity: 1;
-    visibility: visible;
+/* ===== Tablet (768px+) ===== */
+@media (min-width: 768px) {
+  .logo img {
+    max-height: 40px;
   }
 
   .mobileNav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
     gap: 32px;
   }
 
   .mobileNavLink {
     font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    color: var(--color-text);
-    transition: opacity 0.2s ease;
+  }
+}
+
+/* ===== Desktop (1024px+) ===== */
+@media (min-width: 1024px) {
+  .logo img {
+    max-height: 44px;
   }
 
-  .mobileNavLink:hover {
-    opacity: 0.7;
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .navLink {
+    font-size: 0.875rem;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .getInTouch {
+    padding: 12px 20px;
+  }
+
+  .mobileToggle {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: none;
   }
 
   .mobileStickyCta {
-    display: block;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 998;
-    padding: 16px 20px;
-    background-color: var(--color-bg);
-    box-shadow: 0 -1px 0 var(--color-border);
+    display: none;
+  }
+}
+
+/* ===== Large Desktop (1440px+) ===== */
+@media (min-width: 1440px) {
+  .logo img {
+    max-height: 50px;
+  }
+
+  .nav {
+    gap: 40px;
+  }
+
+  .actions {
+    gap: 16px;
   }
 }
