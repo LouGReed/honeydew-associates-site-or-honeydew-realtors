@@ -5,15 +5,15 @@ import './globals.css';
 const BASE_URL = 'https://lougreed.github.io/honeydew-associates-site-or-honeydew-realtors';
 
 export const metadata: Metadata = {
-  title: 'Honeydew | Austin Make-Ready Partner',
+  title: 'Honeydew Homes | Homes Ready. Listings Strong.',
   description:
-    'Pre-listing preparation and make-ready services for Austin real estate professionals. Homes ready. Listings strong.',
+    'Austin make-ready contractors specializing in pre-listing repairs and improvements for real estate professionals.',
   icons: {
     icon: '/honeydew-associates-site-or-honeydew-realtors/img/brand/honeydewlogo.png',
   },
   openGraph: {
-    title: 'Honeydew | Austin Make-Ready Partner',
-    description: 'Pre-listing preparation and make-ready services for Austin real estate professionals.',
+    title: 'Honeydew Homes | Homes Ready. Listings Strong.',
+    description: 'Austin make-ready contractors specializing in pre-listing repairs and improvements for real estate professionals.',
     url: BASE_URL,
     siteName: 'Honeydew Homes',
     images: [
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Honeydew | Austin Make-Ready Partner',
-    description: 'Pre-listing preparation and make-ready services for Austin real estate professionals.',
+    title: 'Honeydew Homes | Homes Ready. Listings Strong.',
+    description: 'Austin make-ready contractors specializing in pre-listing repairs and improvements for real estate professionals.',
     images: [`${BASE_URL}/assets/imagery/Pexel%20Assets/Honeydew%20Pexel%20Assets/Pexel%20Favorites%20for%20Honeydew/slideshow/order/01.jpg`],
   },
 };
