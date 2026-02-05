@@ -1,20 +1,23 @@
 /* ============================================
-   Gallery — Mammoth-style contained sequence
-   Work images + Pexels separators interleaved
+   Gallery — Cinematic contained sequence
+   Nearly full-width, narrow deliberate margins,
+   tight vertical flow, no rounded corners
    ============================================ */
 
 .gallery {
   background-color: var(--color-bg);
-  padding: var(--space-xl) 0;
+  padding: var(--space-lg) 0;
 }
 
 .inner {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  gap: var(--space-sm);
+  padding-left: max(var(--container-padding), 3vw);
+  padding-right: max(var(--container-padding), 3vw);
 }
 
-/* ── Panel (work image — default) ──────────── */
+/* ── Panel ─────────────────────────────────── */
 .panel {
   width: 100%;
 }
@@ -26,15 +29,14 @@
   height: auto;
   object-fit: cover;
   object-position: center;
-  border-radius: 2px;
 }
 
-/* ── Pexels separator: extra breathing room ── */
+/* ── Pexels separator: subtle breathing room ─ */
 .separator {
-  padding: var(--space-md) 0;
+  padding: var(--space-sm) 0;
 }
 
-/* ── Vertical orientation: narrower, centered ─ */
+/* ── Vertical: centered, taller presence ───── */
 .vertical {
   display: flex;
   justify-content: center;
@@ -47,15 +49,15 @@
 /* ===== Tablet (768px+) ===================== */
 @media (min-width: 768px) {
   .gallery {
-    padding: var(--space-2xl) 0;
+    padding: var(--space-xl) 0;
   }
 
   .inner {
-    gap: var(--space-xl);
+    gap: var(--space-md);
   }
 
   .separator {
-    padding: var(--space-lg) 0;
+    padding: var(--space-md) 0;
   }
 
   .vertical .image {
@@ -66,15 +68,15 @@
 /* ===== Desktop (1024px+) =================== */
 @media (min-width: 1024px) {
   .gallery {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0;
   }
 
   .inner {
-    gap: var(--space-2xl);
+    gap: var(--space-lg);
   }
 
   .separator {
-    padding: var(--space-xl) 0;
+    padding: var(--space-md) 0;
   }
 
   .vertical .image {
@@ -85,6 +87,6 @@
 /* ===== Large Desktop (1440px+) ============= */
 @media (min-width: 1440px) {
   .inner {
-    gap: var(--space-3xl);
+    gap: var(--space-xl);
   }
 }

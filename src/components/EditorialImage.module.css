@@ -1,17 +1,19 @@
 /* ============================================
    EditorialImage — Supporting photography band
-   Horizontal: full container width
-   Vertical: centered, narrower
+   Matches gallery width (nearly full browser width)
+   Clean edges, no rounded corners
    ============================================ */
 
 .band {
-  padding: var(--space-2xl) 0;
+  padding: var(--space-xl) 0;
   background-color: var(--color-bg);
 }
 
 .inner {
   display: flex;
   justify-content: center;
+  padding-left: max(var(--container-padding), 3vw);
+  padding-right: max(var(--container-padding), 3vw);
 }
 
 .figure {
@@ -24,7 +26,6 @@
   height: auto;
   object-fit: cover;
   object-position: center;
-  border-radius: 2px;
 }
 
 .caption {
@@ -42,7 +43,7 @@
 /* ===== Tablet (768px+) ===================== */
 @media (min-width: 768px) {
   .band {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0;
   }
 
   .vertical .figure {
@@ -53,7 +54,7 @@
 /* ===== Desktop (1024px+) =================== */
 @media (min-width: 1024px) {
   .band {
-    padding: var(--space-4xl) 0;
+    padding: var(--space-3xl) 0;
   }
 
   .vertical .figure {

@@ -331,6 +331,14 @@ button {
   padding-right: var(--container-padding);
 }
 
+.container-wide {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: max(var(--container-padding), 3vw);
+  padding-right: max(var(--container-padding), 3vw);
+}
+
 /* ----- Section Spacing ----- */
 .section {
   padding-top: var(--space-3xl);

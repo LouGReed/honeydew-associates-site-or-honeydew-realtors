@@ -18,7 +18,7 @@ export default function EditorialImage({ image, caption }: Props) {
         image.orientation === 'vertical' ? styles.vertical : ''
       }`}
     >
-      <div className={`container ${styles.inner}`}>
+      <div className={styles.inner}>
         <figure className={styles.figure}>
           <img
             src={encodeURI(image.src)}

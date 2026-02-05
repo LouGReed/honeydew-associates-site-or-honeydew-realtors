@@ -32,7 +32,7 @@ const sequence: GalleryItem[] = [
 export default function Gallery() {
   return (
     <section id="work" className={styles.gallery}>
-      <div className={`container ${styles.inner}`}>
+      <div className={styles.inner}>
         {sequence.map((item, index) => (
           <div
             key={item.src}
