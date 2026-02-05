@@ -1,8 +1,9 @@
+/* Hero Slideshow - Mobile First */
 .hero {
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  min-height: 700px;
+  width: 100%;
+  height: 100svh; /* Use svh for mobile viewport */
+  min-height: 550px;
   overflow: hidden;
 }
 
@@ -33,61 +34,65 @@
   z-index: 1;
 }
 
+/* Content positioned for mobile */
 .content {
   position: absolute;
   inset: 0;
   z-index: 2;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   padding: 0 var(--container-padding);
+  padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
 }
 
 .contentInner {
-  max-width: 700px;
-  margin-left: max(5vw, calc((100vw - var(--container-max)) / 2 + var(--container-padding)));
+  width: 100%;
+  max-width: 100%;
 }
 
 .headline {
   color: white;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .subhead {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 40px;
-  max-width: 550px;
+  margin-bottom: 24px;
+  max-width: 100%;
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 }
 
 .ctas {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  flex-direction: column;
+  gap: 12px;
 }
 
+.ctas :global(.btn) {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Scroll indicator - hidden on mobile */
 .scrollIndicator {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
+  display: none;
 }
 
 .scrollLine {
   display: block;
   width: 1px;
-  height: 60px;
+  height: 48px;
   background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
+  animation: scrollPulse 2.5s ease-in-out infinite;
 }
 
 @keyframes scrollPulse {
   0%, 100% {
     opacity: 0.4;
-    transform: scaleY(0.8);
+    transform: scaleY(0.85);
   }
   50% {
     opacity: 1;
@@ -95,31 +100,95 @@
   }
 }
 
-@media (max-width: 768px) {
+/* ===== Tablet (768px+) ===== */
+@media (min-width: 768px) {
   .hero {
-    height: 90vh;
+    height: 100vh;
     min-height: 600px;
   }
 
+  .content {
+    align-items: center;
+    padding-bottom: 0;
+  }
+
   .contentInner {
-    margin-left: 0;
-    padding-right: 20px;
+    max-width: 560px;
+    margin-left: 5vw;
+  }
+
+  .headline {
+    margin-bottom: 20px;
   }
 
   .subhead {
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
+    margin-bottom: 32px;
+    max-width: 480px;
   }
 
   .ctas {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
   }
 
-  .ctas .btn {
-    width: 100%;
-    text-align: center;
+  .ctas :global(.btn) {
+    width: auto;
   }
 
   .scrollIndicator {
-    display: none;
+    display: block;
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+}
+
+/* ===== Desktop (1024px+) ===== */
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 700px;
+  }
+
+  .contentInner {
+    max-width: 640px;
+    margin-left: max(5vw, calc((100vw - var(--container-max)) / 2 + var(--container-padding)));
+  }
+
+  .headline {
+    margin-bottom: 24px;
+  }
+
+  .subhead {
+    font-size: 1.1875rem;
+    margin-bottom: 40px;
+    max-width: 520px;
+  }
+
+  .scrollIndicator {
+    bottom: 40px;
+  }
+
+  .scrollLine {
+    height: 56px;
+  }
+}
+
+/* ===== Large Desktop (1440px+) ===== */
+@media (min-width: 1440px) {
+  .contentInner {
+    max-width: 700px;
+  }
+
+  .subhead {
+    font-size: 1.25rem;
+    max-width: 550px;
+  }
+
+  .scrollLine {
+    height: 60px;
   }
 }
