@@ -18,6 +18,9 @@ export default function HomePage() {
       {/* Intro - Centered editorial text */}
       <Intro />
 
+      {/* Gallery - Full-width image sequence */}
+      <Gallery />
+
       {/* Services - What we do */}
       <Services />
 
@@ -26,9 +29,6 @@ export default function HomePage() {
 
       {/* Featured Image - Full bleed break */}
       <ImageBand />
-
-      {/* Gallery - Portfolio / Work */}
-      <Gallery />
 
       {/* Validation - Trust signals */}
       <Validation />
