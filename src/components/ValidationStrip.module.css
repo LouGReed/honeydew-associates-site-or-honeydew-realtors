@@ -1,5 +1,6 @@
+/* Validation Strip - Mobile First */
 .validation {
-  padding: 80px 0;
+  padding: 48px 0;
   background-color: var(--color-bg);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
@@ -7,19 +8,19 @@
 
 .header {
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .logos {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 64px;
+  gap: 32px;
   flex-wrap: wrap;
 }
 
@@ -27,26 +28,69 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.7;
+  opacity: 0.6;
   filter: grayscale(100%);
-  transition: opacity 0.3s ease;
+  flex: 0 0 auto;
+  max-width: 100px;
 }
 
-.logoWrapper:hover {
-  opacity: 1;
-}
-
-@media (max-width: 768px) {
+/* ===== Tablet (768px+) ===== */
+@media (min-width: 768px) {
   .validation {
     padding: 60px 0;
   }
 
+  .header {
+    font-size: 0.75rem;
+    margin-bottom: 40px;
+  }
+
   .logos {
-    gap: 40px;
+    gap: 48px;
   }
 
   .logoWrapper {
-    flex: 0 0 calc(50% - 20px);
-    justify-content: center;
+    opacity: 0.7;
+    max-width: 120px;
+  }
+}
+
+/* ===== Desktop (1024px+) ===== */
+@media (min-width: 1024px) {
+  .validation {
+    padding: 72px 0;
+  }
+
+  .header {
+    font-size: 0.8125rem;
+    margin-bottom: 48px;
+  }
+
+  .logos {
+    gap: 56px;
+  }
+
+  .logoWrapper {
+    max-width: 140px;
+    transition: opacity 0.3s ease;
+  }
+
+  .logoWrapper:hover {
+    opacity: 1;
+  }
+}
+
+/* ===== Large Desktop (1440px+) ===== */
+@media (min-width: 1440px) {
+  .validation {
+    padding: 80px 0;
+  }
+
+  .header {
+    font-size: 0.875rem;
+  }
+
+  .logos {
+    gap: 64px;
   }
 }
