@@ -11,14 +11,16 @@ export interface ImageEntry {
   position?: string; // CSS object-position for art-direction
 }
 
-// ─── Hero Work Images (their actual work, highest priority) ─────────
+// ─── Hero Slideshow (curated order — deterministic 01→04) ────────────
+// Paths are human-readable with spaces; use encodeURI() at render time.
+const HERO_DIR =
+  '/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/slideshow/order';
+
 export const heroImages: ImageEntry[] = [
-  { src: '/img/hero/hero-01.png', alt: 'Freshly finished Austin home interior', position: 'center' },
-  { src: '/img/hero/hero-02.png', alt: 'Modern kitchen turnover complete', position: 'center' },
-  { src: '/img/hero/hero-03.png', alt: 'Clean bright living space ready for listing', position: 'center' },
-  { src: '/img/hero/hero-04.png', alt: 'Detail work on Austin property', position: 'center' },
-  { src: '/img/hero/hero-05.png', alt: 'Pre-listing preparation complete', position: 'center 30%' },
-  { src: '/img/hero/hero-06.png', alt: 'Staged home ready for photographer', position: 'center' },
+  { src: `${HERO_DIR}/01.jpg`, alt: 'Austin home — warm living space', position: 'center' },
+  { src: `${HERO_DIR}/02.jpg`, alt: 'Modern kitchen ready for listing', position: 'center' },
+  { src: `${HERO_DIR}/03.jpg`, alt: 'Bright interior after make-ready', position: 'center' },
+  { src: `${HERO_DIR}/04.jpg`, alt: 'Staged room detail', position: 'center' },
 ];
 
 // ─── Secondary Work Images (slideshow/scene-setter context) ─────────

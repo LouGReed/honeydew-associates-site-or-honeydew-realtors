@@ -21,7 +21,7 @@ export default function Gallery() {
               }`}
             >
               <img
-                src={image.src}
+                src={encodeURI(image.src)}
                 alt={image.alt}
                 loading="lazy"
                 style={{

@@ -1,6 +1,6 @@
 /* ============================================
    HeroSlideshow - Full-Viewport Crossfade
-   Bottom-left editorial text placement
+   4 curated slides, 4500ms interval, 900ms fade
    ============================================ */
 
 /* ── Hero Container ────────────────────────── */
@@ -11,6 +11,7 @@
   height: 100svh;
   min-height: 600px;
   overflow: hidden;
+  touch-action: pan-y;
 }
 
 /* ── Slides ────────────────────────────────── */
@@ -23,7 +24,8 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 900ms ease-in-out;
+  will-change: opacity;
 }
 
 .slide.active {
@@ -41,7 +43,47 @@
   pointer-events: none;
 }
 
-/* ── Content -- Bottom Left ────────────────── */
+/* ── Arrows ────────────────────────────────── */
+.arrow {
+  display: none; /* hidden on mobile */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.arrow:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.arrowPrev {
+  left: var(--container-padding);
+}
+
+.arrowNext {
+  right: var(--container-padding);
+}
+
+/* ── Content — Bottom Left ─────────────────── */
 .content {
   position: absolute;
   bottom: 0;
@@ -77,22 +119,23 @@
   max-width: 400px;
 }
 
-/* ── Slide Indicators ──────────────────────── */
+/* ── Slide Indicators (dots) ─────────────── */
 .indicators {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   margin-top: var(--space-lg);
 }
 
 .indicator {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.3);
   border: none;
   padding: 0;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .indicator:hover {
@@ -106,6 +149,7 @@
 
 .indicatorActive {
   background-color: white;
+  transform: scale(1.25);
 }
 
 /* ── Scroll Cue ────────────────────────────── */
@@ -147,6 +191,10 @@
 
 /* ===== Desktop (1024px+) =================== */
 @media (min-width: 1024px) {
+  .arrow {
+    display: flex;
+  }
+
   .headline {
     font-size: 3.5rem;
   }
