@@ -1,6 +1,6 @@
 /* ============================================
-   HeroSlideshow - Full-Viewport Crossfade
-   4 curated slides, 4500ms interval, 900ms fade
+   HeroSlideshow - Editorial Full-Viewport
+   Calm, confident, atmospheric
    ============================================ */
 
 /* ── Hero Container ────────────────────────── */
@@ -24,7 +24,7 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 900ms ease-in-out;
+  transition: opacity 1.4s ease-in-out;
   will-change: opacity;
 }
 
@@ -32,58 +32,39 @@
   opacity: 1;
 }
 
+/* Subtle image treatment: reduce brightness for atmosphere */
+.slide img {
+  filter: brightness(0.92) contrast(0.95);
+}
+
 /* ── Gradient Overlay ──────────────────────── */
+/* Deeper, more cinematic overlay for type dominance */
 .gradientOverlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 50%, transparent 80%),
-    linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, transparent 60%);
+    linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.2) 45%, rgba(0, 0, 0, 0.05) 100%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.25) 0%, transparent 50%);
   pointer-events: none;
 }
 
-/* ── Arrows ────────────────────────────────── */
+/* ── Arrows — HIDDEN on all viewports for restraint ── */
 .arrow {
-  display: none; /* hidden on mobile */
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
-  width: 48px;
-  height: 48px;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-  -webkit-tap-highlight-color: transparent;
+  display: none;
 }
 
-.arrow:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
+.arrow:hover,
 .arrow:focus-visible {
-  outline: 2px solid white;
-  outline-offset: 2px;
+  /* Intentionally empty — arrows are hidden */
 }
 
-.arrowPrev {
-  left: var(--container-padding);
-}
-
+.arrowPrev,
 .arrowNext {
-  right: var(--container-padding);
+  /* Intentionally empty — arrows are hidden */
 }
 
-/* ── Content — Bottom Left ─────────────────── */
+/* ── Content — Bottom Left, pulled up for tension ── */
 .content {
   position: absolute;
   bottom: 0;
@@ -91,125 +72,70 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
-  padding: var(--space-2xl) var(--container-padding);
-  padding-bottom: calc(var(--space-3xl) + env(safe-area-inset-bottom, 0px));
-  max-width: 560px;
+  gap: var(--space-sm);
+  padding: var(--space-xl) var(--container-padding);
+  padding-bottom: calc(var(--space-2xl) + env(safe-area-inset-bottom, 0px));
+  max-width: 540px;
 }
 
 /* ── Eyebrow ───────────────────────────────── */
 .eyebrow {
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: var(--space-xs);
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 2px;
 }
 
-/* ── Headline ──────────────────────────────── */
+/* ── Headline — Editorial dominance ─────────── */
 .headline {
-  font-size: 2.25rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: white;
+  font-size: 2rem;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: rgba(255, 255, 255, 0.95);
 }
 
-/* ── Subhead ───────────────────────────────── */
+/* ── Subhead — Quiet, supportive ─────────────── */
 .subhead {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 400px;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 340px;
+  margin-top: var(--space-md);
 }
 
-/* ── Slide Indicators (dots) ─────────────── */
+/* ── Slide Indicators — Minimal, recede ─────── */
 .indicators {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   margin-top: var(--space-lg);
 }
 
 .indicator {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
   border: none;
   padding: 0;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
 .indicator:hover {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .indicator:focus-visible {
-  outline: 2px solid white;
+  outline: 2px solid rgba(255, 255, 255, 0.5);
   outline-offset: 2px;
 }
 
 .indicatorActive {
-  background-color: white;
-  transform: scale(1.25);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
-/* ── Scroll Cue ────────────────────────────── */
+/* ── Scroll Cue — Removed for restraint ─────── */
 .scrollCue {
-  position: absolute;
-  bottom: var(--space-lg);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  width: 1px;
-  height: 32px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-  0%, 100% {
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-/* ===== Tablet (768px+) ===================== */
-@media (min-width: 768px) {
-  .content {
-    padding: var(--space-3xl) var(--container-padding);
-  }
-
-  .headline {
-    font-size: 3rem;
-  }
-
-  .subhead {
-    font-size: 1.0625rem;
-  }
-}
-
-/* ===== Desktop (1024px+) =================== */
-@media (min-width: 1024px) {
-  .arrow {
-    display: flex;
-  }
-
-  .headline {
-    font-size: 3.5rem;
-  }
-
-  .subhead {
-    font-size: 1.125rem;
-    max-width: 420px;
-  }
-}
-
-/* ===== Large Desktop (1440px+) ============= */
-@media (min-width: 1440px) {
-  .headline {
-    font-size: 4rem;
-  }
+  display: none;
 }
 
 /* ── Hero Sentinel (for header observer) ───── */
@@ -222,13 +148,65 @@
   pointer-events: none;
 }
 
+/* ===== Tablet (768px+) ===================== */
+@media (min-width: 768px) {
+  .content {
+    padding: var(--space-2xl) var(--container-padding);
+    padding-bottom: calc(var(--space-3xl) + env(safe-area-inset-bottom, 0px));
+    gap: var(--space-sm);
+  }
+
+  .headline {
+    font-size: 2.75rem;
+    line-height: 1.04;
+  }
+
+  .subhead {
+    font-size: 0.9375rem;
+    max-width: 360px;
+  }
+}
+
+/* ===== Desktop (1024px+) =================== */
+@media (min-width: 1024px) {
+  .content {
+    max-width: 600px;
+  }
+
+  .headline {
+    font-size: 3.25rem;
+    letter-spacing: -0.03em;
+  }
+
+  .subhead {
+    font-size: 1rem;
+    max-width: 380px;
+  }
+
+  .indicators {
+    gap: 10px;
+  }
+
+  .indicator {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+/* ===== Large Desktop (1440px+) ============= */
+@media (min-width: 1440px) {
+  .headline {
+    font-size: 3.75rem;
+  }
+
+  .subhead {
+    max-width: 400px;
+  }
+}
+
 /* ===== Reduced Motion ====================== */
 @media (prefers-reduced-motion: reduce) {
   .slide {
     transition: none;
-  }
-
-  .scrollCue {
-    animation: none;
   }
 }
