@@ -3,7 +3,7 @@ import styles from './Services.module.css';
 
 export default function Services() {
   return (
-    <section id="services" className={styles.services}>
+    <section id="services" className={`snap-section ${styles.services}`}>
       <div className={`container ${styles.container}`}>
         <header className={styles.header}>
           <span className="eyebrow">What We Do</span>

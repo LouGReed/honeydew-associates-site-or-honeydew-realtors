@@ -4,6 +4,7 @@ import {
   Services,
   Process,
   ImageBand,
+  Gallery,
   Validation,
   Contact,
 } from '@/components';
@@ -23,8 +24,11 @@ export default function HomePage() {
       {/* Process - How it works */}
       <Process />
 
-      {/* Featured Image - Full bleed gallery */}
+      {/* Featured Image - Full bleed break */}
       <ImageBand />
+
+      {/* Gallery - Portfolio / Work */}
+      <Gallery />
 
       {/* Validation - Trust signals */}
       <Validation />

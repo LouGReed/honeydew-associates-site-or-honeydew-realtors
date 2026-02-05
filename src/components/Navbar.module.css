@@ -1,4 +1,8 @@
-/* Navbar - Editorial Style */
+/* ============================================
+   Navbar - Editorial / Fixed with Frosted Glass
+   ============================================ */
+
+/* Base navbar: fixed, transparent */
 .navbar {
   position: fixed;
   top: 0;
@@ -9,12 +13,14 @@
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-.navbar.scrolled {
+/* Scrolled: frosted glass */
+.scrolled {
   background-color: rgba(253, 251, 247, 0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
+/* Container */
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
@@ -25,7 +31,7 @@
   justify-content: space-between;
 }
 
-/* Logo */
+/* ===== Logo ===== */
 .logo {
   display: flex;
   align-items: center;
@@ -49,7 +55,7 @@
   filter: none;
 }
 
-/* Desktop Nav */
+/* ===== Desktop Nav ===== */
 .nav {
   display: none;
   align-items: center;
@@ -70,6 +76,7 @@
   color: var(--color-text);
 }
 
+/* Underline animation */
 .navLink::after {
   content: '';
   position: absolute;
@@ -85,6 +92,7 @@
   width: 100%;
 }
 
+/* Active link: underline always visible */
 .navLinkActive {
   color: white;
 }
@@ -97,7 +105,7 @@
   color: var(--color-text);
 }
 
-/* Desktop Actions */
+/* ===== Desktop Actions ===== */
 .actions {
   display: none;
   align-items: center;
@@ -117,13 +125,13 @@
   background-color: var(--color-text-secondary);
 }
 
-/* Mobile Toggle */
+/* ===== Mobile Toggle ===== */
 .mobileToggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--min-tap-target);
-  height: var(--min-tap-target);
+  width: 44px;
+  height: 44px;
   position: relative;
   z-index: 1001;
   -webkit-tap-highlight-color: transparent;
@@ -161,6 +169,7 @@
   bottom: -7px;
 }
 
+/* Open state: middle line transparent, before/after rotate to X */
 .hamburger.open {
   background-color: transparent;
 }
@@ -175,7 +184,7 @@
   background-color: var(--color-text);
 }
 
-/* Mobile Menu */
+/* ===== Mobile Menu: Full-screen overlay ===== */
 .mobileMenu {
   position: fixed;
   top: 0;
@@ -194,6 +203,7 @@
   visibility: visible;
 }
 
+/* Mobile nav: flex column centered */
 .mobileNav {
   display: flex;
   flex-direction: column;

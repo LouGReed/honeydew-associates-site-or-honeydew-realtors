@@ -29,7 +29,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className={styles.contact}>
+    <section id="contact" className={`snap-section ${styles.contact}`}>
       <div className={`container ${styles.container}`}>
         <div className={styles.content}>
           <header className={styles.header}>

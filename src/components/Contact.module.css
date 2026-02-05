@@ -1,5 +1,7 @@
 /* Contact Section - Clean Editorial */
 .contact {
+  display: flex;
+  align-items: center;
   padding: var(--space-3xl) 0;
   background-color: var(--color-bg-warm);
 }

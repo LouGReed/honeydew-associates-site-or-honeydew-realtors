@@ -1,10 +1,10 @@
 /* ============================================
    HONEYDEW DESIGN SYSTEM
-   Editorial / Premium Interior Studio Feel
-   Typography: Telegraf Regular ONLY
+   Warm editorial aesthetic, single-weight typography
+   Font: Telegraf Regular 400
    ============================================ */
 
-/* Telegraf Font - Regular weight only */
+/* ----- Font Face ----- */
 @font-face {
   font-family: 'Telegraf';
   src: url('/fonts/telegraf/TelegrafRegular_272984568a25d8528fe2de8b20b29011.otf') format('opentype');
@@ -13,9 +13,9 @@
   font-display: swap;
 }
 
-/* Design Tokens - Mobile First */
+/* ----- Design Tokens ----- */
 :root {
-  /* Colors - Warm, sophisticated palette */
+  /* Palette */
   --color-bg: #FDFBF7;
   --color-bg-warm: #F7F4EE;
   --color-bg-cream: #F2EDE4;
@@ -31,11 +31,11 @@
   --color-footer-bg: #1A1816;
   --color-footer-text: #F2EDE4;
 
-  /* Typography - Single weight, hierarchy through size/spacing */
+  /* Typography */
   --font-primary: 'Telegraf', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-weight: 400;
 
-  /* Spacing Scale */
+  /* Spacing */
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
@@ -54,41 +54,70 @@
   /* Accessibility */
   --min-tap-target: 44px;
   --focus-ring: 0 0 0 2px var(--color-accent);
+
+  /* Breakpoints (reference only, used in media queries) */
+  /* --bp-tablet: 768px;   */
+  /* --bp-desktop: 1024px; */
+  /* --bp-large: 1440px;   */
 }
 
-/* Reset */
+/* ----- Complete CSS Reset ----- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ----- Base ----- */
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-}
-
-/* Section anchoring for smooth scroll */
-section[id] {
-  scroll-margin-top: var(--nav-height);
-}
-
-/* Full viewport section */
-.section-viewport {
-  min-height: 100vh;
-  min-height: 100svh;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+  text-size-adjust: 100%;
 }
 
 body {
@@ -100,25 +129,64 @@ body {
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
-/* Typography Scale - Telegraf Regular Only
-   Hierarchy through: size, tracking, case, spacing */
-
-.eyebrow {
-  font-size: 0.6875rem;
-  font-weight: var(--font-weight);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
+/* ----- Scroll Snap ----- */
+.snap-main {
+  height: 100vh;
+  height: 100svh;
+  overflow-y: auto;
+  scroll-snap-type: y proximity;
 }
+
+.snap-section {
+  min-height: 100vh;
+  min-height: 100svh;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 767px) {
+  .snap-main {
+    scroll-snap-type: y proximity;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snap-main {
+    scroll-snap-type: none;
+  }
+
+  .snap-section {
+    scroll-snap-align: unset;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Anchor offset for fixed navbar */
+section[id] {
+  scroll-margin-top: var(--nav-height);
+}
+
+/* ----- Typography Scale ----- */
+/* ALL weights are 400. Hierarchy through size, letter-spacing, line-height. */
 
 h1, .h1 {
   font-size: 2rem;
   font-weight: var(--font-weight);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
   color: var(--color-text);
 }
 
@@ -145,31 +213,50 @@ p, .body {
   color: var(--color-text-secondary);
 }
 
-.body-sm {
-  font-size: 0.875rem;
-  line-height: 1.65;
+.eyebrow {
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  color: var(--color-text-muted);
+  line-height: 1.4;
 }
 
-/* Links */
+.body-sm {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight);
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+/* ----- Links ----- */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Images */
+/* ----- Images ----- */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Buttons - Telegraf Regular, uppercase with letterspacing */
-button {
+/* ----- Buttons ----- */
+button, input, select, textarea {
   font-family: inherit;
   font-weight: var(--font-weight);
-  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
   border: none;
   background: none;
+}
+
+button {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn {
@@ -184,14 +271,16 @@ button {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  border: none;
   border-radius: 2px;
-  transition: all 0.2s ease;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
   background-color: var(--color-accent);
-  color: white;
+  color: #fff;
 }
 
 .btn-primary:hover {
@@ -203,69 +292,89 @@ button {
   box-shadow: var(--focus-ring);
 }
 
-.btn-secondary {
-  background-color: transparent;
-  color: var(--color-text);
-  border: 1px solid var(--color-border-strong);
-}
-
-.btn-secondary:hover {
-  background-color: var(--color-text);
-  color: var(--color-bg);
-  border-color: var(--color-text);
-}
-
 .btn-ghost {
   background: transparent;
   color: var(--color-text);
   padding: 8px 0;
   font-size: 0.8125rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid transparent;
 }
 
 .btn-ghost:hover {
   color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
 }
 
-/* Container */
+.btn-ghost:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* ----- Container Utilities ----- */
 .container {
   width: 100%;
   max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 .container-narrow {
   max-width: var(--container-narrow);
 }
 
-/* Section Spacing */
-.section {
-  padding: var(--space-3xl) 0;
+.container-full {
+  max-width: 100%;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
-/* Focus States */
+/* ----- Section Spacing ----- */
+.section {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+.section-viewport {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* ----- Focus States ----- */
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
   outline: none;
   box-shadow: var(--focus-ring);
 }
 
-/* Selection */
+/* ----- Selection Color ----- */
 ::selection {
   background-color: var(--color-accent);
-  color: white;
+  color: #fff;
 }
 
-/* ===== TABLET (768px+) ===== */
+::-moz-selection {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* ----- Strong/Bold override (keep weight 400) ----- */
+strong, b {
+  font-weight: var(--font-weight);
+}
+
+/* ================================================
+   TABLET  (768px+)
+   ================================================ */
 @media (min-width: 768px) {
   :root {
     --nav-height: 72px;
     --container-padding: 32px;
-  }
-
-  .eyebrow {
-    font-size: 0.75rem;
   }
 
   h1, .h1 {
@@ -284,12 +393,19 @@ button:focus-visible {
     font-size: 1.0625rem;
   }
 
+  .eyebrow {
+    font-size: 0.75rem;
+  }
+
   .section {
-    padding: var(--space-4xl) 0;
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
   }
 }
 
-/* ===== DESKTOP (1024px+) ===== */
+/* ================================================
+   DESKTOP  (1024px+)
+   ================================================ */
 @media (min-width: 1024px) {
   :root {
     --nav-height: 80px;
@@ -314,7 +430,9 @@ button:focus-visible {
   }
 }
 
-/* ===== LARGE DESKTOP (1440px+) ===== */
+/* ================================================
+   LARGE DESKTOP  (1440px+)
+   ================================================ */
 @media (min-width: 1440px) {
   h1, .h1 {
     font-size: 3.75rem;
@@ -322,5 +440,9 @@ button:focus-visible {
 
   h2, .h2 {
     font-size: 2.5rem;
+  }
+
+  h3, .h3 {
+    font-size: 1.5rem;
   }
 }

@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import { siteConfig } from '@/config/site';
+import { validationLogos } from '@/config/images';
 import styles from './Validation.module.css';
 
 export default function Validation() {
@@ -13,14 +12,12 @@ export default function Validation() {
           </h2>
         </div>
         <div className={styles.logos}>
-          {siteConfig.validationLogos.map((logo, index) => (
+          {validationLogos.map((logo, index) => (
             <div key={index} className={styles.logoWrapper}>
-              <Image
+              <img
                 src={logo.src}
                 alt={logo.alt}
-                width={100}
-                height={40}
-                style={{ objectFit: 'contain' }}
+                style={{ width: 100, height: 40, objectFit: 'contain' }}
               />
             </div>
           ))}
