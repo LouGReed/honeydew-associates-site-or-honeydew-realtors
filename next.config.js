@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: false,
+    // Use unoptimized for local development to avoid issues
+    unoptimized: true,
   },
 }
 
