@@ -5,7 +5,7 @@ export const siteConfig = {
   tagline: 'Austin Make-Ready Partner',
   phone: '(512) 555-0134',
   email: 'hello@honeydew.co',
-  housecallProUrl: 'https://housecallpro.com/book/honeydew-homes',
+  housecallProUrl: 'https://book.housecallpro.com/book/HoneyDew-Homes/1a8cf53602dc4a05b78968e265bb487d?v2=true',
   logo: `${BASE_PATH}/img/brand/honeydewlogo.png`,
 
   services: [

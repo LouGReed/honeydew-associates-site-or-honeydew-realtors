@@ -3,7 +3,6 @@
   background-color: var(--color-footer-bg);
   color: var(--color-footer-text);
   padding: var(--space-2xl) 0;
-  /* Footer is not a full snap section, just standard height */
 }
 
 .container {
@@ -12,29 +11,67 @@
   gap: var(--space-xl);
 }
 
+/* ── Top row: left rail + nav ────────────────── */
 .top {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
 }
 
-.logo {
-  display: inline-block;
+/* Left rail: logo + service areas share exact same left edge */
+.leftRail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  padding: 0;
+  margin: 0;
+}
+
+/* ── Logo (text-based for perfect alignment) ─── */
+.logoText {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-footer-text);
+  padding: 0;
+  margin: 0;
   transition: opacity 0.2s ease;
 }
 
-.logo:hover {
+.logoText:hover {
   opacity: 0.8;
 }
 
-.logo img {
-  width: 160px;
-  height: 32px;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(0) invert(1);
+/* ── Service Areas ───────────────────────────── */
+.areas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  padding: 0;
+  margin: 0;
 }
 
+.areasLabel {
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(242, 237, 228, 0.4);
+  margin: 0;
+  padding: 0;
+}
+
+.areasList {
+  font-size: 0.8125rem;
+  color: rgba(242, 237, 228, 0.6);
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Nav ─────────────────────────────────────── */
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -51,26 +88,7 @@
   color: var(--color-footer-text);
 }
 
-.areas {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  padding: var(--space-lg) 0;
-  border-top: 1px solid rgba(242, 237, 228, 0.1);
-}
-
-.areasLabel {
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(242, 237, 228, 0.4);
-}
-
-.areasList {
-  font-size: 0.8125rem;
-  color: rgba(242, 237, 228, 0.6);
-}
-
+/* ── Bottom row ──────────────────────────────── */
 .bottom {
   display: flex;
   flex-direction: column;
@@ -94,7 +112,11 @@
   .top {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+  }
+
+  .nav {
+    align-items: flex-start;
   }
 
   .bottom {

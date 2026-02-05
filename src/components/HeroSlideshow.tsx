@@ -180,6 +180,9 @@ export default function HeroSlideshow() {
 
       {/* ── Scroll cue ──────────────────────────── */}
       <div className={styles.scrollCue} aria-hidden="true" />
+
+      {/* Sentinel for header IntersectionObserver */}
+      <div id="hero-sentinel" aria-hidden="true" className={styles.heroSentinel} />
     </section>
   );
 }

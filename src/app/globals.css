@@ -139,6 +139,12 @@ body {
   height: 100svh;
   overflow-y: auto;
   scroll-snap-type: y proximity;
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE / Edge */
+}
+
+.snap-main::-webkit-scrollbar {
+  display: none;                  /* Chrome / Safari */
 }
 
 .snap-section {

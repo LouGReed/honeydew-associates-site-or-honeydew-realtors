@@ -212,6 +212,16 @@
   }
 }
 
+/* ── Hero Sentinel (for header observer) ───── */
+.heroSentinel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  pointer-events: none;
+}
+
 /* ===== Reduced Motion ====================== */
 @media (prefers-reduced-motion: reduce) {
   .slide {

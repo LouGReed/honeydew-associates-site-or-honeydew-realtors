@@ -35,9 +35,9 @@ const sequence: GalleryItem[] = [
   { type: 'single', src: `${GALLERY_DIR}/02.png`, alt: 'Home improvement — kitchen detail',  width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
   { type: 'single', src: `${GALLERY_DIR}/03.png`, alt: 'Home improvement — bathroom finish', width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
   { type: 'single', src: `${GALLERY_DIR}/04.png`, alt: 'Home improvement — bedroom staging', width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
-  { type: 'twoFecta', left: twoFectaLeft, right: twoFectaRight },
   { type: 'single', src: `${GALLERY_DIR}/05.png`, alt: 'Home improvement — exterior view',   width: 1920, height: 1280, kind: 'work',   orientation: 'horizontal' },
   { type: 'single', src: `${GALLERY_DIR}/06.png`, alt: 'Home improvement — final walkthrough', width: 1920, height: 1280, kind: 'work', orientation: 'horizontal' },
+  { type: 'twoFecta', left: twoFectaLeft, right: twoFectaRight },
 ];
 
 export default function Gallery() {

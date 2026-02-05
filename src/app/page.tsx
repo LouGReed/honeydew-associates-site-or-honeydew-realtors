@@ -6,6 +6,7 @@ import {
   Process,
   ImageBand,
   Validation,
+  PostValidationBand,
   Contact,
 } from '@/components';
 
@@ -32,6 +33,9 @@ export default function HomePage() {
 
       {/* Validation — Trust signals */}
       <Validation />
+
+      {/* Editorial break — Family BBQ */}
+      <PostValidationBand />
 
       {/* Contact — CTA + Form */}
       <Contact />

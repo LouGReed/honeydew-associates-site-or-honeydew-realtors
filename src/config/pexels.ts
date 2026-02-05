@@ -52,6 +52,15 @@ export const twoFectaRight: PexelImage = {
   orientation: 'vertical',
 };
 
+/** Post-validation — family BBQ editorial break */
+export const postValidationBand: PexelImage = {
+  src: `${FAV}/familyatbbq.jpg`,
+  alt: 'Family gathered outdoors at a backyard barbecue',
+  width: 8192,
+  height: 5461,
+  orientation: 'horizontal',
+};
+
 /** Services section — side figure */
 export const servicesFigure: PexelImage = {
   src: `${BASE}/pexels-ioanamtc-12814943.jpg`,

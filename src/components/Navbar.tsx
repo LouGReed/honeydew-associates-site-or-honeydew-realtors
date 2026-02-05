@@ -10,54 +10,53 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
-  // Detect when the hero's bottom edge crosses above the header
+  // Detect when user scrolls past the hero.
+  // .snap-main is the scroll container (overflow-y: auto), so we listen
+  // to its scroll event and compare scrollTop against the sentinel position.
   useEffect(() => {
-    const hero = document.getElementById('hero');
-    if (!hero) return;
+    const scrollRoot = document.querySelector('.snap-main');
+    const sentinel = document.getElementById('hero-sentinel');
+    if (!scrollRoot || !sentinel) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // When hero is NOT intersecting the top of the viewport → scrolled past
-        setScrolledPastHero(!entry.isIntersecting);
-      },
-      {
-        // Trigger when the hero bottom passes below the nav height
-        rootMargin: '-96px 0px 0px 0px',
-        threshold: 0,
-      }
-    );
+    const check = () => {
+      const sentinelRect = sentinel.getBoundingClientRect();
+      const rootRect = scrollRoot.getBoundingClientRect();
+      // Sentinel is at hero bottom; when its top is above the nav height, we've scrolled past
+      setScrolledPastHero(sentinelRect.top < rootRect.top + 96);
+    };
 
-    observer.observe(hero);
-    return () => observer.disconnect();
+    // Check on mount
+    check();
+
+    scrollRoot.addEventListener('scroll', check, { passive: true });
+    return () => scrollRoot.removeEventListener('scroll', check);
   }, []);
 
-  // IntersectionObserver for active section tracking
+  // Active section tracking via scroll position
   useEffect(() => {
+    const scrollRoot = document.querySelector('.snap-main');
     const sections = siteConfig.navLinks
       .map((link) => document.querySelector(link.href))
       .filter(Boolean) as Element[];
 
-    if (sections.length === 0) return;
+    if (sections.length === 0 || !scrollRoot) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(`#${entry.target.id}`);
-          }
-        });
-      },
-      {
-        rootMargin: '-20% 0px -60% 0px',
-        threshold: 0,
+    const check = () => {
+      const rootRect = scrollRoot.getBoundingClientRect();
+      const trigger = rootRect.top + rootRect.height * 0.3;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const rect = sections[i].getBoundingClientRect();
+        if (rect.top <= trigger) {
+          setActiveSection(`#${sections[i].id}`);
+          return;
+        }
       }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
     };
+
+    check();
+    scrollRoot.addEventListener('scroll', check, { passive: true });
+    return () => scrollRoot.removeEventListener('scroll', check);
   }, []);
 
   // Close mobile menu on Escape key
