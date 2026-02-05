@@ -1,4 +1,7 @@
-/* Intro Section - Centered Editorial Text */
+/* ============================================
+   Intro — Two-column editorial (copy + portrait)
+   ============================================ */
+
 .intro {
   padding: var(--space-3xl) 0;
   background-color: var(--color-bg);
@@ -6,6 +9,14 @@
 
 .container {
   display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+/* ── Copy column ──────────────────────────── */
+.copy {
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
@@ -17,15 +28,52 @@
   color: var(--color-text);
 }
 
+/* ── Portrait column ──────────────────────── */
+.portrait {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2px;
+}
+
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
   .intro {
     padding: var(--space-4xl) 0;
   }
 
+  .container {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-3xl);
+  }
+
+  .copy {
+    flex: 1;
+  }
+
   .text {
     font-size: 1.5rem;
-    max-width: 720px;
+    max-width: 480px;
+    text-align: left;
+  }
+
+  .portrait {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
+  .image {
+    max-width: 100%;
+    aspect-ratio: 3 / 4;
   }
 }
 
@@ -33,6 +81,11 @@
 @media (min-width: 1024px) {
   .text {
     font-size: 1.75rem;
-    max-width: 800px;
+    max-width: 520px;
+  }
+
+  .portrait {
+    flex: 0 0 36%;
+    max-width: 36%;
   }
 }

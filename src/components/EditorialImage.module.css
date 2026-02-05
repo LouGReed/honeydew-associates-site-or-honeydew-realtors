@@ -1,0 +1,62 @@
+/* ============================================
+   EditorialImage — Supporting photography band
+   Horizontal: full container width
+   Vertical: centered, narrower
+   ============================================ */
+
+.band {
+  padding: var(--space-2xl) 0;
+  background-color: var(--color-bg);
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+}
+
+.figure {
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2px;
+}
+
+.caption {
+  margin-top: var(--space-md);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+/* Vertical images: narrower on larger screens */
+.vertical .figure {
+  max-width: 100%;
+}
+
+/* ===== Tablet (768px+) ===================== */
+@media (min-width: 768px) {
+  .band {
+    padding: var(--space-3xl) 0;
+  }
+
+  .vertical .figure {
+    max-width: 55%;
+  }
+}
+
+/* ===== Desktop (1024px+) =================== */
+@media (min-width: 1024px) {
+  .band {
+    padding: var(--space-4xl) 0;
+  }
+
+  .vertical .figure {
+    max-width: 45%;
+  }
+}

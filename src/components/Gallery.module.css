@@ -1,7 +1,6 @@
 /* ============================================
    Gallery — Mammoth-style contained sequence
-   Large editorial images, generous whitespace,
-   aligned to the site content container
+   Work images + Pexels separators interleaved
    ============================================ */
 
 .gallery {
@@ -9,11 +8,15 @@
   padding: var(--space-xl) 0;
 }
 
-/* Inner wrapper inherits .container (max-width + side padding) */
 .inner {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+}
+
+/* ── Panel (work image — default) ──────────── */
+.panel {
+  width: 100%;
 }
 
 /* ── Image ─────────────────────────────────── */
@@ -26,6 +29,21 @@
   border-radius: 2px;
 }
 
+/* ── Pexels separator: extra breathing room ── */
+.separator {
+  padding: var(--space-md) 0;
+}
+
+/* ── Vertical orientation: narrower, centered ─ */
+.vertical {
+  display: flex;
+  justify-content: center;
+}
+
+.vertical .image {
+  max-width: 100%;
+}
+
 /* ===== Tablet (768px+) ===================== */
 @media (min-width: 768px) {
   .gallery {
@@ -34,6 +52,14 @@
 
   .inner {
     gap: var(--space-xl);
+  }
+
+  .separator {
+    padding: var(--space-lg) 0;
+  }
+
+  .vertical .image {
+    max-width: 55%;
   }
 }
 
@@ -45,6 +71,14 @@
 
   .inner {
     gap: var(--space-2xl);
+  }
+
+  .separator {
+    padding: var(--space-xl) 0;
+  }
+
+  .vertical .image {
+    max-width: 45%;
   }
 }
 

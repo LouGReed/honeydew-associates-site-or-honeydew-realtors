@@ -1,4 +1,7 @@
-/* Services Section - Editorial Grid */
+/* ============================================
+   Services — Editorial cards + vertical sidebar
+   ============================================ */
+
 .services {
   display: flex;
   align-items: center;
@@ -7,7 +10,14 @@
 }
 
 .container {
-  max-width: var(--container-narrow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+/* ── Main content (header + card grid) ─────── */
+.main {
+  flex: 1;
 }
 
 .header {
@@ -47,7 +57,23 @@
   color: var(--color-text-secondary);
 }
 
-/* ===== Tablet (768px+) ===== */
+/* ── Side figure (vertical Pexels image) ───── */
+.figure {
+  display: flex;
+  justify-content: center;
+}
+
+.figureImage {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2px;
+}
+
+/* ===== Tablet (768px+) ===================== */
 @media (min-width: 768px) {
   .services {
     padding: var(--space-4xl) 0;
@@ -81,10 +107,17 @@
   }
 }
 
-/* ===== Desktop (1024px+) ===== */
+/* ===== Desktop (1024px+) =================== */
 @media (min-width: 1024px) {
   .container {
-    max-width: var(--container-max);
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-3xl);
+  }
+
+  .main {
+    flex: 1;
+    min-width: 0;
   }
 
   .title {
@@ -98,5 +131,18 @@
 
   .cardTitle {
     font-size: 1.125rem;
+  }
+
+  .figure {
+    flex: 0 0 28%;
+    max-width: 28%;
+    position: sticky;
+    top: calc(var(--nav-height) + var(--space-xl));
+    align-self: flex-start;
+  }
+
+  .figureImage {
+    max-width: 100%;
+    aspect-ratio: 3 / 4;
   }
 }

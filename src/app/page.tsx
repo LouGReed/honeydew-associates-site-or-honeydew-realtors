@@ -1,39 +1,47 @@
 import {
   HeroSlideshow,
   Intro,
+  Gallery,
+  EditorialImage,
   Services,
   Process,
   ImageBand,
-  Gallery,
   Validation,
   Contact,
 } from '@/components';
+import { postGalleryBand, preContactBand } from '@/config/pexels';
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero - Full viewport slideshow */}
+      {/* Hero — Full viewport slideshow */}
       <HeroSlideshow />
 
-      {/* Intro - Centered editorial text */}
+      {/* Intro — Two-column: copy + vertical Pexels portrait */}
       <Intro />
 
-      {/* Gallery - Full-width image sequence */}
+      {/* Gallery — Work images with Pexels separators interleaved */}
       <Gallery />
 
-      {/* Services - What we do */}
+      {/* Editorial band (H) — transition to services */}
+      <EditorialImage image={postGalleryBand} />
+
+      {/* Services — Cards + vertical Pexels sidebar */}
       <Services />
 
-      {/* Process - How it works */}
+      {/* Process — How it works */}
       <Process />
 
-      {/* Featured Image - Full bleed break */}
+      {/* Featured image — Full bleed break */}
       <ImageBand />
 
-      {/* Validation - Trust signals */}
+      {/* Validation — Trust signals */}
       <Validation />
 
-      {/* Contact - CTA + Form */}
+      {/* Editorial band (H) — calm break before contact */}
+      <EditorialImage image={preContactBand} caption="On-site coordination" />
+
+      {/* Contact — CTA + Form */}
       <Contact />
     </>
   );
