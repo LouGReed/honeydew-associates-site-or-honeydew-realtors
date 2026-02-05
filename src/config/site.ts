@@ -15,37 +15,43 @@ export const siteConfig = {
   logo: "/assets/brand/Honey Dew Logos/honeydewfinal.png",
   logoAlt: "/assets/brand/Honey Dew Logos/Untitled design (19).png",
 
-  // Hero slideshow images - mix from hero folder and lifestyle
+  // Hero slideshow images - from slideshow folder
   heroSlides: [
     {
-      src: "/assets/imagery/hero/_make_this_16-9_533g18zg4lvr221xgqdk_1.png",
+      src: "/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/slideshow/_2jpynof175jqd0qqtvlf_1.png",
       fit: "cover",
       position: "center",
       overlayStrength: 0.25,
     },
     {
-      src: "/assets/imagery/hero/_0mxza8kb24wnu3anuz90_0.png",
+      src: "/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/slideshow/_a0v9yx6l4u99c1hz1h5u_0.png",
       fit: "cover",
       position: "center",
       overlayStrength: 0.2,
     },
     {
-      src: "/assets/imagery/hero/_93h9sbu59vqc0wc7j51y_0.png",
+      src: "/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/slideshow/Copy of pexels-anastasia-shuraeva-4122912.jpg",
       fit: "cover",
       position: "center",
       overlayStrength: 0.25,
     },
     {
-      src: "/assets/imagery/hero/_a0v9yx6l4u99c1hz1h5u_0.png",
+      src: "/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/slideshow/Copy of pexels-askar-abayev-5637755 copy.jpg",
       fit: "cover",
-      position: "center top",
+      position: "center",
       overlayStrength: 0.2,
     },
     {
-      src: "/assets/imagery/hero/_j9y4kfp2wprk6puqhuyp_0.png",
+      src: "/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/slideshow/Copy of pexels-askar-abayev-5638605 copy.jpg",
       fit: "cover",
       position: "center",
       overlayStrength: 0.25,
+    },
+    {
+      src: "/assets/imagery/Pexel Assets/Honeydew Pexel Assets/Pexel Favorites for Honeydew/slideshow/Copy of pexels-ron-lach-10397939 copy.jpg",
+      fit: "cover",
+      position: "center",
+      overlayStrength: 0.2,
     },
   ] as HeroSlide[],
 
