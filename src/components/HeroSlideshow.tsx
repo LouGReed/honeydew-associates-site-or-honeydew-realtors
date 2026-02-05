@@ -12,7 +12,6 @@ export default function HeroSlideshow() {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const slides = siteConfig.heroSlides;
 
-  // Check for reduced motion preference
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setPrefersReducedMotion(mediaQuery.matches);
@@ -29,7 +28,6 @@ export default function HeroSlideshow() {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   }, [slides.length]);
 
-  // Auto-advance slideshow
   useEffect(() => {
     if (isPaused || prefersReducedMotion) {
       if (intervalRef.current) {
@@ -49,7 +47,7 @@ export default function HeroSlideshow() {
 
   return (
     <section
-      className={`snap-section ${styles.hero}`}
+      className={styles.hero}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       aria-label="Hero slideshow"
@@ -69,14 +67,14 @@ export default function HeroSlideshow() {
               priority={index === 0}
               sizes="100vw"
               style={{
-                objectFit: slide.fit,
+                objectFit: 'cover',
                 objectPosition: slide.position,
               }}
             />
           </div>
         ))}
 
-        {/* Gradient overlay for text legibility */}
+        {/* Gradient overlay for text legibility - bottom-left focused */}
         <div className={styles.gradientOverlay} aria-hidden="true" />
       </div>
 
@@ -87,23 +85,15 @@ export default function HeroSlideshow() {
             {siteConfig.tagline}
           </span>
           <h1 className={styles.headline}>
-            Homes Ready.<span className={styles.lineBreak}> </span>Listings Strong.
+            Homes Ready. Listings Strong.
           </h1>
           <p className={styles.subhead}>
             Pre-listing preparation and make-ready services for Austin real estate professionals.
           </p>
-          <a
-            href={siteConfig.housecallProUrl}
-            className="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book a Walkthrough
-          </a>
         </div>
       </div>
 
-      {/* Slide indicators */}
+      {/* Slide indicators - discreet dots */}
       <div className={styles.indicators} aria-label="Slide navigation">
         {slides.map((_, index) => (
           <button
@@ -116,8 +106,8 @@ export default function HeroSlideshow() {
         ))}
       </div>
 
-      {/* Scroll indicator */}
-      <div className={styles.scrollIndicator} aria-hidden="true">
+      {/* Scroll cue - subtle line */}
+      <div className={styles.scrollCue} aria-hidden="true">
         <div className={styles.scrollLine} />
       </div>
     </section>

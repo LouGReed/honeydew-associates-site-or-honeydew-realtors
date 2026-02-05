@@ -1,5 +1,6 @@
 export { default as Navbar } from './Navbar';
 export { default as HeroSlideshow } from './HeroSlideshow';
+export { default as Intro } from './Intro';
 export { default as Services } from './Services';
 export { default as Process } from './Process';
 export { default as Validation } from './Validation';

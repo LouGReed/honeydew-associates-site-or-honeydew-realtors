@@ -3,7 +3,7 @@ import styles from './Process.module.css';
 
 export default function Process() {
   return (
-    <section id="process" className={`snap-section ${styles.process}`}>
+    <section id="process" className={styles.process}>
       <div className={`container ${styles.container}`}>
         <header className={styles.header}>
           <span className="eyebrow">How It Works</span>

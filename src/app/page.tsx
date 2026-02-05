@@ -1,9 +1,10 @@
 import {
   HeroSlideshow,
+  Intro,
   Services,
   Process,
-  Validation,
   ImageBand,
+  Validation,
   Contact,
 } from '@/components';
 
@@ -13,17 +14,20 @@ export default function HomePage() {
       {/* Hero - Full viewport slideshow */}
       <HeroSlideshow />
 
+      {/* Intro - Centered editorial text */}
+      <Intro />
+
       {/* Services - What we do */}
       <Services />
 
       {/* Process - How it works */}
       <Process />
 
+      {/* Featured Image - Full bleed gallery */}
+      <ImageBand />
+
       {/* Validation - Trust signals */}
       <Validation />
-
-      {/* Featured Image - Full bleed */}
-      <ImageBand />
 
       {/* Contact - CTA + Form */}
       <Contact />

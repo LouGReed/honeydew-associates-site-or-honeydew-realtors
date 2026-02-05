@@ -4,7 +4,7 @@ import styles from './Validation.module.css';
 
 export default function Validation() {
   return (
-    <section className={`snap-section ${styles.validation}`}>
+    <section className={styles.validation}>
       <div className={`container ${styles.container}`}>
         <div className={styles.content}>
           <span className="eyebrow">Trusted Partners</span>

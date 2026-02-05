@@ -9,7 +9,16 @@ import styles from './Navbar.module.css';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
+  const navLinks = [
+    { label: 'About', href: '#about' },
+    { label: 'Services', href: '#services' },
+    { label: 'Process', href: '#process' },
+    { label: 'Contact', href: '#contact' },
+  ];
+
+  // Handle scroll state
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -17,6 +26,35 @@ export default function Navbar() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // IntersectionObserver for active section tracking
+  useEffect(() => {
+    const sections = navLinks.map(link =>
+      document.querySelector(link.href)
+    ).filter(Boolean) as Element[];
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        });
+      },
+      {
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0,
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
   }, []);
 
   // Close mobile menu on escape
@@ -39,13 +77,6 @@ export default function Navbar() {
       document.body.style.overflow = '';
     };
   }, [mobileMenuOpen]);
-
-  const navLinks = [
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Process', href: '#process' },
-    { label: 'Contact', href: '#contact' },
-  ];
 
   const handleNavClick = () => {
     setMobileMenuOpen(false);
@@ -71,7 +102,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className={styles.navLink}
+                className={`${styles.navLink} ${activeSection === link.href ? styles.navLinkActive : ''}`}
               >
                 {link.label}
               </a>
@@ -85,7 +116,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Book a Walkthrough
+              Get in Touch
             </a>
           </div>
 
@@ -110,7 +141,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className={styles.mobileNavLink}
+              className={`${styles.mobileNavLink} ${activeSection === link.href ? styles.mobileNavLinkActive : ''}`}
               onClick={handleNavClick}
               tabIndex={mobileMenuOpen ? 0 : -1}
             >
@@ -125,7 +156,7 @@ export default function Navbar() {
             onClick={handleNavClick}
             tabIndex={mobileMenuOpen ? 0 : -1}
           >
-            Book a Walkthrough
+            Get in Touch
           </a>
         </nav>
       </div>

@@ -10,7 +10,6 @@ export default function Contact() {
     name: '',
     email: '',
     phone: '',
-    neighborhood: '',
     message: '',
   });
 
@@ -30,28 +29,26 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className={`snap-section ${styles.contact}`}>
+    <section id="contact" className={styles.contact}>
       <div className={`container ${styles.container}`}>
         <div className={styles.content}>
           <header className={styles.header}>
             <span className="eyebrow">Get Started</span>
-            <h2 className={styles.title}>Book a walkthrough.</h2>
+            <h2 className={styles.title}>Let's talk about your next listing.</h2>
             <p className={styles.subtitle}>
-              Tell us about the property—we'll handle the rest.
+              Tell us about the property and we'll handle the rest.
             </p>
           </header>
 
-          <div className={styles.methods}>
+          <div className={styles.contactInfo}>
             <a
               href={`tel:${siteConfig.phone.replace(/[^0-9]/g, '')}`}
-              className={styles.method}
+              className={styles.contactLink}
             >
-              <span className={styles.methodLabel}>Phone</span>
-              <span className={styles.methodValue}>{siteConfig.phone}</span>
+              {siteConfig.phone}
             </a>
-            <a href={`mailto:${siteConfig.email}`} className={styles.method}>
-              <span className={styles.methodLabel}>Email</span>
-              <span className={styles.methodValue}>{siteConfig.email}</span>
+            <a href={`mailto:${siteConfig.email}`} className={styles.contactLink}>
+              {siteConfig.email}
             </a>
           </div>
         </div>
@@ -66,21 +63,22 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className={styles.form}>
-              <div className={styles.formRow}>
-                <div className={styles.field}>
-                  <label htmlFor="name" className={styles.label}>
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className={styles.input}
-                  />
-                </div>
+              <div className={styles.field}>
+                <label htmlFor="name" className={styles.label}>
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className={styles.input}
+                />
+              </div>
+
+              <div className={styles.fieldRow}>
                 <div className={styles.field}>
                   <label htmlFor="email" className={styles.label}>
                     Email
@@ -95,9 +93,6 @@ export default function Contact() {
                     className={styles.input}
                   />
                 </div>
-              </div>
-
-              <div className={styles.formRow}>
                 <div className={styles.field}>
                   <label htmlFor="phone" className={styles.label}>
                     Phone
@@ -109,20 +104,6 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     className={styles.input}
-                  />
-                </div>
-                <div className={styles.field}>
-                  <label htmlFor="neighborhood" className={styles.label}>
-                    Neighborhood
-                  </label>
-                  <input
-                    type="text"
-                    id="neighborhood"
-                    name="neighborhood"
-                    value={formData.neighborhood}
-                    onChange={handleChange}
-                    className={styles.input}
-                    placeholder="e.g., South Austin, Mueller"
                   />
                 </div>
               </div>

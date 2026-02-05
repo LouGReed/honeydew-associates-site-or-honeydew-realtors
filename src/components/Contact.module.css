@@ -1,7 +1,5 @@
-/* Contact Section - Clean Two-Column */
+/* Contact Section - Clean Editorial */
 .contact {
-  display: flex;
-  align-items: center;
   padding: var(--space-3xl) 0;
   background-color: var(--color-bg-warm);
 }
@@ -31,37 +29,19 @@
   color: var(--color-text-secondary);
 }
 
-.methods {
+.contactInfo {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
-.method {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: var(--space-sm) 0;
+.contactLink {
+  font-size: 1rem;
+  color: var(--color-text);
   transition: color 0.2s ease;
 }
 
-.method:hover {
-  color: var(--color-accent);
-}
-
-.methodLabel {
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
-.methodValue {
-  font-size: 1rem;
-  color: var(--color-text);
-}
-
-.method:hover .methodValue {
+.contactLink:hover {
   color: var(--color-accent);
 }
 
@@ -76,7 +56,7 @@
   gap: var(--space-lg);
 }
 
-.formRow {
+.fieldRow {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-lg);
@@ -161,7 +141,7 @@
     align-items: start;
   }
 
-  .formRow {
+  .fieldRow {
     grid-template-columns: repeat(2, 1fr);
   }
 }

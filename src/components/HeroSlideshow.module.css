@@ -17,85 +17,77 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 1.2s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .slide.active {
   opacity: 1;
 }
 
-/* Gradient overlay - bottom and left for text legibility */
+/* Gradient overlay - bottom-left focused for text legibility */
 .gradientOverlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.2) 40%, transparent 70%),
-    linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, transparent 50%);
+    linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 50%, transparent 80%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.25) 0%, transparent 60%);
   pointer-events: none;
 }
 
-/* Content - Bottom Left */
+/* Content - Bottom Left Quadrant */
 .content {
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
   z-index: 2;
-  padding: 0 var(--container-padding);
+  padding: var(--space-2xl) var(--container-padding);
   padding-bottom: calc(var(--space-3xl) + env(safe-area-inset-bottom, 0px));
+  max-width: 640px;
 }
 
 .contentInner {
-  max-width: var(--container-max);
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
 /* Eyebrow */
 .eyebrow {
-  display: inline-block;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: var(--space-md);
+  color: rgba(255, 255, 255, 0.75);
 }
 
-/* Headline - One line on desktop */
+/* Headline - Single line, no forced breaks */
 .headline {
-  font-size: 2rem;
-  line-height: 1.15;
+  font-size: 2.25rem;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   color: white;
-  margin-bottom: var(--space-md);
-  max-width: 600px;
-}
-
-.lineBreak {
-  display: block;
 }
 
 /* Subhead */
 .subhead {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.85);
-  margin-bottom: var(--space-lg);
-  max-width: 420px;
+  max-width: 400px;
 }
 
-/* Slide indicators */
+/* Slide indicators - discreet dots */
 .indicators {
   position: absolute;
   bottom: var(--space-xl);
-  right: var(--container-padding);
+  left: var(--container-padding);
   z-index: 2;
   display: flex;
-  gap: var(--space-sm);
+  gap: 8px;
 }
 
 .indicator {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.35);
   border: none;
   padding: 0;
   cursor: pointer;
@@ -103,64 +95,51 @@
 }
 
 .indicator:hover {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.indicator:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
 }
 
 .indicatorActive {
   background-color: white;
-  transform: scale(1.2);
 }
 
-/* Scroll indicator - subtle line */
-.scrollIndicator {
+/* Scroll cue - subtle thin line */
+.scrollCue {
   position: absolute;
   bottom: var(--space-lg);
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .scrollLine {
   width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scaleY(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scaleY(1.1);
-  }
+  height: 32px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
 }
 
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
   .content {
-    padding-bottom: var(--space-3xl);
+    padding: var(--space-3xl) var(--container-padding);
+    max-width: 560px;
   }
 
   .headline {
-    font-size: 2.75rem;
-  }
-
-  .lineBreak {
-    display: inline;
+    font-size: 3rem;
   }
 
   .subhead {
-    font-size: 1rem;
+    font-size: 1.0625rem;
   }
 
   .indicators {
     bottom: var(--space-2xl);
+    gap: 10px;
   }
 
   .indicator {
@@ -169,7 +148,7 @@
   }
 
   .scrollLine {
-    height: 48px;
+    height: 40px;
   }
 }
 
@@ -179,38 +158,32 @@
     min-height: 700px;
   }
 
-  .contentInner {
-    max-width: 560px;
+  .content {
+    padding: var(--space-4xl);
+    max-width: 600px;
   }
 
   .headline {
-    font-size: 3.25rem;
-    margin-bottom: var(--space-lg);
+    font-size: 3.5rem;
   }
 
   .subhead {
-    font-size: 1.0625rem;
-    margin-bottom: var(--space-xl);
-  }
-
-  .indicators {
-    right: var(--container-padding);
-    gap: 10px;
+    font-size: 1.125rem;
+    max-width: 420px;
   }
 
   .scrollLine {
-    height: 56px;
+    height: 48px;
   }
 }
 
 /* ===== Large Desktop (1440px+) ===== */
 @media (min-width: 1440px) {
   .headline {
-    font-size: 3.75rem;
+    font-size: 4rem;
   }
 
   .subhead {
-    font-size: 1.125rem;
     max-width: 460px;
   }
 }
@@ -219,10 +192,5 @@
 @media (prefers-reduced-motion: reduce) {
   .slide {
     transition: none;
-  }
-
-  .scrollLine {
-    animation: none;
-    opacity: 0.6;
   }
 }

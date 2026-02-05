@@ -1,0 +1,38 @@
+/* Intro Section - Centered Editorial Text */
+.intro {
+  padding: var(--space-3xl) 0;
+  background-color: var(--color-bg);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  max-width: 640px;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--color-text);
+}
+
+/* ===== Tablet (768px+) ===== */
+@media (min-width: 768px) {
+  .intro {
+    padding: var(--space-4xl) 0;
+  }
+
+  .text {
+    font-size: 1.5rem;
+    max-width: 720px;
+  }
+}
+
+/* ===== Desktop (1024px+) ===== */
+@media (min-width: 1024px) {
+  .text {
+    font-size: 1.75rem;
+    max-width: 800px;
+  }
+}

@@ -85,6 +85,18 @@
   width: 100%;
 }
 
+.navLinkActive {
+  color: white;
+}
+
+.navLinkActive::after {
+  width: 100%;
+}
+
+.scrolled .navLinkActive {
+  color: var(--color-text);
+}
+
 /* Desktop Actions */
 .actions {
   display: none;
@@ -206,6 +218,10 @@
 }
 
 .mobileNavLink:hover {
+  color: var(--color-accent);
+}
+
+.mobileNavLinkActive {
   color: var(--color-accent);
 }
 
