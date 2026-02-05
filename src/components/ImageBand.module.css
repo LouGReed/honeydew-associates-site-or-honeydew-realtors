@@ -25,7 +25,6 @@
   right: 0;
   padding: var(--space-md) var(--space-lg);
   font-size: 0.75rem;
-  font-weight: 600;
   letter-spacing: 0.05em;
   color: white;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);

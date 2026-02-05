@@ -60,9 +60,8 @@
 /* Headline - One line on desktop */
 .headline {
   font-size: 2rem;
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   color: white;
   margin-bottom: var(--space-md);
   max-width: 600px;
@@ -91,7 +90,6 @@
 
 .secondaryCta {
   color: rgba(255, 255, 255, 0.85);
-  font-weight: 600;
 }
 
 .secondaryCta:hover {

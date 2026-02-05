@@ -38,7 +38,6 @@
 
 .navLink {
   font-size: 0.8125rem;
-  font-weight: 500;
   color: rgba(242, 237, 228, 0.7);
   transition: color 0.2s ease;
 }
