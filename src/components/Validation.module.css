@@ -1,0 +1,85 @@
+/* Validation Strip - Monochrome Black Logos */
+.validation {
+  padding: var(--space-2xl) 0;
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Convert to monochrome black */
+  filter: grayscale(100%) brightness(0);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.logoWrapper:hover {
+  opacity: 1;
+}
+
+.tagline {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ===== Tablet (768px+) ===== */
+@media (min-width: 768px) {
+  .validation {
+    padding: var(--space-3xl) 0;
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--space-xl);
+  }
+
+  .logos {
+    gap: var(--space-3xl);
+    flex-wrap: nowrap;
+  }
+
+  .logoWrapper {
+    max-width: 100px;
+  }
+
+  .tagline {
+    text-align: right;
+    max-width: 280px;
+  }
+}
+
+/* ===== Desktop (1024px+) ===== */
+@media (min-width: 1024px) {
+  .logos {
+    gap: var(--space-4xl);
+  }
+
+  .logoWrapper {
+    max-width: 120px;
+  }
+
+  .tagline {
+    font-size: 0.875rem;
+    max-width: 320px;
+  }
+}

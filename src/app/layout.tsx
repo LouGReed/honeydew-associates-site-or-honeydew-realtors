@@ -1,16 +1,15 @@
 import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import { Navbar, Footer } from '@/components';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: `${siteConfig.businessName} | Make-Ready Services for Austin Realtors`,
-  description: 'We help Austin realtors prepare homes for market with reliable, respectful, efficient contracting—so listings show well and move fast.',
-  keywords: ['Austin contractor', 'make-ready services', 'real estate prep', 'Compass realtor', 'home repairs Austin'],
+  title: `${siteConfig.businessName} | Austin Make-Ready Partner`,
+  description: 'Pre-listing preparation and make-ready services for Austin real estate professionals. Homes ready. Listings strong.',
+  keywords: ['Austin make-ready', 'pre-listing services', 'real estate prep', 'Austin contractor', 'home repairs'],
   openGraph: {
-    title: `${siteConfig.businessName} | Make-Ready Services for Austin Realtors`,
-    description: 'We help Austin realtors prepare homes for market with reliable, respectful, efficient contracting.',
+    title: `${siteConfig.businessName} | Austin Make-Ready Partner`,
+    description: 'Pre-listing preparation and make-ready services for Austin real estate professionals.',
     type: 'website',
   },
 };
@@ -23,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/assets/brand/Honey Dew Logos/Untitled design (19).png" />
+        <link rel="icon" href="/assets/brand/Honey Dew Logos/honeydewfinal.png" type="image/png" />
       </head>
       <body>
         <Navbar />

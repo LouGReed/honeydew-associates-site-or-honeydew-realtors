@@ -1,207 +1,92 @@
-/* Footer - Mobile First */
+/* Footer - Minimal Editorial */
 .footer {
   background-color: var(--color-footer-bg);
   color: var(--color-footer-text);
-  padding: 48px 0 100px; /* Extra bottom padding for mobile sticky CTA */
+  padding: var(--space-2xl) 0;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
 }
 
-/* Brand section */
-.brand {
-  margin-bottom: 8px;
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
 }
 
 .logo {
   display: inline-block;
-  margin-bottom: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 .logo img {
-  max-height: 36px;
+  filter: brightness(0) invert(1);
 }
 
-.tagline {
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: rgba(232, 228, 223, 0.7);
-}
-
-/* Columns */
-.column {
+.nav {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
 }
 
-.columnTitle {
-  font-size: 0.6875rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(232, 228, 223, 0.5);
-  margin-bottom: 14px;
-}
-
-.columnNav {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.link {
-  font-size: 0.875rem;
-  color: var(--color-footer-text);
-  padding: 4px 0;
-  min-height: var(--min-tap-target);
-  display: flex;
-  align-items: center;
-  transition: opacity 0.2s ease;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.link:hover,
-.link:active {
-  opacity: 0.7;
-}
-
-/* Service areas */
-.areas {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.area {
-  font-size: 0.875rem;
-  color: rgba(232, 228, 223, 0.7);
-}
-
-/* Bottom bar */
-.bottom {
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(232, 228, 223, 0.1);
-}
-
-.copyright {
+.navLink {
   font-size: 0.8125rem;
-  color: rgba(232, 228, 223, 0.5);
+  font-weight: 500;
+  color: rgba(242, 237, 228, 0.7);
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--color-footer-text);
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(242, 237, 228, 0.1);
+}
+
+.location,
+.copyright {
+  font-size: 0.75rem;
+  color: rgba(242, 237, 228, 0.5);
 }
 
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
   .footer {
-    padding: 56px 0 48px;
+    padding: var(--space-3xl) 0;
   }
 
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-  }
-
-  .brand {
-    grid-column: 1 / -1;
-  }
-
-  .logo img {
-    max-height: 40px;
-  }
-
-  .tagline {
-    font-size: 0.9375rem;
-    max-width: 320px;
-  }
-
-  .columnTitle {
-    font-size: 0.75rem;
-    margin-bottom: 16px;
-  }
-
-  .columnNav {
-    gap: 8px;
-  }
-
-  .link {
-    font-size: 0.9375rem;
-    min-height: auto;
-    padding: 2px 0;
+  .top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .bottom {
-    margin-top: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
 /* ===== Desktop (1024px+) ===== */
 @media (min-width: 1024px) {
-  .footer {
-    padding: 72px 0 40px;
+  .nav {
+    gap: var(--space-xl);
   }
 
-  .grid {
-    grid-template-columns: 2fr repeat(4, 1fr);
-    gap: 48px;
-  }
-
-  .brand {
-    grid-column: auto;
-    padding-right: 32px;
-  }
-
-  .logo {
-    margin-bottom: 20px;
-  }
-
-  .logo img {
-    max-height: 44px;
-  }
-
-  .columnTitle {
-    margin-bottom: 18px;
-  }
-
-  .columnNav {
-    gap: 10px;
-  }
-
-  .bottom {
-    margin-top: 56px;
-    padding-top: 28px;
-  }
-
-  .copyright {
+  .navLink {
     font-size: 0.875rem;
-  }
-}
-
-/* ===== Large Desktop (1440px+) ===== */
-@media (min-width: 1440px) {
-  .footer {
-    padding: 80px 0 40px;
-  }
-
-  .logo img {
-    max-height: 50px;
-  }
-
-  .brand {
-    padding-right: 40px;
-  }
-
-  .columnTitle {
-    margin-bottom: 20px;
-  }
-
-  .columnNav {
-    gap: 12px;
-  }
-
-  .bottom {
-    margin-top: 64px;
-    padding-top: 32px;
   }
 }

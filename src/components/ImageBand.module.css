@@ -1,0 +1,64 @@
+/* Image Band - Warm Proof Grid */
+.imageBand {
+  background-color: var(--color-bg-cream);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.imageItem {
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-md) var(--space-lg);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: white;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
+
+/* ===== Tablet (768px+) ===== */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .imageWrapper {
+    aspect-ratio: 1 / 1;
+  }
+
+  .caption {
+    font-size: 0.8125rem;
+    padding: var(--space-lg);
+  }
+}
+
+/* ===== Desktop (1024px+) ===== */
+@media (min-width: 1024px) {
+  .imageWrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .caption {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .imageItem:hover .caption {
+    opacity: 1;
+  }
+}
