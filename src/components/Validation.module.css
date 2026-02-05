@@ -1,5 +1,21 @@
-/* Validation Strip - Monochrome Black Logos */
+/* Validation Strip - Monochrome Black Logos with Sticky Scroll */
+
+/* Outer wrapper - shorter sticky duration */
+.wrapper {
+  position: relative;
+  height: 100vh;
+  z-index: 9;
+}
+
+/* Sticky panel */
 .validation {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: var(--space-2xl) 0;
   background-color: var(--color-bg);
   border-top: 1px solid var(--color-border);
@@ -43,6 +59,10 @@
 
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
+  .wrapper {
+    height: 110vh;
+  }
+
   .validation {
     padding: var(--space-3xl) 0;
   }
@@ -70,6 +90,10 @@
 
 /* ===== Desktop (1024px+) ===== */
 @media (min-width: 1024px) {
+  .wrapper {
+    height: 120vh;
+  }
+
   .logos {
     gap: var(--space-4xl);
   }

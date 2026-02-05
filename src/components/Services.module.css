@@ -1,5 +1,20 @@
-/* Services Section - Editorial Grid */
+/* Services Section - Editorial Grid with Sticky Scroll */
+
+/* Outer wrapper - controls how long section stays pinned */
+.wrapper {
+  position: relative;
+  height: 130vh;
+  z-index: 8;
+}
+
+/* Sticky panel */
 .services {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
   padding: var(--space-3xl) 0;
   background-color: var(--color-bg);
 }
@@ -47,6 +62,10 @@
 
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
+  .wrapper {
+    height: 140vh;
+  }
+
   .services {
     padding: var(--space-4xl) 0;
   }
@@ -81,6 +100,10 @@
 
 /* ===== Desktop (1024px+) ===== */
 @media (min-width: 1024px) {
+  .wrapper {
+    height: 160vh;
+  }
+
   .container {
     max-width: var(--container-max);
   }

@@ -1,0 +1,153 @@
+/* ============================================
+   STICKY IMAGE PANEL - Full-Bleed Editorial Image
+   ============================================ */
+
+/* Outer wrapper - controls scroll height */
+.wrapper {
+  position: relative;
+  z-index: var(--panel-z-index, 1);
+}
+
+/* Scroll height variants - Mobile first */
+.scrollShort {
+  height: 120vh;
+}
+
+.scrollMedium {
+  height: 140vh;
+}
+
+.scrollLong {
+  height: 160vh;
+}
+
+/* Sticky panel - pins to viewport */
+.panel {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 500px;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Image container - full bleed */
+.imageContainer {
+  position: absolute;
+  inset: 0;
+}
+
+/* Gradient overlay for caption legibility */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 30%, transparent 60%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Caption - bottom left */
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-xl) var(--container-padding);
+  padding-bottom: calc(var(--space-2xl) + env(safe-area-inset-bottom, 0px));
+  max-width: 480px;
+}
+
+.eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.captionText {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: white;
+}
+
+/* Reduced motion */
+.reducedMotion .panel {
+  /* Keep sticky, no transitions */
+}
+
+/* ===== Tablet (768px+) ===== */
+@media (min-width: 768px) {
+  .scrollShort {
+    height: 140vh;
+  }
+
+  .scrollMedium {
+    height: 170vh;
+  }
+
+  .scrollLong {
+    height: 200vh;
+  }
+
+  .panel {
+    min-height: 600px;
+  }
+
+  .caption {
+    padding: var(--space-2xl) var(--container-padding);
+    padding-bottom: var(--space-3xl);
+    max-width: 520px;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+  }
+
+  .captionText {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===== Desktop (1024px+) ===== */
+@media (min-width: 1024px) {
+  .scrollShort {
+    height: 160vh;
+  }
+
+  .scrollMedium {
+    height: 200vh;
+  }
+
+  .scrollLong {
+    height: 240vh;
+  }
+
+  .panel {
+    min-height: 700px;
+  }
+
+  .caption {
+    padding: var(--space-3xl);
+    padding-left: calc((100vw - var(--container-max)) / 2 + var(--container-padding));
+    max-width: 600px;
+  }
+
+  .captionText {
+    font-size: 1.75rem;
+  }
+}
+
+/* ===== Large Desktop (1440px+) ===== */
+@media (min-width: 1440px) {
+  .captionText {
+    font-size: 2rem;
+  }
+}

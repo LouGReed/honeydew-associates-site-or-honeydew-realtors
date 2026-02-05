@@ -1,5 +1,20 @@
-/* Contact Section - Clean Two-Column */
+/* Contact Section - Clean Two-Column with Sticky Scroll */
+
+/* Outer wrapper - controls how long section stays pinned */
+.wrapper {
+  position: relative;
+  height: 130vh;
+  z-index: 4;
+}
+
+/* Sticky panel */
 .contact {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
   padding: var(--space-3xl) 0;
   background-color: var(--color-bg-warm);
 }
@@ -148,6 +163,10 @@
 
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
+  .wrapper {
+    height: 140vh;
+  }
+
   .contact {
     padding: var(--space-4xl) 0;
   }
@@ -165,6 +184,10 @@
 
 /* ===== Desktop (1024px+) ===== */
 @media (min-width: 1024px) {
+  .wrapper {
+    height: 160vh;
+  }
+
   .container {
     gap: var(--space-4xl);
   }

@@ -30,9 +30,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className={styles.contact}>
-      <div className={`container ${styles.container}`}>
-        <div className={styles.content}>
+    <div className={styles.wrapper}>
+      <section id="contact" className={styles.contact}>
+        <div className={`container ${styles.container}`}>
+          <div className={styles.content}>
           <header className={styles.header}>
             <h2 className={styles.title}>Book a walkthrough.</h2>
             <p className={styles.subtitle}>
@@ -146,7 +147,8 @@ export default function Contact() {
             </form>
           )}
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   );
 }

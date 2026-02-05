@@ -48,14 +48,15 @@ export default function HeroSlideshow() {
   }, [nextSlide, isPaused, prefersReducedMotion]);
 
   return (
-    <section
-      className={styles.hero}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      aria-label="Hero slideshow"
-    >
-      {/* Slides */}
-      <div className={styles.slidesContainer}>
+    <div className={styles.wrapper}>
+      <section
+        className={styles.hero}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        aria-label="Hero slideshow"
+      >
+        {/* Slides */}
+        <div className={styles.slidesContainer}>
         {slides.map((slide, index) => (
           <div
             key={slide.src}
@@ -108,18 +109,19 @@ export default function HeroSlideshow() {
         </div>
       </div>
 
-      {/* Slide indicators - subtle */}
-      <div className={styles.indicators} aria-label="Slide navigation">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`${styles.indicator} ${index === currentSlide ? styles.indicatorActive : ''}`}
-            onClick={() => setCurrentSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-            aria-current={index === currentSlide ? 'true' : 'false'}
-          />
-        ))}
-      </div>
-    </section>
+        {/* Slide indicators - subtle */}
+        <div className={styles.indicators} aria-label="Slide navigation">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={`${styles.indicator} ${index === currentSlide ? styles.indicatorActive : ''}`}
+              onClick={() => setCurrentSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+              aria-current={index === currentSlide ? 'true' : 'false'}
+            />
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

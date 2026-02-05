@@ -1,5 +1,7 @@
 /* Footer - Minimal Editorial */
 .footer {
+  position: relative;
+  z-index: 100;
   background-color: var(--color-footer-bg);
   color: var(--color-footer-text);
   padding: var(--space-2xl) 0;
