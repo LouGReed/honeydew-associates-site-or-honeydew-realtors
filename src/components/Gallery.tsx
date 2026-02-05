@@ -1,5 +1,6 @@
 import { twoFectaLeft, twoFectaRight } from '@/config/pexels';
 import type { PexelImage } from '@/config/pexels';
+import { BASE_PATH } from '@/config/basePath';
 import styles from './Gallery.module.css';
 
 /**
@@ -9,7 +10,7 @@ import styles from './Gallery.module.css';
  * pair of vertical Pexels images sits side by side.
  */
 
-const GALLERY_DIR = '/assets/imagery/galleryofhomeimprovement';
+const GALLERY_DIR = `${BASE_PATH}/assets/imagery/galleryofhomeimprovement`;
 
 type SingleItem = {
   type: 'single';

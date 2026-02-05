@@ -18,7 +18,9 @@ export interface PexelImage {
   orientation: Orientation;
 }
 
-const BASE = '/assets/imagery/Pexel Assets/Honeydew Pexel Assets';
+import { BASE_PATH } from './basePath';
+
+const BASE = `${BASE_PATH}/assets/imagery/Pexel Assets/Honeydew Pexel Assets`;
 const FAV = `${BASE}/Pexel Favorites for Honeydew`;
 
 // ─── Assigned Placements ──────────────────────────────────────────

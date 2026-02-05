@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Pre-listing preparation and make-ready services for Austin real estate professionals. Homes ready. Listings strong.',
   icons: {
-    icon: '/img/brand/honeydewlogo.png',
+    icon: '/honeydew-associates-site-or-honeydew-realtors/img/brand/honeydewlogo.png',
   },
 };
 

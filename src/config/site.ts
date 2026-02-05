@@ -1,10 +1,12 @@
+import { BASE_PATH } from './basePath';
+
 export const siteConfig = {
   businessName: 'Honeydew',
   tagline: 'Austin Make-Ready Partner',
   phone: '(512) 555-0134',
   email: 'hello@honeydew.co',
   housecallProUrl: 'https://housecallpro.com/book/honeydew-homes',
-  logo: '/img/brand/honeydewlogo.png',
+  logo: `${BASE_PATH}/img/brand/honeydewlogo.png`,
 
   services: [
     {
