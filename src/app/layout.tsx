@@ -2,12 +2,36 @@ import type { Metadata } from 'next';
 import { Navbar, Footer } from '@/components';
 import './globals.css';
 
+const BASE_URL = 'https://lougreed.github.io/honeydew-associates-site-or-honeydew-realtors';
+
 export const metadata: Metadata = {
   title: 'Honeydew | Austin Make-Ready Partner',
   description:
     'Pre-listing preparation and make-ready services for Austin real estate professionals. Homes ready. Listings strong.',
   icons: {
     icon: '/honeydew-associates-site-or-honeydew-realtors/img/brand/honeydewlogo.png',
+  },
+  openGraph: {
+    title: 'Honeydew | Austin Make-Ready Partner',
+    description: 'Pre-listing preparation and make-ready services for Austin real estate professionals.',
+    url: BASE_URL,
+    siteName: 'Honeydew Homes',
+    images: [
+      {
+        url: `${BASE_URL}/assets/imagery/Pexel%20Assets/Honeydew%20Pexel%20Assets/Pexel%20Favorites%20for%20Honeydew/slideshow/order/01.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Austin home — warm living space',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Honeydew | Austin Make-Ready Partner',
+    description: 'Pre-listing preparation and make-ready services for Austin real estate professionals.',
+    images: [`${BASE_URL}/assets/imagery/Pexel%20Assets/Honeydew%20Pexel%20Assets/Pexel%20Favorites%20for%20Honeydew/slideshow/order/01.jpg`],
   },
 };
 
