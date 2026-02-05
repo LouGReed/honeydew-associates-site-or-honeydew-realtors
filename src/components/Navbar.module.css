@@ -1,4 +1,4 @@
-/* Navbar - Mobile First */
+/* Navbar - Editorial Style */
 .navbar {
   position: fixed;
   top: 0;
@@ -6,12 +6,13 @@
   right: 0;
   z-index: 1000;
   height: var(--nav-height);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 .navbar.scrolled {
-  background-color: var(--color-bg);
-  box-shadow: 0 1px 0 var(--color-border);
+  background-color: rgba(253, 251, 247, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .container {
@@ -30,12 +31,17 @@
   align-items: center;
   flex-shrink: 0;
   min-height: var(--min-tap-target);
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 .logo img {
   filter: brightness(0) invert(1);
   transition: filter 0.3s ease;
-  max-height: 36px;
+  max-height: 32px;
   width: auto;
 }
 
@@ -43,40 +49,64 @@
   filter: none;
 }
 
-/* Desktop nav - hidden on mobile */
+/* Desktop Nav */
 .nav {
   display: none;
+  align-items: center;
+  gap: 36px;
 }
 
 .navLink {
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   padding: 8px 0;
-  transition: opacity 0.2s ease;
+  position: relative;
+  transition: color 0.2s ease;
 }
 
 .scrolled .navLink {
   color: var(--color-text);
 }
 
-.navLink:hover {
-  opacity: 0.7;
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.2s ease;
 }
 
-/* Desktop actions - hidden on mobile */
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* Desktop Actions */
 .actions {
   display: none;
+  align-items: center;
 }
 
-.getInTouch {
-  padding: 10px 16px;
-  font-size: 0.75rem;
+.ctaBtn {
+  font-size: 0.6875rem;
+  padding: 12px 20px;
 }
 
-/* Mobile hamburger toggle */
+.scrolled .ctaBtn {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.scrolled .ctaBtn:hover {
+  background-color: var(--color-text-secondary);
+}
+
+/* Mobile Toggle */
 .mobileToggle {
   display: flex;
   align-items: center;
@@ -90,7 +120,7 @@
 
 .hamburger {
   display: block;
-  width: 24px;
+  width: 22px;
   height: 2px;
   background-color: white;
   position: relative;
@@ -105,7 +135,7 @@
 .hamburger::after {
   content: '';
   position: absolute;
-  width: 24px;
+  width: 22px;
   height: 2px;
   background-color: inherit;
   left: 0;
@@ -113,11 +143,11 @@
 }
 
 .hamburger::before {
-  top: -8px;
+  top: -7px;
 }
 
 .hamburger::after {
-  bottom: -8px;
+  bottom: -7px;
 }
 
 .hamburger.open {
@@ -125,18 +155,17 @@
 }
 
 .hamburger.open::before {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
   background-color: var(--color-text);
 }
 
 .hamburger.open::after {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
   background-color: var(--color-text);
 }
 
-/* Mobile menu overlay */
+/* Mobile Menu */
 .mobileMenu {
-  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -160,12 +189,12 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  gap: 24px;
-  padding: 20px;
+  gap: 28px;
+  padding: 24px;
 }
 
 .mobileNavLink {
-  font-size: 1.375rem;
+  font-size: 1.125rem;
   font-weight: 800;
   letter-spacing: 0.02em;
   color: var(--color-text);
@@ -173,33 +202,22 @@
   min-height: var(--min-tap-target);
   display: flex;
   align-items: center;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
-.mobileNavLink:hover,
-.mobileNavLink:active {
-  opacity: 0.7;
+.mobileNavLink:hover {
+  color: var(--color-accent);
 }
 
-/* Mobile sticky CTA bar */
-.mobileStickyCta {
-  display: block;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 998;
-  padding: 12px var(--container-padding);
-  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-  background-color: var(--color-bg);
-  box-shadow: 0 -1px 0 var(--color-border);
+.mobileCta {
+  margin-top: 16px;
 }
 
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
   .logo img {
-    max-height: 40px;
+    max-height: 36px;
   }
 
   .mobileNav {
@@ -207,34 +225,22 @@
   }
 
   .mobileNavLink {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 
 /* ===== Desktop (1024px+) ===== */
 @media (min-width: 1024px) {
   .logo img {
-    max-height: 44px;
+    max-height: 40px;
   }
 
   .nav {
     display: flex;
-    align-items: center;
-    gap: 36px;
-  }
-
-  .navLink {
-    font-size: 0.875rem;
   }
 
   .actions {
     display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .getInTouch {
-    padding: 12px 20px;
   }
 
   .mobileToggle {
@@ -244,23 +250,20 @@
   .mobileMenu {
     display: none;
   }
-
-  .mobileStickyCta {
-    display: none;
-  }
 }
 
 /* ===== Large Desktop (1440px+) ===== */
 @media (min-width: 1440px) {
-  .logo img {
-    max-height: 50px;
-  }
-
   .nav {
-    gap: 40px;
+    gap: 44px;
   }
 
-  .actions {
-    gap: 16px;
+  .navLink {
+    font-size: 0.8125rem;
+  }
+
+  .ctaBtn {
+    font-size: 0.75rem;
+    padding: 14px 24px;
   }
 }

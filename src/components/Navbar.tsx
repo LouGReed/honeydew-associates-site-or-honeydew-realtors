@@ -12,63 +12,87 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu on escape
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false);
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, []);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
-    { label: 'About', href: '/#about' },
-    { label: 'Services', href: '/#services' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'About', href: '#about' },
+    { label: 'Services', href: '#services' },
+    { label: 'Process', href: '#process' },
+    { label: 'Contact', href: '#contact' },
   ];
+
+  const handleNavClick = () => {
+    setMobileMenuOpen(false);
+  };
 
   return (
     <>
       <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.container}>
-          <Link href="/" className={styles.logo}>
+          <Link href="/" className={styles.logo} aria-label="Honeydew Home">
             <Image
               src={siteConfig.logo}
               alt={siteConfig.businessName}
-              width={180}
-              height={50}
+              width={140}
+              height={40}
               priority
               style={{ objectFit: 'contain' }}
             />
           </Link>
 
-          <nav className={styles.nav}>
+          <nav className={styles.nav} aria-label="Main navigation">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className={styles.navLink}>
+              <a
+                key={link.href}
+                href={link.href}
+                className={styles.navLink}
+              >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </nav>
 
           <div className={styles.actions}>
-            <Link
-              href="/contact"
-              className={`btn ${scrolled ? 'btn-outline' : 'btn-secondary'} ${styles.getInTouch}`}
-            >
-              Get in Touch
-            </Link>
-            <Link
+            <a
               href={siteConfig.housecallProUrl}
-              className="btn btn-primary"
+              className={`btn btn-primary ${styles.ctaBtn}`}
               target="_blank"
               rel="noopener noreferrer"
             >
               Book a Walkthrough
-            </Link>
+            </a>
           </div>
 
           <button
             className={styles.mobileToggle}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileMenuOpen}
           >
             <span className={`${styles.hamburger} ${mobileMenuOpen ? styles.open : ''}`} />
@@ -77,41 +101,33 @@ export default function Navbar() {
       </header>
 
       {/* Mobile Menu */}
-      <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
-        <nav className={styles.mobileNav}>
+      <div
+        className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.mobileMenuOpen : ''}`}
+        aria-hidden={!mobileMenuOpen}
+      >
+        <nav className={styles.mobileNav} aria-label="Mobile navigation">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               className={styles.mobileNavLink}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={handleNavClick}
+              tabIndex={mobileMenuOpen ? 0 : -1}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
-          <Link
+          <a
             href={siteConfig.housecallProUrl}
-            className="btn btn-primary"
+            className={`btn btn-primary ${styles.mobileCta}`}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ marginTop: '24px' }}
+            onClick={handleNavClick}
+            tabIndex={mobileMenuOpen ? 0 : -1}
           >
             Book a Walkthrough
-          </Link>
+          </a>
         </nav>
-      </div>
-
-      {/* Mobile Sticky CTA */}
-      <div className={styles.mobileStickyCta}>
-        <Link
-          href={siteConfig.housecallProUrl}
-          className="btn btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ width: '100%' }}
-        >
-          Book a Walkthrough
-        </Link>
       </div>
     </>
   );
