@@ -1,0 +1,27 @@
+.cta {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-bg-warm);
+}
+
+.content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.headline {
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.body {
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 768px) {
+  .body {
+    font-size: 1.125rem;
+  }
+}
