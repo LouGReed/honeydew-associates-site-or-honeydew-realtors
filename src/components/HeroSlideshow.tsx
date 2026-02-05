@@ -156,7 +156,8 @@ export default function HeroSlideshow() {
         </span>
 
         <h1 className={styles.headline}>
-          Homes Ready. Listings Strong.
+          Homes Ready.<br />
+          Listings Strong.
         </h1>
 
         <p className={styles.subhead}>
