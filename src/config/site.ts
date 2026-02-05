@@ -15,34 +15,34 @@ export const siteConfig = {
   // Logo
   logo: "/assets/brand/Honey Dew Logos/honeydewfinal.png",
 
-  // Hero slideshow - prioritize real work images
+  // Hero slideshow - using slideshow folder images (smaller, optimized)
   heroSlides: [
     {
-      src: "/assets/imagery/hero/_make_this_16-9_533g18zg4lvr221xgqdk_1.png",
+      src: "/assets/slideshow/slide-home-1.jpg",
       alt: "Modern Austin home interior",
       fit: "cover",
       position: "center",
     },
     {
-      src: "/assets/imagery/hero/_0mxza8kb24wnu3anuz90_0.png",
-      alt: "Freshly finished living space",
+      src: "/assets/slideshow/slide-family-1.jpg",
+      alt: "Family-ready living space",
       fit: "cover",
       position: "center",
     },
     {
-      src: "/assets/imagery/hero/_93h9sbu59vqc0wc7j51y_0.png",
-      alt: "Kitchen ready for photos",
+      src: "/assets/slideshow/slide-outdoor-2.jpg",
+      alt: "Outdoor living area",
       fit: "cover",
       position: "center",
     },
     {
-      src: "/assets/imagery/hero/_2jpynof175jqd0qqtvlf_1.png",
+      src: "/assets/slideshow/slide-family-2.jpg",
       alt: "Bright clean interior",
       fit: "cover",
       position: "center",
     },
     {
-      src: "/assets/imagery/hero/_a0v9yx6l4u99c1hz1h5u_0.png",
+      src: "/assets/slideshow/slide-work-1.png",
       alt: "Detail work complete",
       fit: "cover",
       position: "center",
@@ -98,11 +98,11 @@ export const siteConfig = {
     },
   ],
 
-  // Lifestyle images for warm proof section
+  // Lifestyle images for featured section
   lifestyleImages: [
-    { src: "/assets/slideshow/slide-family-1.jpg", caption: "Family-ready finishes" },
-    { src: "/assets/slideshow/slide-outdoor-2.jpg", caption: "Photo-day polish" },
-    { src: "/assets/slideshow/slide-family-2.jpg", caption: "Austin light, inside and out" },
+    { src: "/assets/slideshow/slide-family-3.jpg", caption: "Family-ready finishes" },
+    { src: "/assets/slideshow/slide-outdoor-1.jpg", caption: "Photo-day polish" },
+    { src: "/assets/slideshow/slide-work-2.png", caption: "Austin light, inside and out" },
   ],
 
   // Footer
