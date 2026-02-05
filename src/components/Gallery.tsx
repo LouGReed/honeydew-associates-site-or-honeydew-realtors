@@ -1,8 +1,8 @@
 import styles from './Gallery.module.css';
 
 /**
- * Mammoth-style full-bleed image sequence.
- * One image per panel, generous whitespace, no captions.
+ * Mammoth-style contained image sequence.
+ * Large editorial images inside a calm container — not edge-to-edge.
  */
 
 const GALLERY_DIR = '/assets/imagery/galleryofhomeimprovement';
@@ -19,19 +19,21 @@ const images = [
 export default function Gallery() {
   return (
     <section id="work" className={styles.gallery}>
-      {images.map((image, index) => (
-        <div key={image.src} className={styles.panel}>
-          <img
-            src={encodeURI(image.src)}
-            alt={image.alt}
-            width={1920}
-            height={1280}
-            loading={index < 2 ? 'eager' : 'lazy'}
-            draggable={false}
-            className={styles.image}
-          />
-        </div>
-      ))}
+      <div className={`container ${styles.inner}`}>
+        {images.map((image, index) => (
+          <div key={image.src} className={styles.panel}>
+            <img
+              src={encodeURI(image.src)}
+              alt={image.alt}
+              width={1920}
+              height={1280}
+              loading={index < 2 ? 'eager' : 'lazy'}
+              draggable={false}
+              className={styles.image}
+            />
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
