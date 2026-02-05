@@ -1,4 +1,52 @@
-/* Gallery — placeholder while rebuilding */
+/* ============================================
+   Gallery — Mammoth-style full-bleed sequence
+   One image per panel, generous whitespace
+   ============================================ */
+
 .gallery {
   background-color: var(--color-bg);
+}
+
+/* ── Panel ─────────────────────────────────── */
+.panel {
+  width: 100%;
+  padding: var(--space-sm) 0;
+}
+
+.panel:first-child {
+  padding-top: 0;
+}
+
+.panel:last-child {
+  padding-bottom: 0;
+}
+
+/* ── Image ─────────────────────────────────── */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ===== Tablet (768px+) ===================== */
+@media (min-width: 768px) {
+  .panel {
+    padding: var(--space-md) 0;
+  }
+}
+
+/* ===== Desktop (1024px+) =================== */
+@media (min-width: 1024px) {
+  .panel {
+    padding: var(--space-lg) 0;
+  }
+}
+
+/* ===== Large Desktop (1440px+) ============= */
+@media (min-width: 1440px) {
+  .panel {
+    padding: var(--space-xl) 0;
+  }
 }
