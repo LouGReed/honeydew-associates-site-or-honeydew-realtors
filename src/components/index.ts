@@ -5,6 +5,7 @@ export { default as Intro } from './Intro';
 export { default as Services } from './Services';
 export { default as Process } from './Process';
 export { default as Gallery } from './Gallery';
+export { default as CtaBand } from './CtaBand';
 export { default as EditorialImage } from './EditorialImage';
 export { default as Validation } from './Validation';
 export { default as ImageBand } from './ImageBand';

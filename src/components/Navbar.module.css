@@ -79,11 +79,12 @@
 }
 
 .scrolled .navLink {
-  color: rgba(26, 24, 22, 0.6);
+  color: rgba(26, 24, 22, 0.45);
+  font-weight: 400;
 }
 
 .scrolled .navLink:hover {
-  color: rgba(26, 24, 22, 0.95);
+  color: rgba(26, 24, 22, 0.8);
 }
 
 /* Underline — subtle */
@@ -122,9 +123,11 @@
 }
 
 .ctaBtn {
-  font-size: 0.625rem;
-  letter-spacing: 0.1em;
-  padding: 11px 18px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 12px 20px;
+  min-height: 40px;
 }
 
 /* ===== Mobile Toggle ===== */

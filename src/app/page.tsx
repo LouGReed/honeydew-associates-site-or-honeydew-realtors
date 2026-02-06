@@ -3,6 +3,7 @@ import {
   Intro,
   Gallery,
   Services,
+  CtaBand,
   Process,
   ImageBand,
   Validation,
@@ -24,6 +25,9 @@ export default function HomePage() {
 
       {/* Services — Cards + vertical Pexels sidebar */}
       <Services />
+
+      {/* Mid-page CTA — Decision point */}
+      <CtaBand />
 
       {/* Process — How it works */}
       <Process />

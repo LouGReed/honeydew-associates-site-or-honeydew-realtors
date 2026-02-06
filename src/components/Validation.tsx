@@ -7,6 +7,7 @@ export default function Validation() {
       <div className={`container ${styles.container}`}>
         <div className={styles.content}>
           <span className="eyebrow">Trusted Partners</span>
+          <p className={styles.declarative}>Make-ready for agents who don't miss deadlines.</p>
           <h2 className={styles.title}>
             Trusted by Austin agents and teams who care about the details.
           </h2>

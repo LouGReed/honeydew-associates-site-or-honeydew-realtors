@@ -22,8 +22,8 @@
   --color-text: #1A1816;
   --color-text-secondary: #4A4642;
   --color-text-muted: #7A756E;
-  --color-accent: #C9A052;
-  --color-accent-hover: #B8913F;
+  --color-accent: #B8923D;
+  --color-accent-hover: #A6822F;
   --color-border: rgba(26, 24, 22, 0.08);
   --color-border-strong: rgba(26, 24, 22, 0.15);
 
@@ -270,18 +270,22 @@ button {
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  min-height: var(--min-tap-target);
-  padding: 14px 28px;
+  min-height: 48px;
+  padding: 16px 32px;
   font-family: var(--font-primary);
-  font-weight: var(--font-weight);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   border: none;
   border-radius: 2px;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
   -webkit-tap-highlight-color: transparent;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
 }
 
 .btn-primary {
@@ -439,8 +443,9 @@ strong, b {
   }
 
   .btn {
-    padding: 16px 32px;
-    font-size: 0.8125rem;
+    padding: 18px 36px;
+    font-size: 0.875rem;
+    min-height: 52px;
   }
 }
 

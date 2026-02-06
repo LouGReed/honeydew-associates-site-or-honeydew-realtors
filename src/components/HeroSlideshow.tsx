@@ -164,6 +164,19 @@ export default function HeroSlideshow() {
           Pre-listing preparation and make-ready services for Austin real estate professionals.
         </p>
 
+        {/* Hero CTA */}
+        <div className={styles.ctaWrap}>
+          <a
+            href={siteConfig.housecallProUrl}
+            className={`btn btn-primary ${styles.heroCta}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book a Walkthrough
+          </a>
+          <span className={styles.ctaMicro}>2–3 minute booking. No calls needed.</span>
+        </div>
+
         {/* Dots */}
         <div className={styles.indicators} role="tablist" aria-label="Slide navigation">
           {slides.map((_, index) => (

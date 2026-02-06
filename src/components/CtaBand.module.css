@@ -1,0 +1,30 @@
+/* ============================================
+   CtaBand — Mid-page decision point
+   Generous spacing, centered, unavoidable
+   ============================================ */
+
+.ctaBand {
+  padding: var(--space-2xl) 0;
+  background-color: var(--color-bg);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--container-padding);
+}
+
+/* ===== Tablet (768px+) ===== */
+@media (min-width: 768px) {
+  .ctaBand {
+    padding: var(--space-3xl) 0;
+  }
+}
+
+/* ===== Desktop (1024px+) ===== */
+@media (min-width: 1024px) {
+  .ctaBand {
+    padding: var(--space-3xl) 0 var(--space-2xl);
+  }
+}

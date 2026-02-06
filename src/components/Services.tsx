@@ -9,6 +9,7 @@ export default function Services() {
         <div className={styles.main}>
           <header className={styles.header}>
             <span className="eyebrow">What We Do</span>
+            <p className={styles.declarative}>Clean scope. Clean execution. Clean handoff.</p>
             <h2 className={styles.title}>
               Make-ready work that respects your timeline and your client's home.
             </h2>

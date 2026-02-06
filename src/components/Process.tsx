@@ -7,6 +7,7 @@ export default function Process() {
       <div className={`container ${styles.container}`}>
         <header className={styles.header}>
           <span className="eyebrow">How It Works</span>
+          <p className={styles.declarative}>Built for listing timelines and busy client days.</p>
           <h2 className={styles.title}>Simple. Clear. On time.</h2>
         </header>
 
