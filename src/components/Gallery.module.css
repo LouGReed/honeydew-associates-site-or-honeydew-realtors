@@ -6,7 +6,7 @@
 
 .gallery {
   background-color: var(--color-bg);
-  margin-top: clamp(64px, 10vh, 180px);
+  margin-top: clamp(56px, 8vh, 140px);
   padding: clamp(72px, 10vh, 160px) 0;
 }
 

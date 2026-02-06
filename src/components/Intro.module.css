@@ -1,28 +1,35 @@
 /* ============================================
-   Intro — Lead + Echo with tension
-   3-line cadence, image, Texas mark
+   Intro — Authored ABOUT section
+   Lead copy + Principles + Texas mark
+   Scope preview under image
    ============================================ */
 
 .intro {
-  padding: var(--space-xl) 0 var(--space-sm);
+  padding: var(--space-xl) 0 var(--space-md);
   background-color: var(--color-bg);
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
 }
 
-/* ── Copy column ──────────────────────────── */
-.copy {
+/* ── Left Column ─────────────────────────── */
+.leftCol {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-/* Line 1: Canela Bold, larger */
+/* ── Copy block ──────────────────────────── */
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .lead {
   font-family: var(--font-display);
   font-weight: 700;
@@ -33,7 +40,6 @@
   margin: 0;
 }
 
-/* Line 2: Neue Montreal Medium */
 .support {
   font-family: var(--font-sans);
   font-weight: 500;
@@ -43,7 +49,6 @@
   margin-top: 8px;
 }
 
-/* Gold rule motif */
 .rule {
   width: 56px;
   height: 2px;
@@ -51,7 +56,6 @@
   margin: var(--space-md) 0;
 }
 
-/* Line 3: Neue Montreal Regular, smaller/subtle */
 .echo {
   font-family: var(--font-sans);
   font-weight: 400;
@@ -61,20 +65,84 @@
   max-width: 400px;
 }
 
-/* ── Texas Map Mark ──────────────────────── */
+/* ── Operating Principles ────────────────── */
+.principles {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.principlesRule {
+  width: 40px;
+  height: 1px;
+  background-color: var(--color-accent);
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+
+.principlesLabel {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.principlesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--color-text-secondary);
+}
+
+.principlesList li::before {
+  content: '•';
+  margin-right: 8px;
+  color: var(--color-accent);
+  opacity: 0.7;
+}
+
+/* ── Texas Mark ──────────────────────────── */
 .txMark {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  margin-top: 20px;
+  gap: 10px;
+  margin-top: var(--space-lg);
 }
 
 .txSvg {
-  width: clamp(96px, 12vw, 140px);
+  width: clamp(130px, 16vw, 170px);
   height: auto;
-  color: var(--color-accent);
-  opacity: 0.85;
+}
+
+.txOutline {
+  stroke: var(--color-accent);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.txRing {
+  stroke: var(--color-accent);
+  fill: none;
+  stroke-width: 1.25;
+  opacity: 0.6;
+}
+
+.txStar {
+  fill: var(--color-oak-green);
 }
 
 .txCaption {
@@ -86,27 +154,66 @@
   color: var(--color-text-muted);
 }
 
-/* ── Portrait column ──────────────────────── */
+/* ── Right Column ────────────────────────── */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
 .portrait {
   display: flex;
   justify-content: center;
-  margin-top: 0;
 }
 
 .image {
   display: block;
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
   height: auto;
   object-fit: cover;
   object-position: center;
   border-radius: 8px;
 }
 
+/* ── Scope Preview ───────────────────────── */
+.scopePreview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.scopeItem {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.scopeCta {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  margin-top: 8px;
+  transition: color 0.2s ease;
+}
+
+.scopeCta:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
   .intro {
-    padding: var(--space-2xl) 0 var(--space-md);
+    padding: var(--space-2xl) 0 var(--space-lg);
   }
 
   .container {
@@ -115,11 +222,14 @@
     gap: var(--space-2xl);
   }
 
-  .copy {
+  .leftCol {
     flex: 1;
     align-items: flex-start;
     text-align: left;
-    padding-top: var(--space-sm);
+  }
+
+  .copy {
+    align-items: flex-start;
   }
 
   .lead {
@@ -133,7 +243,6 @@
 
   .rule {
     width: 64px;
-    margin: var(--space-md) 0;
   }
 
   .echo {
@@ -141,19 +250,31 @@
     max-width: 420px;
   }
 
+  .principles {
+    align-items: flex-start;
+    margin-top: var(--space-xl);
+  }
+
+  .principlesList {
+    font-size: 0.875rem;
+  }
+
   .txMark {
     align-items: flex-start;
-    margin-top: 24px;
   }
 
   .txSvg {
-    width: clamp(100px, 10vw, 160px);
+    width: clamp(140px, 14vw, 180px);
+  }
+
+  .rightCol {
+    flex: 0 0 38%;
+    max-width: 38%;
+    align-items: flex-start;
   }
 
   .portrait {
-    flex: 0 0 36%;
-    max-width: 36%;
-    margin-top: 0;
+    width: 100%;
   }
 
   .image {
@@ -161,21 +282,21 @@
     aspect-ratio: 3 / 4;
     border-radius: 10px;
   }
+
+  .scopePreview {
+    align-items: flex-start;
+    text-align: left;
+  }
 }
 
 /* ===== Desktop (1024px+) ===== */
 @media (min-width: 1024px) {
   .intro {
-    padding: var(--space-2xl) 0 var(--space-sm);
+    padding: var(--space-2xl) 0 var(--space-md);
   }
 
   .container {
     gap: var(--space-3xl);
-    align-items: flex-start;
-  }
-
-  .copy {
-    padding-top: var(--space-md);
   }
 
   .lead {
@@ -197,17 +318,30 @@
     max-width: 460px;
   }
 
+  .principlesLabel {
+    font-size: 0.6875rem;
+  }
+
+  .principlesList {
+    font-size: 0.9375rem;
+    gap: 4px;
+  }
+
   .txSvg {
-    width: 140px;
+    width: 170px;
   }
 
-  .portrait {
-    flex: 0 0 32%;
-    max-width: 32%;
+  .rightCol {
+    flex: 0 0 34%;
+    max-width: 34%;
   }
 
-  .image {
-    border-radius: 10px;
+  .scopeItem {
+    font-size: 0.8125rem;
+  }
+
+  .scopeCta {
+    font-size: 0.875rem;
   }
 }
 
@@ -226,7 +360,7 @@
   }
 
   .txSvg {
-    width: 160px;
+    width: 190px;
   }
 
   .image {
