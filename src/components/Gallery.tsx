@@ -3,8 +3,8 @@ import styles from './Gallery.module.css';
 
 /**
  * Gallery — Trifecta lifestyle images
- * Three images in a calm, premium grid layout.
- * Full aspect ratio, no cropping.
+ * Three vertical images in a calm, premium grid layout.
+ * Third image cropped to vertical to match the first two.
  */
 
 const images = [trifectaLeft, trifectaCenter, trifectaRight];
@@ -15,7 +15,10 @@ export default function Gallery() {
       <div className={styles.inner}>
         <div className={styles.trifecta}>
           {images.map((img, i) => (
-            <div key={i} className={styles.card}>
+            <div
+              key={i}
+              className={`${styles.card} ${i === 2 ? styles.cardCropped : ''}`}
+            >
               <img
                 src={encodeURI(img.src)}
                 alt={img.alt}
@@ -23,7 +26,7 @@ export default function Gallery() {
                 height={img.height}
                 loading="lazy"
                 draggable={false}
-                className={styles.image}
+                className={`${styles.image} ${i === 2 ? styles.imageCropped : ''}`}
               />
             </div>
           ))}
