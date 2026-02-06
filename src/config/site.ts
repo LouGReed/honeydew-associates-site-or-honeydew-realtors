@@ -50,7 +50,6 @@ export const siteConfig = {
   navLinks: [
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
-    { label: 'Work', href: '#work' },
     { label: 'Book', href: '#book' },
   ],
 };
