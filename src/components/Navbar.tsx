@@ -119,7 +119,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Get in Touch
+              Book a Walkthrough
             </a>
           </div>
 
@@ -168,7 +168,7 @@ export default function Navbar() {
             onClick={handleNavClick}
             tabIndex={mobileMenuOpen ? 0 : -1}
           >
-            Get in Touch
+            Book a Walkthrough
           </a>
         </nav>
       </div>

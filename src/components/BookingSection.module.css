@@ -1,0 +1,102 @@
+/* ============================================
+   BookingSection — Final CTA before footer
+   Clean, confident, minimal. Single action.
+   ============================================ */
+
+.booking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4xl) 0;
+  background-color: var(--color-bg-warm);
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+  max-width: 560px;
+}
+
+/* ── Content ──────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-top: var(--space-md);
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  max-width: 400px;
+}
+
+/* ── CTA Block ────────────────────────────── */
+.ctaBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ctaBtn {
+  /* Inherits from .btn .btn-primary */
+  padding: 16px 32px;
+  font-size: 1rem;
+}
+
+.microcopy {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+}
+
+/* ===== Tablet (768px+) ===================== */
+@media (min-width: 768px) {
+  .booking {
+    padding: var(--space-5xl) 0;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.0625rem;
+  }
+}
+
+/* ===== Desktop (1024px+) =================== */
+@media (min-width: 1024px) {
+  .title {
+    font-size: 3rem;
+    letter-spacing: -0.025em;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    max-width: 440px;
+  }
+
+  .ctaBtn {
+    padding: 18px 40px;
+    font-size: 1.0625rem;
+  }
+}

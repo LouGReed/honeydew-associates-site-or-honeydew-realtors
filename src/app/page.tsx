@@ -9,7 +9,7 @@ import {
   ImageBand,
   Validation,
   PostValidationBand,
-  Contact,
+  BookingSection,
 } from '@/components';
 
 export default function HomePage() {
@@ -45,8 +45,8 @@ export default function HomePage() {
       {/* Editorial break — Family BBQ */}
       <PostValidationBand />
 
-      {/* Contact — CTA + Form */}
-      <Contact />
+      {/* Booking — Final CTA */}
+      <BookingSection />
     </>
   );
 }
