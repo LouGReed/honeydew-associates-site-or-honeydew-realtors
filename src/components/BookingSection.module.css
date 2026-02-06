@@ -1,102 +1,197 @@
 /* ============================================
-   BookingSection — Final CTA before footer
-   Clean, confident, minimal. Single action.
+   BookingSection — Full-bleed Hero CTA
+   BBQ image background with overlay gradient.
+   Left-aligned content, vertically centered.
    ============================================ */
 
 .booking {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: var(--space-4xl) 0;
-  background-color: var(--color-bg-warm);
-  text-align: center;
+  min-height: 60vh;
+  background-color: #1a1a1a;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
+/* ── Dark Overlay Gradient ─────────────────── */
+/* Left-to-right: strongest behind text on left */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0.15) 100%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ── Container ─────────────────────────────── */
 .container {
+  position: relative;
+  z-index: 2;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: var(--space-xl);
-  max-width: 560px;
+  width: 100%;
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
 }
 
-/* ── Content ──────────────────────────────── */
+/* ── Content Block ─────────────────────────── */
 .content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-sm);
+  max-width: 560px;
 }
 
+/* ── Accent Rule ───────────────────────────── */
+.accentRule {
+  width: 48px;
+  height: 2px;
+  background-color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+
+/* ── Eyebrow ───────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── Title ─────────────────────────────────── */
 .title {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 2rem;
-  line-height: 1.1;
+  line-height: 1.05;
   letter-spacing: -0.02em;
-  color: var(--color-text);
-  margin-top: var(--space-md);
+  color: rgba(255, 255, 255, 0.97);
+  margin-top: var(--space-xs);
 }
 
+/* ── Subtitle ──────────────────────────────── */
 .subtitle {
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: 0.9375rem;
+  font-weight: 400;
   line-height: 1.6;
-  color: var(--color-text-secondary);
-  max-width: 400px;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 380px;
+  margin-top: var(--space-sm);
 }
 
-/* ── CTA Block ────────────────────────────── */
+/* ── CTA Block ─────────────────────────────── */
 .ctaBlock {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: var(--space-lg);
 }
 
 .ctaBtn {
-  /* Inherits from .btn .btn-primary */
-  padding: 16px 32px;
+  padding: 18px 36px;
   font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
+.ctaBtn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
+}
+
+/* ── Microcopy ─────────────────────────────── */
 .microcopy {
   font-family: var(--font-sans);
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  color: var(--color-text-muted);
-  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.02em;
 }
 
 /* ===== Tablet (768px+) ===================== */
 @media (min-width: 768px) {
   .booking {
-    padding: var(--space-5xl) 0;
+    min-height: 65vh;
+  }
+
+  .container {
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
+  }
+
+  .accentRule {
+    width: 56px;
+    height: 2px;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
   }
 
   .title {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
+    line-height: 1.02;
   }
 
   .subtitle {
+    font-size: 1rem;
+    max-width: 400px;
+  }
+
+  .ctaBtn {
+    padding: 20px 44px;
     font-size: 1.0625rem;
   }
 }
 
 /* ===== Desktop (1024px+) =================== */
 @media (min-width: 1024px) {
+  .booking {
+    min-height: 70vh;
+  }
+
+  .accentRule {
+    width: 64px;
+    margin-bottom: var(--space-md);
+  }
+
   .title {
-    font-size: 3rem;
+    font-size: 3.25rem;
     letter-spacing: -0.025em;
   }
 
   .subtitle {
-    font-size: 1.125rem;
-    max-width: 440px;
+    font-size: 1.0625rem;
+    max-width: 420px;
   }
 
   .ctaBtn {
-    padding: 18px 40px;
-    font-size: 1.0625rem;
+    padding: 22px 52px;
+    font-size: 1.125rem;
+  }
+
+  .microcopy {
+    font-size: 0.8125rem;
+  }
+}
+
+/* ===== Large Desktop (1440px+) ============= */
+@media (min-width: 1440px) {
+  .title {
+    font-size: 3.75rem;
+  }
+
+  .content {
+    max-width: 620px;
   }
 }
