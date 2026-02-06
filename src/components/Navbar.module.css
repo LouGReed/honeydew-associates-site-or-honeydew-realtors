@@ -65,9 +65,10 @@
 
 .navLink {
   font-size: 0.6875rem;
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
   padding: 8px 0;
   position: relative;
   transition: color 0.3s ease;
@@ -79,12 +80,12 @@
 }
 
 .scrolled .navLink {
-  color: rgba(26, 24, 22, 0.45);
-  font-weight: 400;
+  color: rgba(31, 59, 45, 0.55);
+  font-weight: 500;
 }
 
 .scrolled .navLink:hover {
-  color: rgba(26, 24, 22, 0.8);
+  color: rgba(31, 59, 45, 0.9);
 }
 
 /* Underline — subtle */
@@ -113,7 +114,7 @@
 }
 
 .scrolled .navLinkActive {
-  color: rgba(26, 24, 22, 0.95);
+  color: rgba(31, 59, 45, 0.95);
 }
 
 /* ===== Desktop Actions ===== */

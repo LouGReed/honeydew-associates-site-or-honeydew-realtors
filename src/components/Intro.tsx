@@ -3,12 +3,13 @@ import { introPortrait } from '@/config/pexels';
 import styles from './Intro.module.css';
 
 /**
- * Texas outline SVG with prominent Austin star
- * Large, dominant map element for the left column
+ * Texas outline SVG — Service Area badge
+ * Compact, intentional positioning with headline
  */
 function TexasMark() {
   return (
     <div className={styles.txMark}>
+      <span className={styles.txLabel}>Service Area</span>
       <svg
         viewBox="0 0 120 115"
         fill="none"
@@ -21,16 +22,16 @@ function TexasMark() {
           d="M3 3L3 45L15 45L15 65L3 65L3 90L22 112L54 112L63 102L70 112L115 112L118 90L102 65L102 45L90 30L90 3L3 3Z"
           className={styles.txOutline}
         />
-        {/* Austin ring (behind star) - enlarged */}
+        {/* Austin ring (behind star) */}
         <circle
           cx="54"
           cy="63"
-          r="18"
+          r="16"
           className={styles.txRing}
         />
-        {/* Austin star - scaled up ~40% */}
+        {/* Austin star - enlarged ~120% */}
         <path
-          d="M54 48L58 59L69 59L61 67L64 78L54 71L44 78L47 67L39 59L50 59L54 48Z"
+          d="M54 46L59 58L71 58L62 67L65 80L54 72L43 80L46 67L37 58L49 58L54 46Z"
           className={styles.txStar}
         />
       </svg>
@@ -43,24 +44,32 @@ export default function Intro() {
   return (
     <section id="about" className={styles.intro}>
       <div className={`container ${styles.container}`}>
-        {/* Left column: Copy + Texas mark */}
+        {/* Left column: Copy block + Map badge */}
         <div className={styles.leftCol}>
-          <div className={styles.copy}>
-            <h2 className={styles.lead}>Built for Austin realtors.</h2>
-            <p className={styles.support}>
-              We handle the prep work so you can focus on closing.
-            </p>
+          {/* Top row: Copy + Map aligned */}
+          <div className={styles.topRow}>
+            <div className={styles.copy}>
+              <h2 className={styles.lead}>Built for Austin realtors.</h2>
+              <p className={styles.support}>
+                We handle the prep work so you can focus on closing.
+              </p>
 
-            {/* Gold rule */}
-            <div className={styles.rule} aria-hidden="true" />
+              {/* Gold rule */}
+              <div className={styles.rule} aria-hidden="true" />
 
-            <p className={styles.echo}>
-              Listings that photograph clean, show confidently, and move faster.
-            </p>
+              <p className={styles.echo}>
+                Listings that photograph clean, show confidently, and move faster.
+              </p>
+            </div>
+
+            {/* Texas map — Service Area badge */}
+            <TexasMark />
           </div>
 
-          {/* Texas mark — dominant visual element */}
-          <TexasMark />
+          {/* Anchoring line */}
+          <p className={styles.anchor}>
+            Trusted by Austin agents for fast, repeat-ready turnarounds.
+          </p>
         </div>
 
         {/* Right column: Portrait + Scope preview */}
