@@ -1,6 +1,6 @@
 /* ============================================
    Intro — Lead + Echo with tension
-   3-line cadence, image overlap, gold rule
+   3-line cadence, image, Texas mark
    ============================================ */
 
 .intro {
@@ -61,6 +61,31 @@
   max-width: 400px;
 }
 
+/* ── Texas Map Mark ──────────────────────── */
+.txMark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.txSvg {
+  width: clamp(96px, 12vw, 140px);
+  height: auto;
+  color: var(--color-accent);
+  opacity: 0.85;
+}
+
+.txCaption {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
 /* ── Portrait column ──────────────────────── */
 .portrait {
   display: flex;
@@ -116,6 +141,15 @@
     max-width: 420px;
   }
 
+  .txMark {
+    align-items: flex-start;
+    margin-top: 24px;
+  }
+
+  .txSvg {
+    width: clamp(100px, 10vw, 160px);
+  }
+
   .portrait {
     flex: 0 0 36%;
     max-width: 36%;
@@ -163,6 +197,10 @@
     max-width: 460px;
   }
 
+  .txSvg {
+    width: 140px;
+  }
+
   .portrait {
     flex: 0 0 32%;
     max-width: 32%;
@@ -185,6 +223,10 @@
 
   .echo {
     font-size: 1.125rem;
+  }
+
+  .txSvg {
+    width: 160px;
   }
 
   .image {

@@ -1,11 +1,12 @@
 /* ============================================
    Gallery — Trifecta Lifestyle Grid
    Larger, more dominant vertical cards
-   Generous breathing room above/below
+   Pushed down from ABOUT section
    ============================================ */
 
 .gallery {
   background-color: var(--color-bg);
+  margin-top: clamp(64px, 10vh, 180px);
   padding: clamp(72px, 10vh, 160px) 0;
 }
 
@@ -56,6 +57,7 @@
 /* ===== Tablet (768px+) ===================== */
 @media (min-width: 768px) {
   .gallery {
+    margin-top: clamp(80px, 12vh, 180px);
     padding: clamp(80px, 12vh, 160px) 0;
   }
 
@@ -80,6 +82,7 @@
 /* ===== Desktop (1024px+) =================== */
 @media (min-width: 1024px) {
   .gallery {
+    margin-top: clamp(120px, 14vh, 180px);
     padding: clamp(120px, 14vh, 160px) 0;
   }
 
@@ -103,6 +106,7 @@
 /* ===== Large Desktop (1440px+) ============= */
 @media (min-width: 1440px) {
   .gallery {
+    margin-top: 180px;
     padding: 160px 0;
   }
 
