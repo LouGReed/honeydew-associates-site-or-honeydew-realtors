@@ -1,10 +1,10 @@
 /* ============================================
    TrustStrip — Operating System block
-   How we work + bullets + CTA
+   Tightly connected to lead content above
    ============================================ */
 
 .trustStrip {
-  padding: var(--space-lg) 0;
+  padding: clamp(24px, 4vh, 48px) 0 var(--space-lg);
   background-color: var(--color-bg);
 }
 
@@ -14,12 +14,12 @@
   gap: var(--space-sm);
 }
 
-/* ── Gold rule motif ──────────────────────── */
+/* ── Gold rule motif (shorter, less dominant) ── */
 .rule {
-  width: 48px;
+  width: 140px;
   height: 2px;
   background-color: var(--color-accent);
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 
 /* ── Label ─────────────────────────────────── */
@@ -53,40 +53,43 @@
   color: var(--color-accent);
 }
 
-/* ── CTA (part of system) ──────────────────── */
+/* ── CTA (enhanced presence) ───────────────── */
 .cta {
   display: inline-block;
   font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 0.875rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
   letter-spacing: 0.01em;
   color: var(--color-accent);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
   margin-top: var(--space-sm);
+  text-underline-offset: 4px;
 }
 
 .cta:hover {
   color: var(--color-accent-hover);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-hover);
 }
 
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
   .trustStrip {
-    padding: var(--space-xl) 0;
+    padding: clamp(32px, 5vh, 56px) 0 var(--space-lg);
   }
 
   .container {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--space-md) var(--space-xl);
+    gap: var(--space-sm) var(--space-lg);
   }
 
   .rule {
-    width: 56px;
+    width: 180px;
     flex: 0 0 100%;
-    margin-bottom: 0;
+    margin-bottom: var(--space-xs);
   }
 
   .label {
@@ -98,13 +101,14 @@
     flex: 1;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 4px 28px;
+    gap: 4px 24px;
     margin: 0;
   }
 
   .cta {
     flex: 0 0 auto;
     margin-top: 0;
+    margin-left: var(--space-md);
     font-size: 0.9375rem;
   }
 }
@@ -112,11 +116,11 @@
 /* ===== Desktop (1024px+) ===== */
 @media (min-width: 1024px) {
   .trustStrip {
-    padding: var(--space-lg) 0;
+    padding: clamp(40px, 5vh, 64px) 0 var(--space-lg);
   }
 
   .rule {
-    width: 64px;
+    width: 200px;
   }
 
   .label {
@@ -125,10 +129,11 @@
 
   .list {
     font-size: 1rem;
-    gap: 4px 40px;
+    gap: 4px 32px;
   }
 
   .cta {
     font-size: 1rem;
+    margin-left: var(--space-lg);
   }
 }
