@@ -1,20 +1,18 @@
 /* ============================================
-   Gallery — Cinematic contained sequence
-   Nearly full-width, narrow deliberate margins,
-   tight vertical flow, no rounded corners
+   Gallery — Curated paired moment
+   Contained, refined, full aspect ratio
    ============================================ */
 
 .gallery {
   background-color: var(--color-bg);
-  padding: var(--space-lg) 0;
+  padding: var(--space-lg) 0 var(--space-md);
 }
 
 .inner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  padding-left: max(var(--container-padding), 3vw);
-  padding-right: max(var(--container-padding), 3vw);
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
 /* ── Panel ─────────────────────────────────── */
@@ -27,78 +25,79 @@
   display: block;
   width: 100%;
   height: auto;
-  object-fit: cover;
-  object-position: center;
 }
 
-/* ── Pexels separator: subtle breathing room ─ */
+/* ── Pexels separator ─────────────────────── */
 .separator {
-  padding: var(--space-sm) 0;
+  /* No extra padding needed */
 }
 
 /* ── Two-fecta: side-by-side vertical pair ─── */
 .twoFecta {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 16px;
 }
 
 .twoFectaImage {
   display: block;
   width: 100%;
   height: auto;
-  object-fit: cover;
-  object-position: center;
-  aspect-ratio: 4 / 5;
+  border-radius: 8px;
 }
 
 /* ===== Tablet (768px+) ===================== */
 @media (min-width: 768px) {
   .gallery {
-    padding: var(--space-xl) 0;
+    padding: var(--space-xl) 0 var(--space-lg);
   }
 
   .inner {
-    gap: var(--space-md);
-  }
-
-  .separator {
-    padding: var(--space-md) 0;
+    max-width: 900px;
   }
 
   .twoFecta {
     flex-direction: row;
-    gap: var(--space-md);
+    gap: 24px;
   }
 
   .twoFectaImage {
     flex: 1;
     min-width: 0;
+    border-radius: 10px;
   }
 }
 
 /* ===== Desktop (1024px+) =================== */
 @media (min-width: 1024px) {
   .gallery {
-    padding: var(--space-2xl) 0;
+    padding: var(--space-xl) 0 var(--space-lg);
   }
 
   .inner {
-    gap: var(--space-lg);
-  }
-
-  .separator {
-    padding: var(--space-md) 0;
+    max-width: 1080px;
   }
 
   .twoFecta {
-    gap: var(--space-lg);
+    gap: 28px;
+  }
+
+  .twoFectaImage {
+    border-radius: 10px;
   }
 }
 
 /* ===== Large Desktop (1440px+) ============= */
 @media (min-width: 1440px) {
   .inner {
-    gap: var(--space-xl);
+    max-width: 1120px;
+  }
+
+  .twoFecta {
+    gap: 32px;
+  }
+
+  .twoFectaImage {
+    border-radius: 12px;
   }
 }
