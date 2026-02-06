@@ -44,32 +44,29 @@ export default function Intro() {
   return (
     <section id="about" className={styles.intro}>
       <div className={`container ${styles.container}`}>
-        {/* Left column: Copy block + Map badge */}
+        {/* Left column: Copy + Map + Anchor + Section rule */}
         <div className={styles.leftCol}>
-          {/* Top row: Copy + Map aligned */}
-          <div className={styles.topRow}>
-            <div className={styles.copy}>
-              <h2 className={styles.lead}>Built for Austin realtors.</h2>
-              <p className={styles.support}>
-                We handle the prep work so you can focus on closing.
-              </p>
-
-              {/* Gold rule */}
-              <div className={styles.rule} aria-hidden="true" />
-
-              <p className={styles.echo}>
-                Listings that photograph clean, show confidently, and move faster.
-              </p>
-            </div>
-
-            {/* Texas map — Service Area badge */}
-            <TexasMark />
+          {/* Copy block */}
+          <div className={styles.copy}>
+            <h2 className={styles.lead}>Built for Austin realtors.</h2>
+            <p className={styles.support}>
+              We handle the prep work so you can focus on closing.
+            </p>
+            <p className={styles.echo}>
+              Listings that photograph clean, show confidently, and move faster.
+            </p>
           </div>
+
+          {/* Texas map — territorial stamp */}
+          <TexasMark />
 
           {/* Anchoring line */}
           <p className={styles.anchor}>
             Trusted by Austin agents for fast, repeat-ready turnarounds.
           </p>
+
+          {/* Section-ending rule — decisive boundary */}
+          <div className={styles.sectionRule} aria-hidden="true" />
         </div>
 
         {/* Right column: Portrait + Scope preview */}

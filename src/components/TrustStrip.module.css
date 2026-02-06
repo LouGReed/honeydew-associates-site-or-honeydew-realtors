@@ -1,32 +1,28 @@
 /* ============================================
-   TrustStrip — Operating System block
-   Tightly connected to lead content above
+   TrustStrip — Operating System bridge
+   Compressed, intentional transition
    ============================================ */
 
 .trustStrip {
-  padding: clamp(16px, 3vh, 32px) 0 var(--space-lg);
+  padding: clamp(12px, 2vh, 20px) 0 clamp(12px, 2vh, 20px);
   background-color: var(--color-bg);
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
-/* ── Gold rule motif (shorter, slightly muted) ── */
+/* ── Gold rule — removed, section rule above handles this ── */
 .rule {
-  width: 140px;
-  height: 2px;
-  background-color: var(--color-accent);
-  opacity: 0.85;
-  margin-bottom: 6px;
+  display: none;
 }
 
 /* ── Label ─────────────────────────────────── */
 .label {
   font-family: var(--font-sans);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -77,20 +73,14 @@
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
   .trustStrip {
-    padding: clamp(20px, 4vh, 40px) 0 var(--space-lg);
+    padding: clamp(14px, 2.5vh, 24px) 0 clamp(14px, 2.5vh, 24px);
   }
 
   .container {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    gap: 6px var(--space-md);
-  }
-
-  .rule {
-    width: 180px;
-    flex: 0 0 100%;
-    margin-bottom: 4px;
+    gap: 4px var(--space-md);
   }
 
   .label {
@@ -117,11 +107,7 @@
 /* ===== Desktop (1024px+) ===== */
 @media (min-width: 1024px) {
   .trustStrip {
-    padding: clamp(24px, 4vh, 48px) 0 var(--space-lg);
-  }
-
-  .rule {
-    width: 200px;
+    padding: clamp(16px, 2.5vh, 28px) 0 clamp(16px, 2.5vh, 28px);
   }
 
   .label {

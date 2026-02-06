@@ -1,17 +1,17 @@
 /* ============================================
    Intro — Authored ABOUT section
-   Copy + Service Area badge + Anchoring line
+   Decisive ending with territorial map stamp
    ============================================ */
 
 .intro {
-  padding: var(--space-xl) 0 var(--space-xs);
+  padding: var(--space-lg) 0 0;
   background-color: var(--color-bg);
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  gap: var(--space-md);
 }
 
 /* ── Left Column ─────────────────────────── */
@@ -20,16 +20,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: var(--space-md);
-}
-
-/* ── Top Row: Copy + Map ─────────────────── */
-.topRow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-md);
-  width: 100%;
+  gap: 8px;
 }
 
 /* ── Copy block ──────────────────────────── */
@@ -37,6 +28,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 4px;
 }
 
 .lead {
@@ -52,57 +44,42 @@
 .support {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   line-height: 1.35;
   color: var(--color-text);
-  margin-top: 6px;
-}
-
-.rule {
-  width: 48px;
-  height: 2px;
-  background-color: var(--color-accent);
-  margin: 12px 0;
+  margin-top: 4px;
 }
 
 .echo {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   line-height: 1.45;
   color: var(--color-text-secondary);
-  max-width: 380px;
+  max-width: 340px;
+  margin-top: 6px;
 }
 
-/* ── Anchoring Line ─────────────────────── */
-.anchor {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: var(--color-text-muted);
-  margin: 0;
-}
-
-/* ── Texas Mark — Service Area Badge ─────── */
+/* ── Texas Mark — Territorial Stamp ──────── */
 .txMark {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
+  margin-top: -4px;
 }
 
 .txLabel {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 0.625rem;
+  font-size: 0.5625rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-oak-green);
 }
 
 .txSvg {
-  width: 140px;
+  width: 160px;
   height: auto;
 }
 
@@ -128,11 +105,29 @@
 .txCaption {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 0.625rem;
+  font-size: 0.5625rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-oak-green);
-  margin-top: 2px;
+  margin-top: 0;
+}
+
+/* ── Anchoring Line ─────────────────────── */
+.anchor {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ── Section-ending Rule — Decisive ──────── */
+.sectionRule {
+  width: 180px;
+  height: 3px;
+  background-color: #9A7829;
+  margin-top: 8px;
 }
 
 /* ── Right Column ────────────────────────── */
@@ -194,32 +189,25 @@
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
   .intro {
-    padding: var(--space-xl) 0 var(--space-sm);
+    padding: var(--space-xl) 0 0;
   }
 
   .container {
     flex-direction: row;
     align-items: flex-start;
-    gap: var(--space-2xl);
+    gap: var(--space-xl);
   }
 
   .leftCol {
     flex: 1;
     align-items: flex-start;
     text-align: left;
-    gap: var(--space-sm);
-  }
-
-  .topRow {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: var(--space-lg);
+    gap: 6px;
   }
 
   .copy {
     align-items: flex-start;
-    flex: 1;
+    gap: 2px;
   }
 
   .lead {
@@ -228,44 +216,46 @@
 
   .support {
     font-size: 1.125rem;
-    margin-top: 6px;
-  }
-
-  .rule {
-    width: 56px;
-    margin: 10px 0;
+    margin-top: 4px;
   }
 
   .echo {
     font-size: 0.9375rem;
-    max-width: 360px;
+    max-width: 380px;
+    margin-top: 8px;
+  }
+
+  .txMark {
+    align-items: flex-start;
+    margin-top: -8px;
+  }
+
+  .txLabel {
+    font-size: 0.5625rem;
+  }
+
+  .txSvg {
+    width: 150px;
+  }
+
+  .txCaption {
+    font-size: 0.5625rem;
   }
 
   .anchor {
     font-size: 0.8125rem;
     color: var(--color-oak-green);
+    margin-top: 2px;
   }
 
-  .txMark {
-    align-items: flex-start;
-    flex-shrink: 0;
-  }
-
-  .txLabel {
-    font-size: 0.625rem;
-  }
-
-  .txSvg {
-    width: 130px;
-  }
-
-  .txCaption {
-    font-size: 0.625rem;
+  .sectionRule {
+    width: 200px;
+    margin-top: 10px;
   }
 
   .rightCol {
-    flex: 0 0 36%;
-    max-width: 36%;
+    flex: 0 0 34%;
+    max-width: 34%;
     align-items: flex-start;
     padding-top: 0;
   }
@@ -289,11 +279,15 @@
 /* ===== Desktop (1024px+) ===== */
 @media (min-width: 1024px) {
   .intro {
-    padding: var(--space-2xl) 0 var(--space-xs);
+    padding: var(--space-xl) 0 0;
   }
 
   .container {
-    gap: var(--space-3xl);
+    gap: var(--space-2xl);
+  }
+
+  .leftCol {
+    gap: 8px;
   }
 
   .lead {
@@ -303,39 +297,43 @@
 
   .support {
     font-size: 1.25rem;
-    margin-top: 8px;
-  }
-
-  .rule {
-    width: 64px;
-    margin: 12px 0;
+    margin-top: 6px;
   }
 
   .echo {
     font-size: 1rem;
     max-width: 420px;
+    margin-top: 10px;
+  }
+
+  .txMark {
+    margin-top: -12px;
+  }
+
+  .txLabel {
+    font-size: 0.625rem;
+  }
+
+  .txSvg {
+    width: 175px;
+  }
+
+  .txCaption {
+    font-size: 0.625rem;
   }
 
   .anchor {
     font-size: 0.875rem;
   }
 
-  .txLabel {
-    font-size: 0.6875rem;
-    letter-spacing: 0.1em;
-  }
-
-  .txSvg {
-    width: 150px;
-  }
-
-  .txCaption {
-    font-size: 0.6875rem;
+  .sectionRule {
+    width: 220px;
+    margin-top: 12px;
   }
 
   .rightCol {
-    flex: 0 0 34%;
-    max-width: 34%;
+    flex: 0 0 32%;
+    max-width: 32%;
   }
 
   .scopeItem {
@@ -363,7 +361,11 @@
   }
 
   .txSvg {
-    width: 170px;
+    width: 200px;
+  }
+
+  .sectionRule {
+    width: 240px;
   }
 
   .image {
