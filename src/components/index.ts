@@ -10,6 +10,5 @@ export { default as CtaBand } from './CtaBand';
 export { default as EditorialImage } from './EditorialImage';
 export { default as Validation } from './Validation';
 export { default as ImageBand } from './ImageBand';
-export { default as PostValidationBand } from './PostValidationBand';
 export { default as BookingSection } from './BookingSection';
 export { default as Footer } from './Footer';

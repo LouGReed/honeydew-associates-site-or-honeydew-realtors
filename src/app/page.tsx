@@ -8,7 +8,6 @@ import {
   Process,
   ImageBand,
   Validation,
-  PostValidationBand,
   BookingSection,
 } from '@/components';
 
@@ -42,10 +41,7 @@ export default function HomePage() {
       {/* Validation — Trust signals */}
       <Validation />
 
-      {/* Editorial break — Family BBQ */}
-      <PostValidationBand />
-
-      {/* Booking — Final CTA */}
+      {/* Booking — Final CTA with BBQ image */}
       <BookingSection />
     </>
   );
