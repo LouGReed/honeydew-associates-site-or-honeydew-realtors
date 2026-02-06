@@ -78,16 +78,15 @@
   max-width: 540px;
 }
 
-/* ── Eyebrow — Flat, readable, no shadow ───────────────────────────────── */
+/* ── Eyebrow — Pure white, flat, no effects ───────────────────────────── */
 .eyebrow {
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
+  color: #fff;
   margin-bottom: 4px;
-  /* No text-shadow, no background — flat and clean */
 }
 
 /* ── Headline — Canela Bold, editorial dominance ─────────── */
