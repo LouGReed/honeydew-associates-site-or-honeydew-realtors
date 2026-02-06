@@ -64,22 +64,23 @@
 .txMark {
   display: inline-flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  margin-top: -4px;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 4px;
+  transform-origin: top left;
 }
 
 .txLabel {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 0.5625rem;
+  font-size: 0.625rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-oak-green);
 }
 
 .txSvg {
-  width: 160px;
+  width: min(420px, 90vw);
   height: auto;
 }
 
@@ -227,19 +228,19 @@
 
   .txMark {
     align-items: flex-start;
-    margin-top: -8px;
+    margin-top: 8px;
   }
 
   .txLabel {
-    font-size: 0.5625rem;
+    font-size: 0.6875rem;
   }
 
   .txSvg {
-    width: 150px;
+    width: min(380px, 50vw);
   }
 
   .txCaption {
-    font-size: 0.5625rem;
+    font-size: 0.6875rem;
   }
 
   .anchor {
@@ -307,19 +308,19 @@
   }
 
   .txMark {
-    margin-top: -12px;
+    margin-top: 12px;
   }
 
   .txLabel {
-    font-size: 0.625rem;
+    font-size: 0.75rem;
   }
 
   .txSvg {
-    width: 175px;
+    width: min(460px, 45vw);
   }
 
   .txCaption {
-    font-size: 0.625rem;
+    font-size: 0.75rem;
   }
 
   .anchor {
@@ -361,7 +362,7 @@
   }
 
   .txSvg {
-    width: 200px;
+    width: min(520px, 42vw);
   }
 
   .sectionRule {

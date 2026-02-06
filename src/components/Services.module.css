@@ -2,12 +2,112 @@
    Services — 2-column layout with CTA
    Left: headline + grid + CTA
    Right: constrained image
+   Mobile: compact cards, full-width CTA
    ============================================ */
 
 .services {
   position: relative;
   padding: 72px 0 var(--space-xl);
   background-color: var(--color-bg);
+}
+
+/* ===== Mobile (max-width: 767px) =========== */
+@media (max-width: 767px) {
+  .services {
+    padding: 48px 0 32px;
+  }
+
+  .ruleContainer {
+    margin-bottom: var(--space-md);
+  }
+
+  .header {
+    margin-bottom: var(--space-md);
+  }
+
+  .thesis {
+    font-size: 0.8125rem;
+    margin-bottom: 4px;
+  }
+
+  .headline {
+    margin-top: var(--space-sm);
+    gap: 0;
+  }
+
+  .headlineCanela {
+    font-size: 1.5rem;
+    line-height: 1.12;
+  }
+
+  .headlineEcho {
+    font-size: 1rem;
+    margin-top: 4px;
+  }
+
+  .scopeLabel {
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Card styling for mobile */
+  .grid {
+    gap: 12px;
+  }
+
+  .card {
+    padding: 14px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background-color: transparent;
+  }
+
+  .card:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cardNumber {
+    font-size: 0.6875rem;
+    margin-bottom: 4px;
+    opacity: 0.8;
+  }
+
+  .cardTitle {
+    font-size: 0.9375rem;
+    margin-bottom: 4px;
+  }
+
+  .cardDescription {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    max-width: 32ch;
+  }
+
+  /* Full-width CTA on mobile */
+  .ctaWrap {
+    margin-top: 24px;
+  }
+
+  .ctaWrap .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Full-width image on mobile */
+  .figure {
+    margin-top: 8px;
+  }
+
+  .figureImage {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .figureCaption {
+    font-size: 0.6875rem;
+    text-align: left;
+    padding: 0 4px;
+  }
 }
 
 /* ── Top gold rule separator ───────────────── */
