@@ -1,11 +1,11 @@
 /* ============================================
    Intro — Authored ABOUT section
-   Lead copy + Principles + Texas mark
+   Lead copy + Large Texas mark
    Scope preview under image
    ============================================ */
 
 .intro {
-  padding: var(--space-xl) 0 var(--space-md);
+  padding: var(--space-xl) 0 var(--space-sm);
   background-color: var(--color-bg);
 }
 
@@ -65,64 +65,17 @@
   max-width: 400px;
 }
 
-/* ── Operating Principles ────────────────── */
-.principles {
-  margin-top: var(--space-lg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.principlesRule {
-  width: 40px;
-  height: 1px;
-  background-color: var(--color-accent);
-  opacity: 0.6;
-  margin-bottom: 4px;
-}
-
-.principlesLabel {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 0.625rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
-.principlesList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 0.8125rem;
-  line-height: 1.45;
-  color: var(--color-text-secondary);
-}
-
-.principlesList li::before {
-  content: '•';
-  margin-right: 8px;
-  color: var(--color-accent);
-  opacity: 0.7;
-}
-
-/* ── Texas Mark ──────────────────────────── */
+/* ── Texas Mark — Dominant Visual ────────── */
 .txMark {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  margin-top: var(--space-lg);
+  gap: 12px;
+  margin-top: var(--space-md);
 }
 
 .txSvg {
-  width: clamp(130px, 16vw, 170px);
+  width: min(280px, 85%);
   height: auto;
 }
 
@@ -149,9 +102,9 @@
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.6875rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-oak-green);
 }
 
 /* ── Right Column ────────────────────────── */
@@ -198,14 +151,14 @@
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.8125rem;
-  color: var(--color-accent);
+  color: var(--color-oak-green);
   text-decoration: none;
   margin-top: 8px;
   transition: color 0.2s ease;
 }
 
 .scopeCta:hover {
-  color: var(--color-accent-hover);
+  color: var(--color-oak-green-hover);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -213,7 +166,7 @@
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
   .intro {
-    padding: var(--space-2xl) 0 var(--space-lg);
+    padding: var(--space-2xl) 0 var(--space-md);
   }
 
   .container {
@@ -250,21 +203,17 @@
     max-width: 420px;
   }
 
-  .principles {
-    align-items: flex-start;
-    margin-top: var(--space-xl);
-  }
-
-  .principlesList {
-    font-size: 0.875rem;
-  }
-
   .txMark {
     align-items: flex-start;
+    margin-top: var(--space-lg);
   }
 
   .txSvg {
-    width: clamp(140px, 14vw, 180px);
+    width: min(320px, 90%);
+  }
+
+  .txCaption {
+    font-size: 0.75rem;
   }
 
   .rightCol {
@@ -292,7 +241,7 @@
 /* ===== Desktop (1024px+) ===== */
 @media (min-width: 1024px) {
   .intro {
-    padding: var(--space-2xl) 0 var(--space-md);
+    padding: var(--space-2xl) 0 var(--space-sm);
   }
 
   .container {
@@ -318,17 +267,12 @@
     max-width: 460px;
   }
 
-  .principlesLabel {
-    font-size: 0.6875rem;
-  }
-
-  .principlesList {
-    font-size: 0.9375rem;
-    gap: 4px;
+  .txMark {
+    margin-top: var(--space-lg);
   }
 
   .txSvg {
-    width: 170px;
+    width: min(360px, 90%);
   }
 
   .rightCol {
@@ -360,7 +304,7 @@
   }
 
   .txSvg {
-    width: 190px;
+    width: min(400px, 90%);
   }
 
   .image {

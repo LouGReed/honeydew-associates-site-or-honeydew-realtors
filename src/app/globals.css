@@ -45,6 +45,7 @@
   --color-accent: #A6822F;
   --color-accent-hover: #8F6F24;
   --color-oak-green: #1F3B2D;
+  --color-oak-green-hover: #173024;
   --color-border: rgba(26, 24, 22, 0.08);
   --color-border-strong: rgba(26, 24, 22, 0.15);
 
@@ -296,8 +297,8 @@ button {
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  min-height: 52px;
-  padding: 18px 36px;
+  min-height: 56px;
+  padding: 20px 40px;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.875rem;
@@ -310,10 +311,6 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-.btn-primary:hover {
-  transform: translateY(-1px);
-}
-
 .btn-primary {
   background-color: var(--color-accent);
   color: #fff;
@@ -321,11 +318,28 @@ button {
 
 .btn-primary:hover {
   background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
 }
 
 .btn-primary:focus-visible {
   outline: none;
   box-shadow: var(--focus-ring);
+}
+
+/* Header-only green CTA variant */
+.btn-header {
+  background-color: var(--color-oak-green);
+  color: #fff;
+}
+
+.btn-header:hover {
+  background-color: var(--color-oak-green-hover);
+  transform: translateY(-1px);
+}
+
+.btn-header:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent);
 }
 
 .btn-ghost {
@@ -503,9 +517,9 @@ strong, b {
   }
 
   .btn {
-    padding: 18px 36px;
+    padding: 20px 40px;
     font-size: 0.875rem;
-    min-height: 52px;
+    min-height: 56px;
   }
 }
 

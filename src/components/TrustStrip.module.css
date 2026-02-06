@@ -60,7 +60,7 @@
   font-weight: 600;
   font-size: 0.9375rem;
   letter-spacing: 0.01em;
-  color: var(--color-accent);
+  color: var(--color-oak-green);
   text-decoration: none;
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
   margin-top: var(--space-sm);
@@ -68,9 +68,9 @@
 }
 
 .cta:hover {
-  color: var(--color-accent-hover);
+  color: var(--color-oak-green-hover);
   text-decoration: underline;
-  text-decoration-color: var(--color-accent-hover);
+  text-decoration-color: var(--color-oak-green-hover);
 }
 
 /* ===== Tablet (768px+) ===== */

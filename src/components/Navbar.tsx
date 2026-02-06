@@ -115,7 +115,7 @@ export default function Navbar() {
           <div className={styles.actions}>
             <a
               href={siteConfig.housecallProUrl}
-              className={`btn btn-primary ${styles.ctaBtn}`}
+              className={`btn btn-primary btn-header ${styles.ctaBtn}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -162,7 +162,7 @@ export default function Navbar() {
           ))}
           <a
             href={siteConfig.housecallProUrl}
-            className={`btn btn-primary ${styles.mobileCta}`}
+            className={`btn btn-primary btn-header ${styles.mobileCta}`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleNavClick}
