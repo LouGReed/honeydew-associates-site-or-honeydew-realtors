@@ -34,8 +34,8 @@ export const introPortrait: PexelImage = {
   orientation: 'vertical',
 };
 
-/** Gallery two-fecta — left (vertical) */
-export const twoFectaLeft: PexelImage = {
+/** Gallery trifecta — left (vertical) */
+export const trifectaLeft: PexelImage = {
   src: `${FAV}/fatherandkidsplaying.jpg`,
   alt: 'Father and kids playing at home',
   width: 2274,
@@ -43,13 +43,22 @@ export const twoFectaLeft: PexelImage = {
   orientation: 'vertical',
 };
 
-/** Gallery two-fecta — right (vertical) */
-export const twoFectaRight: PexelImage = {
+/** Gallery trifecta — center (vertical) */
+export const trifectaCenter: PexelImage = {
   src: `${FAV}/grillingfood.jpg`,
   alt: 'Grilling food outdoors',
   width: 5461,
   height: 8192,
   orientation: 'vertical',
+};
+
+/** Gallery trifecta — right (horizontal) */
+export const trifectaRight: PexelImage = {
+  src: `${BASE_PATH}/img/pexels/gallery-karpovich-full.jpg`,
+  alt: 'Family relaxing at home',
+  width: 6720,
+  height: 4480,
+  orientation: 'horizontal',
 };
 
 /** Post-validation — family BBQ editorial break */
