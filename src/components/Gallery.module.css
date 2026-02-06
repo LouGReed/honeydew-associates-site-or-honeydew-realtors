@@ -5,7 +5,7 @@
 
 .gallery {
   background-color: var(--color-bg);
-  padding: var(--space-xl) 0;
+  padding: var(--space-lg) 0 var(--space-md);
 }
 
 .inner {
@@ -24,10 +24,10 @@
 }
 
 /* ── Card Frame ────────────────────────────── */
+/* All cards share the same vertical aspect ratio */
 .card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  aspect-ratio: 2 / 3;
   background: transparent;
   border-radius: 8px;
   overflow: hidden;
@@ -37,27 +37,25 @@
 .image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   border-radius: 8px;
 }
 
-/* ── Third Image: Vertical Crop Frame ──────── */
-/* Crops horizontal image to vertical, centering the girl */
+/* ── Third Image: Center both kids ─────────── */
 .cardCropped {
-  aspect-ratio: 2 / 3;
+  /* Same aspect ratio as others */
 }
 
 .imageCropped {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 55% center; /* Center on the girl */
+  object-position: 50% 40%; /* Center both kids in frame */
 }
 
 /* ===== Tablet (768px+) ===================== */
 @media (min-width: 768px) {
   .gallery {
-    padding: var(--space-2xl) 0;
+    padding: var(--space-xl) 0 var(--space-lg);
   }
 
   .trifecta {
@@ -72,14 +70,14 @@
   .image {
     border-radius: 10px;
   }
-
-  .imageCropped {
-    border-radius: 10px;
-  }
 }
 
 /* ===== Desktop (1024px+) =================== */
 @media (min-width: 1024px) {
+  .gallery {
+    padding: var(--space-xl) 0 var(--space-lg);
+  }
+
   .inner {
     max-width: 1120px;
   }
@@ -93,10 +91,6 @@
   }
 
   .image {
-    border-radius: 10px;
-  }
-
-  .imageCropped {
     border-radius: 10px;
   }
 }
@@ -116,10 +110,6 @@
   }
 
   .image {
-    border-radius: 12px;
-  }
-
-  .imageCropped {
     border-radius: 12px;
   }
 }
