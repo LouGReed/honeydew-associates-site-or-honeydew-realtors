@@ -4,7 +4,6 @@ import {
   TrustStrip,
   Gallery,
   Services,
-  CtaBand,
   Process,
   ImageBand,
   Validation,
@@ -26,11 +25,8 @@ export default function HomePage() {
       {/* Gallery — Lifestyle images */}
       <Gallery />
 
-      {/* Services — Cards + vertical Pexels sidebar */}
+      {/* Services — Cards + CTA + vertical Pexels sidebar */}
       <Services />
-
-      {/* Mid-page CTA — Decision point */}
-      <CtaBand />
 
       {/* Process — How it works */}
       <Process />

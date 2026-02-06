@@ -1,3 +1,4 @@
+import { siteConfig } from '@/config/site';
 import { servicesFigure } from '@/config/pexels';
 import styles from './Services.module.css';
 
@@ -27,18 +28,19 @@ const services = [
 export default function Services() {
   return (
     <section id="services" className={`snap-section ${styles.services}`}>
+      {/* Gold rule separator */}
+      <div className={`container ${styles.ruleContainer}`}>
+        <div className={styles.topRule} aria-hidden="true" />
+      </div>
+
       <div className={`container ${styles.container}`}>
-        {/* Header + Grid */}
+        {/* Left column: Header + Grid + CTA */}
         <div className={styles.main}>
           <header className={styles.header}>
-            {/* Thesis line */}
             <p className={styles.thesis}>
               Clean scope. Clean execution. Clean handoff.
             </p>
-
             <span className="eyebrow">What We Do</span>
-
-            {/* 3-line headline cadence */}
             <h2 className={styles.headline}>
               <span className={styles.headlineCanela}>Make-ready work</span>
               <span className={styles.headlineCanela}>that respects your timeline.</span>
@@ -46,7 +48,6 @@ export default function Services() {
             </h2>
           </header>
 
-          {/* Scope label */}
           <p className={styles.scopeLabel}>Typical scope for Austin listings</p>
 
           {/* 2x2 Confidence Grid */}
@@ -59,9 +60,21 @@ export default function Services() {
               </article>
             ))}
           </div>
+
+          {/* Mid-page CTA — after services grid */}
+          <div className={styles.ctaWrap}>
+            <a
+              href={siteConfig.housecallProUrl}
+              className="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Walkthrough
+            </a>
+          </div>
         </div>
 
-        {/* Side figure with overlap */}
+        {/* Right column: Image + Caption */}
         <figure className={styles.figure}>
           <img
             src={encodeURI(servicesFigure.src)}
