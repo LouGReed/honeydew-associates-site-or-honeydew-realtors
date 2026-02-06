@@ -1,15 +1,16 @@
 /* ============================================
    Gallery — Trifecta Lifestyle Grid
-   3-column premium layout, vertical images
+   Larger, more dominant vertical cards
+   Generous breathing room above/below
    ============================================ */
 
 .gallery {
   background-color: var(--color-bg);
-  padding: var(--space-lg) 0 var(--space-md);
+  padding: 56px 0 64px;
 }
 
 .inner {
-  max-width: 1160px;
+  max-width: 92vw;
   width: 100%;
   margin: 0 auto;
   padding: 0 var(--container-padding);
@@ -19,7 +20,7 @@
 .trifecta {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
+  gap: 20px;
   align-items: start;
 }
 
@@ -55,12 +56,16 @@
 /* ===== Tablet (768px+) ===================== */
 @media (min-width: 768px) {
   .gallery {
-    padding: var(--space-xl) 0 var(--space-lg);
+    padding: 72px 0 80px;
+  }
+
+  .inner {
+    max-width: 90vw;
   }
 
   .trifecta {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 24px;
   }
 
   .card {
@@ -75,15 +80,15 @@
 /* ===== Desktop (1024px+) =================== */
 @media (min-width: 1024px) {
   .gallery {
-    padding: var(--space-xl) 0 var(--space-lg);
+    padding: 96px 0 104px;
   }
 
   .inner {
-    max-width: 1120px;
+    max-width: 1240px;
   }
 
   .trifecta {
-    gap: 24px;
+    gap: 28px;
   }
 
   .card {
@@ -97,12 +102,16 @@
 
 /* ===== Large Desktop (1440px+) ============= */
 @media (min-width: 1440px) {
+  .gallery {
+    padding: 112px 0 120px;
+  }
+
   .inner {
-    max-width: 1180px;
+    max-width: 1320px;
   }
 
   .trifecta {
-    gap: 28px;
+    gap: 32px;
   }
 
   .card {
