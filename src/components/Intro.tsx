@@ -5,12 +5,22 @@ export default function Intro() {
   return (
     <section id="about" className={styles.intro}>
       <div className={`container ${styles.container}`}>
+        {/* 3-line lead + echo stack */}
         <div className={styles.copy}>
-          <p className={styles.text}>
-            Built for Austin realtors who want their listings to shine from day one.
-            We handle the prep work so you can focus on what you do best—closing deals.
+          <h2 className={styles.lead}>Built for Austin realtors.</h2>
+          <p className={styles.support}>
+            We handle the prep work so you can focus on closing.
+          </p>
+
+          {/* Gold rule motif */}
+          <div className={styles.rule} aria-hidden="true" />
+
+          <p className={styles.echo}>
+            Listings that photograph clean, show confidently, and move faster.
           </p>
         </div>
+
+        {/* Portrait with overlap */}
         <div className={styles.portrait}>
           <img
             src={encodeURI(introPortrait.src)}

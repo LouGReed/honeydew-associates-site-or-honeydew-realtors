@@ -1,90 +1,192 @@
 /* ============================================
-   Intro — Two-column editorial (copy + portrait)
+   Intro — Lead + Echo with tension
+   3-line cadence, image overlap, gold rule
    ============================================ */
 
 .intro {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-xl) 0 var(--space-lg);
   background-color: var(--color-bg);
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2xl);
+  gap: var(--space-lg);
 }
 
 /* ── Copy column ──────────────────────────── */
 .copy {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 
-.text {
-  max-width: 640px;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  text-align: center;
+/* Line 1: Canela Bold, larger */
+.lead {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: var(--color-text);
+  margin: 0;
+}
+
+/* Line 2: Neue Montreal Medium */
+.support {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  margin-top: 8px;
+}
+
+/* Gold rule motif */
+.rule {
+  width: 56px;
+  height: 2px;
+  background-color: var(--color-accent);
+  margin: var(--space-md) 0;
+}
+
+/* Line 3: Neue Montreal Regular, smaller/subtle */
+.echo {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  max-width: 400px;
 }
 
 /* ── Portrait column ──────────────────────── */
 .portrait {
   display: flex;
   justify-content: center;
+  margin-top: var(--space-sm);
 }
 
 .image {
   display: block;
   width: 100%;
-  max-width: 400px;
+  max-width: 340px;
   height: auto;
   object-fit: cover;
   object-position: center;
+  border-radius: 8px;
 }
 
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
   .intro {
-    padding: var(--space-4xl) 0;
+    padding: var(--space-2xl) 0 var(--space-xl);
   }
 
   .container {
     flex-direction: row;
     align-items: center;
-    gap: var(--space-3xl);
+    gap: var(--space-2xl);
   }
 
   .copy {
     flex: 1;
-  }
-
-  .text {
-    font-size: 1.5rem;
-    max-width: 480px;
+    align-items: flex-start;
     text-align: left;
   }
 
+  .lead {
+    font-size: 2.25rem;
+  }
+
+  .support {
+    font-size: 1.25rem;
+    margin-top: 10px;
+  }
+
+  .rule {
+    width: 64px;
+    margin: var(--space-md) 0;
+  }
+
+  .echo {
+    font-size: 1rem;
+    max-width: 420px;
+  }
+
   .portrait {
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 38%;
+    max-width: 38%;
+    margin-top: 0;
   }
 
   .image {
     max-width: 100%;
     aspect-ratio: 3 / 4;
+    border-radius: 10px;
   }
 }
 
 /* ===== Desktop (1024px+) ===== */
 @media (min-width: 1024px) {
-  .text {
-    font-size: 1.75rem;
-    max-width: 520px;
+  .intro {
+    padding: var(--space-2xl) 0 var(--space-xl);
+  }
+
+  .container {
+    gap: var(--space-3xl);
+  }
+
+  .lead {
+    font-size: 2.75rem;
+    letter-spacing: -0.025em;
+  }
+
+  .support {
+    font-size: 1.375rem;
+    margin-top: 12px;
+  }
+
+  .rule {
+    width: 72px;
+  }
+
+  .echo {
+    font-size: 1.0625rem;
+    max-width: 460px;
   }
 
   .portrait {
-    flex: 0 0 36%;
-    max-width: 36%;
+    flex: 0 0 34%;
+    max-width: 34%;
+    margin-top: -28px; /* Overlap effect */
+  }
+
+  .image {
+    border-radius: 10px;
+  }
+}
+
+/* ===== Large Desktop (1440px+) ===== */
+@media (min-width: 1440px) {
+  .lead {
+    font-size: 3rem;
+  }
+
+  .support {
+    font-size: 1.5rem;
+  }
+
+  .echo {
+    font-size: 1.125rem;
+  }
+
+  .portrait {
+    margin-top: -32px;
+  }
+
+  .image {
+    border-radius: 12px;
   }
 }
