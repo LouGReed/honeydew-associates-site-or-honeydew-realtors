@@ -1,13 +1,33 @@
 /* ============================================
    HONEYDEW DESIGN SYSTEM
-   Warm editorial aesthetic, single-weight typography
-   Font: Telegraf Regular 400
+   Dual-font editorial aesthetic
+   Headings: Canela (serif)
+   Body/UI: Neue Montreal (sans-serif)
    ============================================ */
 
-/* ----- Font Face ----- */
+/* ----- Font Faces ----- */
+/* Canela Display - Bold for H1 */
 @font-face {
-  font-family: 'Telegraf';
-  src: url('/honeydew-associates-site-or-honeydew-realtors/fonts/telegraf/TelegrafRegular_272984568a25d8528fe2de8b20b29011.otf') format('opentype');
+  font-family: 'Canela';
+  src: url('/honeydew-associates-site-or-honeydew-realtors/fonts/canela-text-trial/Canela-Bold-Trial.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Canela Display - Medium for H2/H3 */
+@font-face {
+  font-family: 'Canela';
+  src: url('/honeydew-associates-site-or-honeydew-realtors/fonts/canela-text-trial/Canela-Medium-Trial.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Canela Display - Regular */
+@font-face {
+  font-family: 'Canela';
+  src: url('/honeydew-associates-site-or-honeydew-realtors/fonts/canela-text-trial/Canela-Regular-Trial.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -22,8 +42,8 @@
   --color-text: #1A1816;
   --color-text-secondary: #4A4642;
   --color-text-muted: #7A756E;
-  --color-accent: #B8923D;
-  --color-accent-hover: #A6822F;
+  --color-accent: #A6822F;
+  --color-accent-hover: #8F6F24;
   --color-border: rgba(26, 24, 22, 0.08);
   --color-border-strong: rgba(26, 24, 22, 0.15);
 
@@ -31,9 +51,9 @@
   --color-footer-bg: #1A1816;
   --color-footer-text: #F2EDE4;
 
-  /* Typography */
-  --font-primary: 'Telegraf', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  --font-weight: 400;
+  /* Typography - Dual Font System */
+  --font-display: 'Canela', Georgia, 'Times New Roman', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
   /* Spacing */
   --space-xs: 4px;
@@ -121,8 +141,8 @@ html {
 }
 
 body {
-  font-family: var(--font-primary);
-  font-weight: var(--font-weight);
+  font-family: var(--font-sans);
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-text);
@@ -186,52 +206,57 @@ section[id] {
 }
 
 /* ----- Typography Scale ----- */
-/* ALL weights are 400. Hierarchy through size, letter-spacing, line-height. */
+/* Canela for headings, system sans for body/UI */
 
 h1, .h1 {
+  font-family: var(--font-display);
   font-size: 2rem;
-  font-weight: var(--font-weight);
-  line-height: 1.1;
-  letter-spacing: -0.025em;
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
   color: var(--color-text);
 }
 
 h2, .h2 {
+  font-family: var(--font-display);
   font-size: 1.5rem;
-  font-weight: var(--font-weight);
-  line-height: 1.2;
+  font-weight: 500;
+  line-height: 1.15;
   letter-spacing: -0.015em;
   color: var(--color-text);
 }
 
 h3, .h3 {
+  font-family: var(--font-display);
   font-size: 1.125rem;
-  font-weight: var(--font-weight);
-  line-height: 1.3;
+  font-weight: 500;
+  line-height: 1.25;
   letter-spacing: -0.01em;
   color: var(--color-text);
 }
 
 p, .body {
+  font-family: var(--font-sans);
   font-size: 1rem;
-  font-weight: var(--font-weight);
+  font-weight: 400;
   line-height: 1.7;
   color: var(--color-text-secondary);
 }
 
 .eyebrow {
+  font-family: var(--font-sans);
   font-size: 0.6875rem;
-  font-weight: var(--font-weight);
-  letter-spacing: 0.14em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-variant: small-caps;
   color: var(--color-text-muted);
   line-height: 1.4;
 }
 
 .body-sm {
+  font-family: var(--font-sans);
   font-size: 0.875rem;
-  font-weight: var(--font-weight);
+  font-weight: 400;
   line-height: 1.65;
   color: var(--color-text-secondary);
 }
@@ -251,8 +276,8 @@ img {
 
 /* ----- Buttons ----- */
 button, input, select, textarea {
-  font-family: inherit;
-  font-weight: var(--font-weight);
+  font-family: var(--font-sans);
+  font-weight: 400;
   font-size: inherit;
   line-height: inherit;
   color: inherit;
@@ -270,12 +295,12 @@ button {
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  min-height: 48px;
-  padding: 16px 32px;
-  font-family: var(--font-primary);
+  min-height: 52px;
+  padding: 18px 36px;
+  font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 0.8125rem;
-  letter-spacing: 0.08em;
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   border: none;
   border-radius: 2px;
@@ -381,9 +406,43 @@ textarea:focus-visible {
   color: #fff;
 }
 
-/* ----- Strong/Bold override (keep weight 400) ----- */
+/* ----- Strong/Bold ----- */
 strong, b {
-  font-weight: var(--font-weight);
+  font-weight: 600;
+}
+
+/* ----- Trust Strip ----- */
+.trust-strip {
+  font-family: var(--font-sans);
+}
+
+.trust-strip-label {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+
+.trust-strip-list {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.trust-strip-cta {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.trust-strip-cta:hover {
+  color: var(--color-accent-hover);
 }
 
 /* ================================================

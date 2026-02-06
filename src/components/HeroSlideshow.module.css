@@ -78,26 +78,36 @@
   max-width: 540px;
 }
 
-/* ── Eyebrow ───────────────────────────────── */
+/* ── Eyebrow — Flat, readable, no shadow ───────────────────────────────── */
 .eyebrow {
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 2px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 4px;
+  /* No text-shadow, no background — flat and clean */
 }
 
-/* ── Headline — Editorial dominance ─────────── */
+/* ── Headline — Canela Bold, editorial dominance ─────────── */
 .headline {
-  font-size: 2rem;
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  color: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.97);
 }
 
-/* ── Subhead — Quiet, supportive ─────────────── */
+/* ── Subhead — Neue Montreal, quiet, supportive ─────────────── */
 .subhead {
-  font-size: 0.875rem;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.9375rem;
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.55);
-  max-width: 340px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 360px;
   margin-top: var(--space-md);
 }
 
@@ -115,6 +125,7 @@
 }
 
 .ctaMicro {
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -177,31 +188,36 @@
     gap: var(--space-sm);
   }
 
+  .eyebrow {
+    font-size: 0.75rem;
+  }
+
   .headline {
-    font-size: 2.75rem;
-    line-height: 1.04;
+    font-size: 3rem;
+    line-height: 0.96;
   }
 
   .subhead {
-    font-size: 0.9375rem;
-    max-width: 360px;
+    font-size: 1rem;
+    max-width: 380px;
   }
 }
 
 /* ===== Desktop (1024px+) =================== */
 @media (min-width: 1024px) {
   .content {
-    max-width: 600px;
+    max-width: 640px;
   }
 
   .headline {
-    font-size: 3.25rem;
-    letter-spacing: -0.03em;
+    font-size: 3.75rem;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
   }
 
   .subhead {
-    font-size: 1rem;
-    max-width: 380px;
+    font-size: 1.0625rem;
+    max-width: 400px;
   }
 
   .indicators {
@@ -217,11 +233,11 @@
 /* ===== Large Desktop (1440px+) ============= */
 @media (min-width: 1440px) {
   .headline {
-    font-size: 3.75rem;
+    font-size: 4.25rem;
   }
 
   .subhead {
-    max-width: 400px;
+    max-width: 420px;
   }
 }
 

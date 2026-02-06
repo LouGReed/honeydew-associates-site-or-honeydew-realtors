@@ -1,6 +1,7 @@
 import {
   HeroSlideshow,
   Intro,
+  TrustStrip,
   Gallery,
   Services,
   CtaBand,
@@ -20,7 +21,10 @@ export default function HomePage() {
       {/* Intro — Two-column: copy + vertical Pexels portrait */}
       <Intro />
 
-      {/* Gallery — Work images with Pexels separators interleaved */}
+      {/* Trust Strip — Type-only value proposition */}
+      <TrustStrip />
+
+      {/* Gallery — Lifestyle images */}
       <Gallery />
 
       {/* Services — Cards + vertical Pexels sidebar */}

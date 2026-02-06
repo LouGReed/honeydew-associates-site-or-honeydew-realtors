@@ -2,6 +2,7 @@ export { default as BrandLogo } from './BrandLogo';
 export { default as Navbar } from './Navbar';
 export { default as HeroSlideshow } from './HeroSlideshow';
 export { default as Intro } from './Intro';
+export { default as TrustStrip } from './TrustStrip';
 export { default as Services } from './Services';
 export { default as Process } from './Process';
 export { default as Gallery } from './Gallery';
