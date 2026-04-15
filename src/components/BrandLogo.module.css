@@ -1,11 +1,49 @@
 /* ============================================
-   BrandLogo — Reusable brand mark
-   Size controlled by parent context via max-height
+   BrandLogo — melon mark + Canela wordmark
+   Mark keeps natural colors; wordmark inherits from parent.
    ============================================ */
 
-.logo {
+.lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1;
+}
+
+.mark {
   display: block;
-  width: auto;
-  height: 100%;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
+  flex-shrink: 0;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.375rem;
+  letter-spacing: -0.01em;
+  color: inherit;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .mark {
+    width: 40px;
+    height: 40px;
+  }
+  .wordmark {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mark {
+    width: 44px;
+    height: 44px;
+  }
+  .wordmark {
+    font-size: 1.625rem;
+  }
 }

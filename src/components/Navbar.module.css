@@ -37,23 +37,16 @@
   flex-shrink: 0;
   min-height: var(--min-tap-target);
   transition: opacity 0.3s ease;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .logo:hover {
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
-.logo img {
-  filter: brightness(0) invert(1);
-  transition: filter 0.4s ease;
-  width: 160px;
-  height: 34px;
-  object-fit: cover;
-  object-position: center;
-}
-
-.scrolled .logo img {
-  filter: brightness(0);
+/* When scrolled, the wordmark adopts the primary text color */
+.scrolled .logo {
+  color: var(--color-text);
 }
 
 /* ===== Desktop Nav ===== */
@@ -246,11 +239,6 @@
 
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
-  .logo img {
-    width: 200px;
-    height: 40px;
-  }
-
   .mobileNav {
     gap: 36px;
   }
@@ -270,11 +258,6 @@
 
   .logo {
     justify-self: start;
-  }
-
-  .logo img {
-    width: 240px;
-    height: 44px;
   }
 
   .nav {
@@ -298,11 +281,6 @@
 
 /* ===== Large Desktop (1440px+) ===== */
 @media (min-width: 1440px) {
-  .logo img {
-    width: 260px;
-    height: 48px;
-  }
-
   .nav {
     gap: 48px;
   }

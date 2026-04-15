@@ -56,13 +56,12 @@ export const galleryImages: ImageEntry[] = [
 
 // ─── Standout Full-Bleed Images (for feature breaks) ───────────────
 export const standoutImages: ImageEntry[] = [
-  { src: `${BASE_PATH}/img/standout/standout-01.jpg`, alt: 'Austin neighborhood', position: 'center' },
+  { src: `${BASE_PATH}/img/standout/standout-01-family-kitchen.jpg`, alt: 'Family moment in a bright, lived-in kitchen', position: 'center' },
 ];
 
 // ─── Validation Logos ───────────────────────────────────────────────
 export const validationLogos = [
   { src: `${BASE_PATH}/img/validation/compass.png`, alt: 'Compass', width: 1080, height: 1080, href: 'https://www.compass.com/' },
-  { src: `${BASE_PATH}/img/validation/sicara.png`, alt: 'Sicara Design', width: 1600, height: 1600, href: 'https://www.sicaradesign.com/' },
   { src: `${BASE_PATH}/img/validation/texas-realtors.png`, alt: 'Texas Realtors', width: 4096, height: 4096, href: 'https://www.texasrealestate.com/' },
 ];
 

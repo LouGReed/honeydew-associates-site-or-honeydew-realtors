@@ -1,4 +1,5 @@
 import { siteConfig } from '@/config/site';
+import { BASE_PATH } from '@/config/basePath';
 import styles from './BrandLogo.module.css';
 
 interface Props {
@@ -6,20 +7,22 @@ interface Props {
 }
 
 /**
- * Reusable brand logo.
- * Single source of truth — swap the file in site.ts and it updates everywhere.
- * Parent controls size via CSS (max-height on the wrapper or img).
- * Pass className to control filter/color treatment per context.
+ * Brand lockup: melon icon + "Honeydew" wordmark.
+ * The melon keeps its natural brand colors; the wordmark inherits
+ * its color from the parent so it can adapt (white over hero, dark when scrolled).
  */
 export default function BrandLogo({ className }: Props) {
   return (
-    <img
-      src={siteConfig.logo}
-      alt={siteConfig.businessName}
-      width={1024}
-      height={1024}
-      draggable={false}
-      className={`${styles.logo} ${className || ''}`}
-    />
+    <span className={`${styles.lockup} ${className || ''}`}>
+      <img
+        src={`${BASE_PATH}/img/brand/melon.png`}
+        alt=""
+        aria-hidden="true"
+        draggable={false}
+        className={styles.mark}
+      />
+      <span className={styles.wordmark}>{siteConfig.businessName}</span>
+      <span className="sr-only">{siteConfig.businessName}</span>
+    </span>
   );
 }
