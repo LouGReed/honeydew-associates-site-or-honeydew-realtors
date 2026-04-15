@@ -28,21 +28,41 @@
   margin: 0;
 }
 
-/* ── Logo (text-based for perfect alignment) ─── */
-.logoText {
-  display: block;
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-footer-text);
+/* ── Logo (vintage image mark) ─── */
+.logoLink {
+  display: inline-block;
   padding: 0;
   margin: 0;
   transition: opacity 0.2s ease;
+  line-height: 0;
 }
 
-.logoText:hover {
+.logoLink:hover {
   opacity: 0.8;
+}
+
+.logoImage {
+  width: 200px;
+  height: 42px;
+  display: block;
+  /* Render the vintage logo in the warm footer cream (#F2EDE4) using a
+     mask so the color is exact, not an approximate filter chain. */
+  background-color: var(--color-footer-text);
+  -webkit-mask-image: url('/honeydew-associates-site-or-honeydew-realtors/img/brand/honeydewlogo.png');
+  mask-image: url('/honeydew-associates-site-or-honeydew-realtors/img/brand/honeydewlogo.png');
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .logoImage {
+    width: 240px;
+    height: 50px;
+  }
 }
 
 /* ── Service Areas ───────────────────────────── */
