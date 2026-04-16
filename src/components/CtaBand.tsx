@@ -18,6 +18,13 @@ export default function CtaBand() {
         >
           Book a Walkthrough
         </a>
+        <a
+          href={siteConfig.smsHref}
+          className="btn-ghost"
+          aria-label={`Text us at ${siteConfig.smsPhone}`}
+        >
+          Or text us →
+        </a>
       </div>
     </section>
   );

@@ -6,22 +6,27 @@ const services = [
   {
     number: '01',
     title: 'Make-Ready + Turnovers',
-    description: 'Pre-listing prep so your home photographs beautifully and sells faster.',
+    description: 'Get a home listing ready before it hits the market.',
   },
   {
     number: '02',
-    title: 'Punch Lists + Repairs',
-    description: 'Efficient execution of inspection items with clear communication.',
+    title: 'Repairs + Punch Lists',
+    description: "The stuff that's been on your list is now on our Honeydew List. We'll knock it out.",
   },
   {
     number: '03',
-    title: 'Paint + Finish Work',
-    description: 'Clean lines and neutral tones that let the home speak for itself.',
+    title: 'Paint + Wall Repair',
+    description: 'Wall flattening, interior/exterior paint.',
   },
   {
     number: '04',
-    title: 'Light Remodels',
-    description: 'Targeted updates that move the needle without a full renovation timeline.',
+    title: 'Installs + Improvements',
+    description: 'Appliances, fixtures, water filtration systems.',
+  },
+  {
+    number: '05',
+    title: 'Landscaping + Nursery Services',
+    description: 'Get landscaping, mulching, tree selection and planting done in one place.',
   },
 ];
 
@@ -38,17 +43,16 @@ export default function Services() {
         <div className={styles.main}>
           <header className={styles.header}>
             <p className={styles.thesis}>
-              Clean scope. Clean execution. Clean handoff.
+              The generalist of general contractors.
             </p>
             <span className="eyebrow">What We Do</span>
             <h2 className={styles.headline}>
-              <span className={styles.headlineCanela}>Make-ready work</span>
-              <span className={styles.headlineCanela}>that respects your timeline.</span>
-              <span className={styles.headlineEcho}>And your client's home.</span>
+              <span className={styles.headlineCanela}>Whatever your home needs,</span>
+              <span className={styles.headlineCanela}>we've got it covered.</span>
             </h2>
           </header>
 
-          <p className={styles.scopeLabel}>Typical scope for Austin listings</p>
+          <p className={styles.scopeLabel}>What we take on</p>
 
           {/* 2x2 Confidence Grid */}
           <div className={styles.grid}>
@@ -71,6 +75,13 @@ export default function Services() {
             >
               Book a Walkthrough
             </a>
+            <a
+              href={siteConfig.smsHref}
+              className="btn-ghost"
+              aria-label={`Text us at ${siteConfig.smsPhone}`}
+            >
+              Or text us →
+            </a>
           </div>
         </div>
 
@@ -86,7 +97,7 @@ export default function Services() {
             className={styles.figureImage}
           />
           <figcaption className={styles.figureCaption}>
-            Completed pre-listing refresh, Central Austin.
+            Completed home refresh, Central Austin.
           </figcaption>
         </figure>
       </div>

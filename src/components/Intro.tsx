@@ -48,12 +48,12 @@ export default function Intro() {
         <div className={styles.leftCol}>
           {/* Copy block */}
           <div className={styles.copy}>
-            <h2 className={styles.lead}>Built for Austin realtors.</h2>
+            <h2 className={styles.lead}>Full service contracting for the houses (and the people) that make Austin home.</h2>
             <p className={styles.support}>
-              We handle the prep work so you can focus on closing.
+              Whether you're prepping a listing or fixing up your home, our team can get it done.
             </p>
             <p className={styles.echo}>
-              Listings that photograph clean, show confidently, and move faster.
+              Austin taking care of Austin, one home at a time.
             </p>
           </div>
 
@@ -62,7 +62,7 @@ export default function Intro() {
 
           {/* Anchoring line */}
           <p className={styles.anchor}>
-            Trusted by Austin agents for fast, repeat-ready turnarounds.
+            Trusted by Austin realtors and homeowners who never want to chase a contractor again.
           </p>
 
           {/* Section-ending rule — decisive boundary */}
@@ -85,9 +85,9 @@ export default function Intro() {
 
           {/* Scope preview */}
           <div className={styles.scopePreview}>
-            <p className={styles.scopeItem}>Typical turnaround: 3–10 days (scope dependent)</p>
-            <p className={styles.scopeItem}>Austin-wide scheduling</p>
-            <p className={styles.scopeItem}>Housecall Pro booking</p>
+            <p className={styles.scopeItem}>Rapid turnaround</p>
+            <p className={styles.scopeItem}>Free walkthrough and transparent quoting</p>
+            <p className={styles.scopeItem}>Online booking and text support</p>
             <a
               href={siteConfig.housecallProUrl}
               className={styles.scopeCta}
@@ -95,6 +95,13 @@ export default function Intro() {
               rel="noopener noreferrer"
             >
               See availability →
+            </a>
+            <a
+              href={siteConfig.smsHref}
+              className={styles.scopeCta}
+              aria-label={`Text us at ${siteConfig.smsPhone}`}
+            >
+              Or text us →
             </a>
           </div>
         </div>

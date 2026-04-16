@@ -231,6 +231,10 @@
 .ctaWrap {
   margin-top: 32px;
   margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
 }
 
 /* ── Right column: Figure ──────────────────── */

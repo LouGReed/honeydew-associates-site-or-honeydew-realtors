@@ -20,23 +20,32 @@ export default function BookingSection() {
 
       <div className={`container ${styles.container}`}>
         <div className={styles.content}>
-          <span className={styles.eyebrow}>Ready to start?</span>
-          <h2 className={styles.title}>Book a Walkthrough</h2>
+          <span className={styles.eyebrow}>What can we Honeydew for you?</span>
+          <h2 className={styles.title}>Book a Walkthrough Online</h2>
           <p className={styles.subtitle}>
             Pick a time that works. We'll confirm quickly and handle the rest.
           </p>
 
           <div className={styles.ctaBlock}>
-            <a
-              href={siteConfig.housecallProUrl}
-              className={`btn btn-primary ${styles.ctaBtn}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Schedule Now
-            </a>
+            <div className={styles.ctaRow}>
+              <a
+                href={siteConfig.housecallProUrl}
+                className={`btn btn-primary ${styles.ctaBtn}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Schedule Now
+              </a>
+              <a
+                href={siteConfig.smsHref}
+                className={styles.textCta}
+                aria-label={`Text us at ${siteConfig.smsPhone}`}
+              >
+                Or text us →
+              </a>
+            </div>
             <p className={styles.microcopy}>
-              2–3 minute booking. No calls needed.
+              2–3 minute booking. Or text {siteConfig.smsPhone}.
             </p>
           </div>
         </div>

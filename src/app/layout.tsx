@@ -45,19 +45,33 @@ export default function RootLayout({
             transition: opacity 600ms ease 200ms, visibility 0ms 800ms;
           }
           #honeydew-splash img {
-            width: 96px;
-            height: 96px;
+            width: 112px;
+            height: 112px;
             object-fit: contain;
-            animation: hd-splash-pulse 1800ms ease-in-out infinite;
+            transform-origin: center 60%;
+            animation:
+              hd-melon-tumble 1400ms cubic-bezier(0.34, 1.56, 0.64, 1) both,
+              hd-melon-idle 2400ms ease-in-out 1400ms infinite;
           }
           #honeydew-splash.hd-splash-hidden {
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
           }
-          @keyframes hd-splash-pulse {
-            0%, 100% { transform: scale(1); opacity: 0.85; }
-            50% { transform: scale(1.04); opacity: 1; }
+          /* Tumble entrance: drops diagonally from upper-left, bounces, settles center */
+          @keyframes hd-melon-tumble {
+            0%   { transform: translate(-40vw, -110vh) rotate(-540deg) scale(0.9); opacity: 0; }
+            25%  { opacity: 1; }
+            65%  { transform: translate(0, 0) rotate(15deg) scale(1); }
+            75%  { transform: translate(0, -18px) rotate(-8deg) scale(1.02); }
+            85%  { transform: translate(0, 0) rotate(4deg) scaleY(0.94) scaleX(1.06); }
+            92%  { transform: translate(0, -4px) rotate(-2deg) scale(1); }
+            100% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+          }
+          /* Idle breathing after landing */
+          @keyframes hd-melon-idle {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            50%      { transform: translateY(-3px) rotate(-1deg) scale(1.02); }
           }
           @media (prefers-reduced-motion: reduce) {
             #honeydew-splash img { animation: none; }
@@ -78,13 +92,21 @@ export default function RootLayout({
               var el = document.getElementById('honeydew-splash');
               if (el) el.classList.add('hd-splash-hidden');
             };
+            // Minimum display time so the tumble animation (1.4s) has time to play
+            var MIN_SHOW_MS = 1700;
+            var startedAt = Date.now();
+            var hideWhenReady = function() {
+              var elapsed = Date.now() - startedAt;
+              var remaining = Math.max(0, MIN_SHOW_MS - elapsed);
+              setTimeout(hide, remaining);
+            };
             if (document.readyState === 'complete') {
-              setTimeout(hide, 400);
+              hideWhenReady();
             } else {
-              window.addEventListener('load', function() { setTimeout(hide, 400); });
+              window.addEventListener('load', hideWhenReady);
             }
-            // Failsafe — never leave splash up for more than 4s
-            setTimeout(hide, 4000);
+            // Failsafe — never leave splash up for more than 5s
+            setTimeout(hide, 5000);
           })();
         ` }} />
         <Navbar />

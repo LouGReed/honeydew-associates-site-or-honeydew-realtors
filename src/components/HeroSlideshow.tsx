@@ -156,25 +156,33 @@ export default function HeroSlideshow() {
         </span>
 
         <h1 className={styles.headline}>
-          Homes Ready.<br />
-          Listings Strong.
+          What can we Honeydew for you?
         </h1>
 
         <p className={styles.subhead}>
-          Pre-listing preparation and make-ready services for Austin real estate professionals.
+          From pre-listing prep to paint, repairs, and installs — we've got ya.
         </p>
 
         {/* Hero CTA */}
         <div className={styles.ctaWrap}>
-          <a
-            href={siteConfig.housecallProUrl}
-            className={`btn btn-primary ${styles.heroCta}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book a Walkthrough
-          </a>
-          <span className={styles.ctaMicro}>2–3 minute booking. No calls needed.</span>
+          <div className={styles.ctaRow}>
+            <a
+              href={siteConfig.housecallProUrl}
+              className={`btn btn-primary ${styles.heroCta}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Walkthrough
+            </a>
+            <a
+              href={siteConfig.smsHref}
+              className={styles.heroTextCta}
+              aria-label={`Text us at ${siteConfig.smsPhone}`}
+            >
+              Text us →
+            </a>
+          </div>
+          <span className={styles.ctaMicro}>2–3 minute booking. Or text {siteConfig.smsPhone}.</span>
         </div>
 
         {/* Dots */}

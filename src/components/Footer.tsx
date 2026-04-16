@@ -8,8 +8,13 @@ export default function Footer() {
         <div className={styles.top}>
           {/* Left rail: logo + service areas share same left edge */}
           <div className={styles.leftRail}>
-            <a href="/" className={styles.logoText} aria-label="Honeydew Home">
-              Honeydew Homes
+            <a href="/" className={styles.logoLink} aria-label={siteConfig.businessName}>
+              <span className={styles.logoImage} role="img" aria-label={siteConfig.businessName} />
+            </a>
+
+            {/* Phone — prominent */}
+            <a href={`tel:${siteConfig.smsPhoneE164}`} className={styles.phone}>
+              {siteConfig.phone}
             </a>
 
             <div className={styles.areas}>

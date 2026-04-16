@@ -32,7 +32,7 @@
 .logoLink {
   display: inline-block;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 -19px; /* nudge ~0.5cm left to optically align with text below */
   transition: opacity 0.2s ease;
   line-height: 0;
 }
@@ -62,6 +62,26 @@
   .logoImage {
     width: 240px;
     height: 50px;
+  }
+}
+
+/* ── Phone — prominent ──────────────────────── */
+.phone {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-footer-text);
+  transition: color 0.2s ease;
+}
+
+.phone:hover {
+  color: var(--color-accent);
+}
+
+@media (min-width: 768px) {
+  .phone {
+    font-size: 1.5rem;
   }
 }
 

@@ -50,6 +50,15 @@
   color: var(--color-accent);
 }
 
+/* ── CTA group (book + text) ───────────────── */
+.ctaGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 4px;
+}
+
 /* ── CTA (enhanced presence) ───────────────── */
 .cta {
   display: inline-block;
