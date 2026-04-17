@@ -82,7 +82,7 @@ export default function RootLayout({
       <body>
         <div id="honeydew-splash" aria-hidden="true">
           <img
-            src="/honeydew-associates-site-or-honeydew-realtors/img/brand/melon.png"
+            src="/img/brand/melon.png"
             alt=""
           />
         </div>

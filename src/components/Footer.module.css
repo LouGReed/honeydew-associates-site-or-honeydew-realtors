@@ -48,8 +48,8 @@
   /* Render the vintage logo in the warm footer cream (#F2EDE4) using a
      mask so the color is exact, not an approximate filter chain. */
   background-color: var(--color-footer-text);
-  -webkit-mask-image: url('/honeydew-associates-site-or-honeydew-realtors/img/brand/honeydewlogo.png');
-  mask-image: url('/honeydew-associates-site-or-honeydew-realtors/img/brand/honeydewlogo.png');
+  -webkit-mask-image: url('/img/brand/honeydewlogo.png');
+  mask-image: url('/img/brand/honeydewlogo.png');
   -webkit-mask-size: cover;
   mask-size: cover;
   -webkit-mask-position: center;

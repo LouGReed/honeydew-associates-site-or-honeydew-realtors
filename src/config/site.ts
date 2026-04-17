@@ -8,7 +8,7 @@ export const siteConfig = {
   businessName: 'Honeydew',
   tagline: "Austin's Make-Ready + Home Services Partner",
   phone: '(512) 716-9176',
-  email: 'hello@honeydew.co',
+  email: 'honeydewzack@gmail.com',
   smsPhone: SMS_PHONE_DISPLAY,
   smsPhoneE164: SMS_PHONE_E164,
   smsBody: SMS_BODY,
