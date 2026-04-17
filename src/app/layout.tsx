@@ -2,24 +2,134 @@ import type { Metadata } from 'next';
 import { Navbar, Footer } from '@/components';
 import './globals.css';
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'LocalBusiness',
+      '@id': 'https://honeydew-homes.com/#business',
+      name: 'Honeydew Homes',
+      alternateName: 'Honeydew',
+      description:
+        'Austin general contractor serving realtors and homeowners. Make-ready turnovers, repairs, paint, installs, landscaping, and more.',
+      url: 'https://honeydew-homes.com',
+      telephone: '+15127169176',
+      email: 'honeydewzack@gmail.com',
+      image: 'https://honeydew-homes.com/img/brand/honeydewlogo.png',
+      logo: 'https://honeydew-homes.com/img/brand/honeydewlogo.png',
+      priceRange: '$$',
+      currenciesAccepted: 'USD',
+      paymentAccepted: 'Cash, Credit Card, Check',
+      areaServed: [
+        { '@type': 'City', name: 'Austin', containedInPlace: { '@type': 'State', name: 'Texas' } },
+        { '@type': 'City', name: 'Round Rock', containedInPlace: { '@type': 'State', name: 'Texas' } },
+        { '@type': 'City', name: 'Cedar Park', containedInPlace: { '@type': 'State', name: 'Texas' } },
+        { '@type': 'City', name: 'Georgetown', containedInPlace: { '@type': 'State', name: 'Texas' } },
+        { '@type': 'City', name: 'Pflugerville', containedInPlace: { '@type': 'State', name: 'Texas' } },
+      ],
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Austin',
+        addressRegion: 'TX',
+        addressCountry: 'US',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 30.2672,
+        longitude: -97.7431,
+      },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Home Services',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Make-Ready & Turnovers', description: 'Get a home listing ready before it hits the market.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Repairs & Punch Lists', description: 'General home repairs and punch list completion.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Paint & Wall Repair', description: 'Wall flattening, interior and exterior paint.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Installs & Improvements', description: 'Appliances, fixtures, water filtration systems.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landscaping & Nursery Services', description: 'Landscaping, mulching, tree selection and planting.' } },
+        ],
+      },
+      sameAs: [],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://honeydew-homes.com/#website',
+      url: 'https://honeydew-homes.com',
+      name: 'Honeydew Homes',
+      publisher: { '@id': 'https://honeydew-homes.com/#business' },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': 'https://honeydew-homes.com/#webpage',
+      url: 'https://honeydew-homes.com',
+      name: 'Honeydew Homes | Austin General Contractor',
+      isPartOf: { '@id': 'https://honeydew-homes.com/#website' },
+      about: { '@id': 'https://honeydew-homes.com/#business' },
+      description:
+        'Full service contracting for the houses and the people that make Austin home.',
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  title: 'Honeydew Homes | Homes Ready. Listings Strong.',
+  metadataBase: new URL('https://honeydew-homes.com'),
+  title: 'Honeydew Homes | Austin General Contractor — Make-Ready, Repairs, Paint & More',
   description:
-    'Austin make-ready contractors specializing in pre-listing repairs and improvements for real estate professionals.',
+    'Austin general contractor serving realtors and homeowners. Make-ready turnovers, repairs, paint, installs, landscaping, and more across Austin, Round Rock, Cedar Park, Georgetown, and Pflugerville. Free walkthrough and transparent quoting.',
+  keywords: [
+    'Austin general contractor',
+    'Austin make-ready contractor',
+    'Austin home repairs',
+    'Austin handyman services',
+    'make-ready services Austin TX',
+    'pre-listing contractor Austin',
+    'Austin painter',
+    'home improvement Austin Texas',
+    'Austin landscaping services',
+    'Austin appliance installation',
+    'general contractor Round Rock',
+    'general contractor Cedar Park',
+    'contractor near me Austin',
+  ],
+  alternates: {
+    canonical: 'https://honeydew-homes.com',
+  },
   openGraph: {
-    title: 'Honeydew Homes | Homes Ready. Listings Strong.',
+    title: 'Honeydew Homes | Austin General Contractor',
     description:
-      'Austin make-ready contractors specializing in pre-listing repairs and improvements for real estate professionals.',
+      'Full service contracting for Austin realtors and homeowners. Make-ready turnovers, repairs, paint, installs, landscaping, and more. Free walkthrough.',
     siteName: 'Honeydew Homes',
     locale: 'en_US',
     type: 'website',
+    url: 'https://honeydew-homes.com',
+    images: [
+      {
+        url: '/img/brand/honeydewlogo.png',
+        width: 600,
+        height: 600,
+        alt: 'Honeydew Homes — Austin General Contractor',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Honeydew Homes | Homes Ready. Listings Strong.',
+    title: 'Honeydew Homes | Austin General Contractor',
     description:
-      'Austin make-ready contractors specializing in pre-listing repairs and improvements for real estate professionals.',
+      'Full service contracting for Austin realtors and homeowners. Make-ready, repairs, paint, installs, landscaping, and more.',
+    images: ['/img/brand/honeydewlogo.png'],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {},
 };
 
 export default function RootLayout({
@@ -30,6 +140,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {/* Splash: shows instantly (before React hydrates), then fades.
             Uses inline styles/script so it works before any JS/CSS loads. */}
         <style dangerouslySetInnerHTML={{ __html: `
