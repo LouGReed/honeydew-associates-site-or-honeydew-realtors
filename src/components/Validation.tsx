@@ -2,7 +2,7 @@ import { validationLogos } from '@/config/images';
 import styles from './Validation.module.css';
 
 const GOOGLE_REVIEW_URL =
-  'https://g.page/r/CQBiPArxLimYEBM/review';
+  'https://g.page/r/CTuF5qywYjwHEAI/review';
 
 export default function Validation() {
   return (
