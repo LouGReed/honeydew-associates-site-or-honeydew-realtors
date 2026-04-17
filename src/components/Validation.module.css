@@ -36,26 +36,31 @@
   line-height: 1.3;
 }
 
-/* ── Review link ─────────────────────────── */
-.reviewLink {
+/* ── Review button ────────────────────────── */
+.reviewBtn {
   display: inline-block;
-  margin-top: var(--space-lg);
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--color-accent);
+  margin-top: var(--space-xl);
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-bg);
+  background-color: var(--color-oak-green);
+  border-radius: 6px;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-.reviewLink:hover {
-  color: var(--color-accent-hover);
+.reviewBtn:hover {
+  background-color: var(--color-oak-green-hover);
+  transform: translateY(-1px);
 }
 
-.reviewLink:focus-visible {
-  outline: 2px solid var(--color-accent);
+.reviewBtn:focus-visible {
+  outline: 2px solid var(--color-oak-green);
   outline-offset: 4px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 /* ── Logo row ─────────────────────────────── */

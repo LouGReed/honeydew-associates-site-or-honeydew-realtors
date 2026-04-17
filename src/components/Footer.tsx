@@ -37,6 +37,14 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <p className={styles.location}>Austin, Texas</p>
+          <a
+            href="https://g.page/r/CQBiPArxLimYEBM/review"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.reviewLink}
+          >
+            How did we Honeydew? Leave a review &rarr;
+          </a>
           <p className={styles.copyright}>
             &copy; {new Date().getFullYear()} {siteConfig.businessName}
           </p>

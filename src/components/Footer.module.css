@@ -143,6 +143,18 @@
   color: rgba(242, 237, 228, 0.5);
 }
 
+.reviewLink {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.reviewLink:hover {
+  color: var(--color-footer-text);
+}
+
 /* ===== Tablet (768px+) ===== */
 @media (min-width: 768px) {
   .footer {

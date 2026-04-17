@@ -18,7 +18,7 @@ export default function Validation() {
             href={GOOGLE_REVIEW_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.reviewLink}
+            className={styles.reviewBtn}
           >
             How did we Honeydew? Leave us a review &rarr;
           </a>
