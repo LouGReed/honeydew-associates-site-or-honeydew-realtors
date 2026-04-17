@@ -36,6 +36,28 @@
   line-height: 1.3;
 }
 
+/* ── Review link ─────────────────────────── */
+.reviewLink {
+  display: inline-block;
+  margin-top: var(--space-lg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.reviewLink:hover {
+  color: var(--color-accent-hover);
+}
+
+.reviewLink:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
 /* ── Logo row ─────────────────────────────── */
 .logos {
   display: flex;

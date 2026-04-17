@@ -1,6 +1,9 @@
 import { validationLogos } from '@/config/images';
 import styles from './Validation.module.css';
 
+const GOOGLE_REVIEW_URL =
+  'https://g.page/r/CQBiPArxLimYEBM/review';
+
 export default function Validation() {
   return (
     <section className={styles.validation}>
@@ -11,6 +14,14 @@ export default function Validation() {
           <h2 className={styles.title}>
             Trusted by Austin Realtors and Homeowners who never want to chase a contractor again.
           </h2>
+          <a
+            href={GOOGLE_REVIEW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.reviewLink}
+          >
+            How did we Honeydew? Leave us a review &rarr;
+          </a>
         </div>
         <div className={styles.logos}>
           {validationLogos.map((logo, index) => (
