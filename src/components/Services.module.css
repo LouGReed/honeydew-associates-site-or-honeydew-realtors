@@ -237,6 +237,28 @@
   gap: 24px;
 }
 
+/* ── Sub-page links ───────────────────────── */
+.subLinks {
+  margin-top: 24px;
+  display: flex;
+  gap: 24px;
+}
+
+.subLink {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.subLink:hover {
+  border-bottom-color: var(--color-accent);
+}
+
 /* ── Right column: Figure ──────────────────── */
 .figure {
   display: flex;

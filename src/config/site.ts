@@ -62,11 +62,12 @@ export const siteConfig = {
     },
   ],
 
-  serviceAreas: ['Austin', 'Round Rock', 'Cedar Park', 'Georgetown', 'Pflugerville'],
+  serviceAreas: ['Austin', 'Round Rock', 'Cedar Park', 'Georgetown', 'Pflugerville', 'Leander'],
 
   navLinks: [
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
+    { label: 'Areas', href: '/areas' },
     { label: 'Book', href: '#book' },
   ],
 };

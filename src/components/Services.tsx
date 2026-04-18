@@ -83,6 +83,13 @@ export default function Services() {
               Or text us →
             </a>
           </div>
+
+          {/* Sub-page links */}
+          <div className={styles.subLinks}>
+            <a href="/areas" className={styles.subLink}>
+              See our service areas →
+            </a>
+          </div>
         </div>
 
         {/* Right column: Image + Caption */}

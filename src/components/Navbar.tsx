@@ -35,7 +35,8 @@ export default function Navbar() {
   // Active section tracking via scroll position
   useEffect(() => {
     const scrollRoot = document.querySelector('.snap-main');
-    const sections = siteConfig.navLinks
+    const anchorLinks = siteConfig.navLinks.filter((link) => link.href.startsWith('#'));
+    const sections = anchorLinks
       .map((link) => document.querySelector(link.href))
       .filter(Boolean) as Element[];
 

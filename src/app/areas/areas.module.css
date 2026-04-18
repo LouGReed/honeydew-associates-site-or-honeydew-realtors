@@ -1,0 +1,584 @@
+/* ============================================
+   Areas We Serve — Index + Detail pages
+   Matches Honeydew editorial design system:
+   Canela for headings, system sans for body/UI
+   ============================================ */
+
+/* ── Index Page ──────────────────────────── */
+.areas {
+  padding: 72px 0 var(--space-xl);
+  background-color: var(--color-bg);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+/* ── Top gold rule (matches Services) ────── */
+.ruleContainer {
+  margin-bottom: var(--space-lg);
+}
+
+.topRule {
+  width: 64px;
+  height: 2px;
+  background-color: var(--color-accent);
+}
+
+.header {
+  margin-bottom: var(--space-2xl);
+}
+
+.thesis {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: var(--space-md);
+}
+
+.titleCanela {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+  margin-top: 6px;
+}
+
+/* ── Area Cards Grid ─────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.card {
+  display: block;
+  padding: var(--space-lg);
+  background-color: var(--color-bg-warm);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--color-border-strong);
+  transform: translateY(-2px);
+}
+
+.card:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 6px;
+}
+
+.cardCounty {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.cardName {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.cardTagline {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.cardLink {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.card:hover .cardLink {
+  border-bottom-color: var(--color-accent);
+}
+
+/* ── Area List (index page, no links) ────── */
+.areaList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.areaItem {
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.areaItem:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.areaItemCounty {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.areaItemName {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.areaItemTagline {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.areaCta {
+  margin-top: var(--space-xl);
+}
+
+.areaCta .ctaActions {
+  justify-content: flex-start;
+}
+
+/* ── Detail Page ─────────────────────────── */
+.detail {
+  padding: 72px 0 var(--space-xl);
+  background-color: var(--color-bg);
+}
+
+.detailHeader {
+  margin-bottom: var(--space-2xl);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  text-decoration: none;
+  margin-bottom: var(--space-2xl);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.backLink:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+.detailCounty {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.detailTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+.detailTagline {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+}
+
+/* ── Description ─────────────────────────── */
+.description {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3xl);
+  max-width: 720px;
+}
+
+/* ── Section Labels (matches .scopeLabel) ── */
+.sectionLabel {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+/* ── Services Highlights ─────────────────── */
+.servicesSection {
+  margin-bottom: var(--space-3xl);
+}
+
+.highlightsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.highlightItem:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.highlightCheck {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  margin-top: 6px;
+}
+
+.highlightCheck::after {
+  display: none;
+}
+
+/* ── Neighborhoods ───────────────────────── */
+.neighborhoodsSection {
+  margin-bottom: var(--space-3xl);
+}
+
+.neighborhoodTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.neighborhoodTag {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--color-bg-warm);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+/* ── CTA Section ─────────────────────────── */
+.cta {
+  padding: var(--space-2xl);
+  background-color: var(--color-oak-green);
+  border-radius: 2px;
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.ctaHeadline {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--color-bg);
+  margin-bottom: var(--space-sm);
+}
+
+.ctaSubtext {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(253, 251, 247, 0.7);
+  margin-bottom: var(--space-xl);
+}
+
+.ctaActions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 20px 40px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-oak-green);
+  background-color: var(--color-bg);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.ctaBtn:hover {
+  background-color: var(--color-bg-warm);
+  transform: translateY(-1px);
+}
+
+.ctaText {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(253, 251, 247, 0.8);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.ctaText:hover {
+  color: var(--color-bg);
+  border-bottom-color: var(--color-bg);
+}
+
+/* ── Other Areas ─────────────────────────── */
+.otherAreas {
+  margin-top: var(--space-2xl);
+}
+
+.otherAreasGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.otherAreaLink {
+  display: block;
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--color-border);
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.otherAreaLink:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.otherAreaLink:hover {
+  opacity: 0.7;
+}
+
+.otherAreaName {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.otherAreaCounty {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* ===== Mobile (max-width: 767px) =========== */
+@media (max-width: 767px) {
+  .areas,
+  .detail {
+    padding: 48px 0 32px;
+  }
+
+  .titleCanela {
+    font-size: 1.5rem;
+    line-height: 1.12;
+  }
+
+  .detailTitle {
+    font-size: 1.5rem;
+    line-height: 1.12;
+  }
+
+  .card {
+    padding: 14px 16px;
+  }
+
+  .cardName {
+    font-size: 1.25rem;
+  }
+
+  .ctaBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===== Tablet (768px+) ===================== */
+@media (min-width: 768px) {
+  .areas,
+  .detail {
+    padding: 88px 0 var(--space-xl);
+  }
+
+  .titleCanela {
+    font-size: 2.25rem;
+    line-height: 1.05;
+  }
+
+  .detailTitle {
+    font-size: 2.25rem;
+    line-height: 1.05;
+  }
+
+  .areaList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 var(--space-xl);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .highlightsList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 var(--space-xl);
+  }
+
+  .otherAreasGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 var(--space-xl);
+  }
+}
+
+/* ===== Desktop (1024px+) =================== */
+@media (min-width: 1024px) {
+  .areas,
+  .detail {
+    padding: 120px 0 64px;
+  }
+
+  .ruleContainer {
+    margin-bottom: var(--space-lg);
+  }
+
+  .topRule {
+    width: 72px;
+  }
+
+  .titleCanela {
+    font-size: 2.5rem;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+  }
+
+  .subtitle {
+    font-size: 1.375rem;
+    margin-top: 10px;
+  }
+
+  .detailTitle {
+    font-size: 2.5rem;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+  }
+
+  .areaList {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 var(--space-2xl);
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .otherAreasGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 var(--space-2xl);
+  }
+}
+
+/* ===== Large Desktop (1440px+) ============= */
+@media (min-width: 1440px) {
+  .titleCanela {
+    font-size: 2.75rem;
+  }
+
+  .detailTitle {
+    font-size: 2.75rem;
+  }
+}
